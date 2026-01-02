@@ -43,7 +43,7 @@ export default function TermsPage() {
                                 <span className="text-purple-500">01.</span> Service Scope
                             </h2>
                             <p>
-                                Asamblor, a product of BODISHTYAN SOLUTIONS SRL ("Asamblor", "we", "us"), provides an Autonomous Recruitment Agent-as-a-Service (RaaS). Our platform automates lead generation, qualification, and booking of candidates for trucking fleets.
+                                Asamblor, a product of BODISHTYAN SOLUTIONS SRL (&quot;Asamblor&quot;, &quot;we&quot;, &quot;us&quot;), provides an Autonomous Recruitment Agent-as-a-Service (RaaS). Our platform automates lead generation, qualification, and booking of candidates for trucking fleets.
                             </p>
                         </section>
 

@@ -28,12 +28,12 @@ export default function AdvantageSection() {
                             The Asamblor Advantage. <br />
                             Access the Hidden <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-br from-white to-white/40">
-                                "Out of Service" Pool.
+                                &quot;Out of Service&quot; Pool.
                             </span>
                         </h2>
 
                         <p className="text-gray-400 text-[15px] leading-relaxed mb-8">
-                            While other fleets fight over the same job board leads, we target CDL drivers from "Out of Service" (OOS) companies. These are experienced drivers who suddenly need a new home because their current carrier shut down.
+                            While other fleets fight over the same job board leads, we target CDL drivers from &quot;Out of Service&quot; (OOS) companies. These are experienced drivers who suddenly need a new home because their current carrier shut down.
                         </p>
 
                         <div className="space-y-4">

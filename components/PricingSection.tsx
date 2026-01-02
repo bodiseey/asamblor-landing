@@ -44,7 +44,7 @@ export default function PricingSection() {
                                     </div>
                                     <div>
                                         <h4 className="text-white font-medium">Access to 2.6M Driver Database</h4>
-                                        <p className="text-sm text-gray-400">Exclusive 'Out of Service' & Inactive pool.</p>
+                                        <p className="text-sm text-gray-400">Exclusive &apos;Out of Service&apos; &amp; Inactive pool.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
@@ -95,7 +95,7 @@ export default function PricingSection() {
                                     The Asamblor Guarantee
                                 </h4>
                                 <p className="text-sm text-yellow-200/80 leading-relaxed relative z-10">
-                                    If we don't generate at least <strong>20 qualified driver interviews</strong> in your first 30 days, we work for free until we do.
+                                    If we don&apos;t generate at least <strong>20 qualified driver interviews</strong> in your first 30 days, we work for free until we do.
                                 </p>
                             </div>
                         </div>

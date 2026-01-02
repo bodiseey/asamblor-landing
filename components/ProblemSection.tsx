@@ -25,7 +25,7 @@ export default function ProblemSection() {
 
                     <p className="text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto mb-12">
                         Cold calls that go nowhere. Job board applicants who ghost. No-shows. Manual follow-ups.
-                        Hiring drivers shouldn't be this hard, and every day a truck sits empty costs you money.
+                        Hiring drivers shouldn&apos;t be this hard, and every day a truck sits empty costs you money.
                     </p>
 
                     <div className="grid md:grid-cols-3 gap-6 text-left">
@@ -34,7 +34,7 @@ export default function ProblemSection() {
                                 1
                             </div>
                             <h3 className="text-xl font-semibold mb-2">Ghosting Applicants</h3>
-                            <p className="text-gray-400 text-sm">You call, they don't answer. You schedule, they don't show.</p>
+                            <p className="text-gray-400 text-sm">You call, they don&apos;t answer. You schedule, they don&apos;t show.</p>
                         </div>
                         <div className="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-white/10 transition-colors">
                             <div className="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center mb-4 text-red-500">

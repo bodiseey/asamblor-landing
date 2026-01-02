@@ -191,7 +191,7 @@ function BordersCard() {
 
             <h3 className="mt-5 text-xl md:text-2xl font-semibold tracking-tight text-white">Hire Without Borders</h3>
             <p className="mt-1.5 text-sm text-white/70">
-                Target drivers across regions ("Out of Service" pools) with localized compliance checks to scale confidently.
+                Target drivers across regions (&quot;Out of Service&quot; pools) with localized compliance checks to scale confidently.
             </p>
         </section>
     );

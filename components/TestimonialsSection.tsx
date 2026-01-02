@@ -8,7 +8,7 @@ import Link from "next/link";
 const testimonials = [
     {
         id: 0,
-        quote: "We went from 8 empty trucks to fully staffed in 6 weeks. It's ridiculous how well this works.",
+        quote: "We went from 8 empty trucks to fully staffed in 6 weeks. It&apos;s ridiculous how well this works.",
         author: "James D.",
         role: "Fleet Owner, Dallas, TX",
         icon: Quote,
@@ -181,7 +181,7 @@ export default function TestimonialsSection() {
                                         <div className="relative">
                                             <Quote className="absolute -top-4 -left-2 text-white/5 rotate-180" size={60} />
                                             <p className="relative text-lg md:text-xl text-white/90 font-medium leading-relaxed">
-                                                "{item.quote}"
+                                                &quot;{item.quote}&quot;
                                             </p>
                                         </div>
 

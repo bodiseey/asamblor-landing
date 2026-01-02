@@ -37,7 +37,7 @@ export default function NotFound() {
                         Page Not Found
                     </h2>
                     <p className="text-gray-500 text-sm leading-relaxed max-w-xs mx-auto">
-                        The resource you are looking for has been moved or doesn't exist yet.
+                        The resource you are looking for has been moved or doesn&apos;t exist yet.
                     </p>
                 </motion.div>
 

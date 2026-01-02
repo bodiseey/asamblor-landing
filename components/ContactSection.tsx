@@ -87,7 +87,7 @@ export default function ContactSection() {
                         <div className="mb-8">
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-semibold uppercase tracking-wider mb-4">
                                 <Mail size={12} />
-                                <span>Let's Work Together</span>
+                                <span>Let&apos;s Work Together</span>
                             </div>
                             <h2 className="text-[34px] font-semibold tracking-tight text-white leading-[1.1] mb-4">
                                 Ready to scale your fleet?
