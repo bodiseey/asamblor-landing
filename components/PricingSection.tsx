@@ -1,5 +1,3 @@
-"use client";
-
 import { Check, ShieldCheck, ArrowRight, Database, Mic, BarChart3, Mail, Bell } from "lucide-react";
 import Link from "next/link";
 

@@ -1,18 +1,10 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { AlertCircle, TrendingDown } from "lucide-react";
 
 export default function ProblemSection() {
     return (
         <section className="py-24 relative overflow-hidden">
             <div className="max-w-4xl mx-auto px-6 text-center">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                >
+                <div className="animate-in fade-in slide-in-from-bottom-5 duration-700 fill-mode-both">
                     <div className="inline-flex items-center gap-2 text-red-400 mb-6 bg-red-400/10 px-4 py-2 rounded-full border border-red-400/20">
                         <TrendingDown size={16} />
                         <span className="text-sm font-medium">The Cost of Empty Seats</span>
@@ -51,7 +43,7 @@ export default function ProblemSection() {
                             <p className="text-gray-400 text-sm">Every idle truck is thousands of dollars in lost potential revenue.</p>
                         </div>
                     </div>
-                </motion.div>
+                </div>
             </div>
         </section>
     );

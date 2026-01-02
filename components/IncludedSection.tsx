@@ -1,5 +1,3 @@
-"use client";
-
 import { Check, X, AlertTriangle, ShieldCheck, Zap } from "lucide-react";
 
 export default function IncludedSection() {

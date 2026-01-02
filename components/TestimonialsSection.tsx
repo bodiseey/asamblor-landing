@@ -163,6 +163,7 @@ export default function TestimonialsSection() {
                                         filter: `blur(${blur}px)`
                                     }}
                                     transition={{ duration: 0.6, ease: [0.32, 0.72, 0, 1] }}
+                                    viewport={{ once: true }}
                                 >
                                     <div className="h-full w-full rounded-3xl border border-white/10 bg-neutral-900/60 p-8 backdrop-blur-xl shadow-2xl flex flex-col justify-between">
 

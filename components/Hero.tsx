@@ -38,12 +38,16 @@ const TypewriterCode = () => {
     );
 };
 
-// CountUp Animation Component
+// CountUp Animation Component (Optimized)
 const CountUp = ({ end, decimals = 0, duration = 2 }: { end: string | number, decimals?: number, duration?: number }) => {
     const [count, setCount] = useState(0);
     const target = typeof end === 'string' ? parseFloat(end.replace(/,/g, '')) : end;
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true });
 
     useEffect(() => {
+        if (!isInView) return;
+
         let startTime: number;
         let animationFrame: number;
         const animate = (timestamp: number) => {
@@ -57,9 +61,9 @@ const CountUp = ({ end, decimals = 0, duration = 2 }: { end: string | number, de
         };
         animationFrame = requestAnimationFrame(animate);
         return () => cancelAnimationFrame(animationFrame);
-    }, [target, duration]);
+    }, [target, duration, isInView]);
 
-    return <span>{count.toLocaleString(undefined, { minimumFractionDigits: decimals, maximumFractionDigits: decimals })}</span>;
+    return <span ref={ref}>{count.toLocaleString(undefined, { minimumFractionDigits: decimals, maximumFractionDigits: decimals })}</span>;
 };
 
 export default function Hero() {
@@ -200,6 +204,7 @@ export default function Hero() {
                                             initial={{ width: 0 }}
                                             animate={{ width: `${(currentData.qualified / currentData.leads) * 100}%` }}
                                             transition={{ duration: 1.5, ease: "easeOut" }}
+                                            viewport={{ once: true }}
                                         />
                                     </div>
                                 </div>
@@ -245,6 +250,7 @@ export default function Hero() {
                                             initial={{ height: 0 }}
                                             animate={{ height: `${h}%` }}
                                             transition={{ delay: i * 0.05, duration: 1, ease: "backOut" }}
+                                            viewport={{ once: true }}
                                             className="flex-1 bg-gradient-to-t from-purple-500/10 via-purple-500/40 to-purple-400/80 rounded-t-sm relative group/bar"
                                         >
                                             <div className="absolute inset-0 bg-white opacity-0 group-hover/bar:opacity-30 transition-opacity rounded-t-sm" />

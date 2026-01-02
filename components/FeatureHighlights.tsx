@@ -166,6 +166,7 @@ function BordersCard() {
                             className="flex flex-col"
                             animate={{ y: [0, -120] }}
                             transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
+                            viewport={{ once: true }}
                         >
                             {[1, 2, 3, 4, 1, 2, 3, 4].map((i, index) => (
                                 <div key={index} className="flex pt-2 pr-3 pb-2 pl-3 items-center justify-between border-b border-white/5 last:border-0">
