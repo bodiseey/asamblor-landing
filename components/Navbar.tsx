@@ -1,0 +1,68 @@
+"use client";
+
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { Menu } from "lucide-react";
+import { useState } from "react";
+
+export default function Navbar() {
+    const [isOpen, setIsOpen] = useState(false);
+
+    return (
+        <motion.nav
+            initial={{ y: -100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="fixed top-0 left-0 right-0 z-50 px-8 py-4"
+        >
+            <div className="max-w-[1200px] mx-auto glass-card rounded-full px-6 py-3 flex items-center justify-between">
+                {/* Logo */}
+                <Link href="/" className="flex items-center gap-2">
+                    <Image
+                        src="/logo.png"
+                        alt="Asamblor Logo"
+                        width={120}
+                        height={32}
+                        className="h-8 w-auto object-contain"
+                        priority
+                    />
+                </Link>
+
+                {/* Desktop Links */}
+                <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
+                    <Link href="/#workflow" className="hover:text-white transition-colors">How It Works</Link>
+                    <Link href="/#testimonials" className="hover:text-white transition-colors">Results</Link>
+                    <Link href="/#pricing" className="hover:text-white transition-colors">Pricing</Link>
+                    <Link href="/#faq" className="hover:text-white transition-colors">FAQ</Link>
+                </div>
+
+                {/* CTA */}
+                <div className="hidden md:flex items-center gap-4">
+                    <Link href="/book">
+                        <button className="glass-button px-4 py-2 rounded-full text-sm font-medium text-white hover:bg-white/10 transition-all">
+                            Book an Appointment
+                        </button>
+                    </Link>
+                </div>
+
+                {/* Mobile Menu Toggle */}
+                <button className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
+                    <Menu size={24} />
+                </button>
+            </div>
+
+            {/* Mobile Menu (Simple Dropdown) */}
+            {isOpen && (
+                <div className="absolute top-20 left-6 right-6 bg-neutral-900/95 backdrop-blur-3xl border border-white/10 rounded-2xl p-6 flex flex-col gap-4 md:hidden shadow-2xl">
+                    <Link href="/#workflow" className="text-gray-300 hover:text-white font-medium" onClick={() => setIsOpen(false)}>How It Works</Link>
+                    <Link href="/#testimonials" className="text-gray-300 hover:text-white font-medium" onClick={() => setIsOpen(false)}>Results</Link>
+                    <Link href="/#pricing" className="text-gray-300 hover:text-white font-medium" onClick={() => setIsOpen(false)}>Pricing</Link>
+                    <Link href="/#faq" className="text-gray-300 hover:text-white font-medium" onClick={() => setIsOpen(false)}>FAQ</Link>
+                    <Link href="/book" className="text-white font-bold bg-white/10 text-center py-3 rounded-xl border border-white/5" onClick={() => setIsOpen(false)}>Book an Appointment</Link>
+                </div>
+            )}
+        </motion.nav>
+    );
+}

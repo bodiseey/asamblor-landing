@@ -2,54 +2,21 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({ 
+const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
-  weight: ['400', '500'],
-  style: ['normal'],
+  variable: '--font-inter',
 })
 
-const inter = Inter({ 
+const playfair = Playfair_Display({
   subsets: ['latin'],
   display: 'swap',
+  variable: '--font-playfair',
 })
 
 export const metadata: Metadata = {
-  title: "vibedev.ai",
-  description: "Experience the new way of coding with vibedev.ai. Transform your development workflow and vibe with your code like never before.",
-  icons: {
-    icon: [
-      {
-        url: "/images/idevibelogo.png",
-        type: "image/png",
-        sizes: "32x32"
-      },
-      {
-        url: "/images/idevibelogo.png",
-        type: "image/png",
-        sizes: "16x16"
-      }
-    ],
-    apple: [
-      {
-        url: "/images/idevibelogo.png",
-        type: "image/png",
-        sizes: "180x180"
-      }
-    ],
-    shortcut: [{ url: "/images/idevibelogo.png" }],
-    other: [
-      {
-        rel: "icon",
-        url: "/images/idevibelogo.png",
-      },
-    ],
-  },
-  manifest: "/manifest.json",
-  viewport: {
-    width: 'device-width',
-    initialScale: 1
-  }
+  title: "Asamblor | Intelligent Fleet Recruitment",
+  description: "AI-driven recruitment platform for trucking fleet owners. Fill your fleet on autopilot.",
 };
 
 export default function RootLayout({
@@ -58,14 +25,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="dark">
-      <head>
-        <link rel="icon" type="image/png" sizes="32x32" href="/images/idevibelogo.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/images/idevibelogo.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/images/idevibelogo.png" />
-        <link rel="manifest" href="/manifest.json" />
-      </head>
-      <body className={`${inter.className} bg-black bg-dotted-grid`}>{children}</body>
+    <html lang="en" className="dark scroll-smooth">
+      <body className={`${inter.className} ${playfair.variable} bg-transparent antialiased tracking-tight selection:bg-purple-500/30 selection:text-purple-200 relative min-h-screen`}>
+        <div data-us-project="cqcLtDwfoHqqRPttBbQE" className="fixed inset-0 -z-50 w-full h-full pointer-events-none"></div>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `!function(){if(!window.UnicornStudio){window.UnicornStudio={isInitialized:!1};var i=document.createElement("script");i.src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js",i.onload=function(){window.UnicornStudio.isInitialized||(UnicornStudio.init(),window.UnicornStudio.isInitialized=!0)},(document.head || document.body).appendChild(i)}}();`
+          }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
