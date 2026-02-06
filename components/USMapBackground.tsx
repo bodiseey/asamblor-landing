@@ -59,8 +59,8 @@ export default function USMapBackground() {
             <div className={`absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/50 transition-all duration-300 ${isMobile ? 'pt-24' : ''}`}>
                 <svg
                     viewBox="100 0 1000 750"
-                    className="w-full h-full opacity-50"
-                    preserveAspectRatio="xMidYMid slice"
+                    className={`w-full h-full opacity-50 transition-transform duration-500 ${isMobile ? 'scale-125 origin-top' : ''}`}
+                    preserveAspectRatio={isMobile ? "xMidYMin meet" : "xMidYMid slice"}
                 >
                     {/* High-Accuracy Realistic Map Backdrop */}
                     <g opacity="0.35" stroke="rgba(255, 255, 255, 0.45)" strokeWidth="0.8" fill="none">
