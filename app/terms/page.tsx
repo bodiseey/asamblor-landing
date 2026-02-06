@@ -5,6 +5,16 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Scale, ShieldCheck, Zap, ArrowLeft } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Terms of Service | Asamblor",
+    description: "Terms and conditions for using Asamblor's autonomous fleet recruitment platform.",
+    robots: {
+        index: false,
+        follow: true,
+    },
+};
 
 export default function TermsPage() {
     return (

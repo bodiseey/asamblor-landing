@@ -16,8 +16,52 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: "Asamblor | Intelligent Fleet Recruitment",
-  description: "AI-driven recruitment platform for trucking fleet owners. Fill your fleet on autopilot.",
+  metadataBase: new URL('https://www.asamblor.com'),
+  title: {
+    default: "Asamblor | Hire CDL Drivers & Owner Operators on Autopilot",
+    template: "%s | Asamblor - Fleet Recruitment"
+  },
+  description: "Asamblor is the AI-driven recruitment platform for trucking fleet owners. Automatically hire qualified CDL drivers and owner operators to fill your fleet faster.",
+  keywords: [
+    "hire cdl drivers",
+    "owner operators",
+    "truck driver recruitment",
+    "fleet recruiting",
+    "cdl driver jobs",
+    "trucking automated recruitment",
+    "asamblor",
+    "driver hiring platform",
+    "trucking business growth",
+    "automated driver vetting"
+  ],
+  authors: [{ name: "Asamblor Team" }],
+  creator: "Asamblor",
+  publisher: "Asamblor",
+  openGraph: {
+    title: "Asamblor | Intelligent Fleet Recruitment for CDL Drivers",
+    description: "Scale your trucking business by hiring the best CDL drivers and owner operators with AI-powered automation.",
+    url: 'https://www.asamblor.com',
+    siteName: 'Asamblor',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Asamblor | Hire CDL Drivers Fast",
+    description: "Automate your fleet recruitment. Hire qualified CDL drivers and owner operators effortlessly.",
+    creator: "@asamblor",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({

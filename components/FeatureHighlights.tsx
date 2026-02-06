@@ -16,12 +16,12 @@ export default function FeatureHighlights() {
             </div>
 
             {/* Heading */}
-            <h1 className="section-heading text-center">
+            <h2 className="section-heading text-center">
                 The Asamblor Stack: <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">
                     Premium Managed Infrastructure
                 </span>
-            </h1>
+            </h2>
             <p className="mx-auto mt-4 max-w-2xl text-center text-base text-muted-foreground font-normal">
                 We don&apos;t just provide leads; we deploy a complete, white-labeled recruitment ecosystem for your fleet.
             </p>

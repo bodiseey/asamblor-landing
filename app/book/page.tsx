@@ -7,6 +7,12 @@ import { useEffect } from "react";
 import { Calendar, ShieldCheck, Zap, ArrowLeft, BarChart3, Users, Clock } from "lucide-react";
 import Link from "next/link";
 import Cal, { getCalApi } from "@calcom/embed-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Book a Strategy Call | Asamblor",
+    description: "Schedule a consultation with Asamblor experts to build your automated fleet recruitment engine.",
+};
 
 export default function BookPage() {
     useEffect(() => {

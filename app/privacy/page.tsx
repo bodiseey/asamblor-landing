@@ -5,6 +5,16 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ShieldAlert, Eye, Lock, ArrowLeft } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Privacy Policy | Asamblor",
+    description: "Asamblor privacy policy. How we collect, use, and protect your fleet and driver data.",
+    robots: {
+        index: false,
+        follow: true,
+    },
+};
 
 export default function PrivacyPage() {
     return (
