@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // Geographic city positions mapped to amCharts Albers projection (0-1100 scale)
 const cities = [
@@ -43,14 +43,24 @@ const statePaths = [
 export default function USMapBackground() {
     const [hoveredCity, setHoveredCity] = useState<string | null>(null);
     const [hoveredRoute, setHoveredRoute] = useState<number | null>(null);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
 
     return (
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/50">
+            <div className={`absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/50 transition-all duration-300 ${isMobile ? 'pt-24' : ''}`}>
                 <svg
                     viewBox="100 0 1000 750"
                     className="w-full h-full opacity-50"
-                    preserveAspectRatio="xMidYMin meet"
+                    preserveAspectRatio={isMobile ? "xMidYMin meet" : "xMidYMid slice"}
                 >
                     {/* High-Accuracy Realistic Map Backdrop */}
                     <g opacity="0.35" stroke="rgba(255, 255, 255, 0.45)" strokeWidth="0.8" fill="none">
