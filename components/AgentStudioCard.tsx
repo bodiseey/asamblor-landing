@@ -13,7 +13,7 @@ export default function AgentStudioCard() {
         >
             <div className="absolute inset-0 rounded-[1.2em] border border-border/50" style={{ maskImage: 'linear-gradient(135deg, white, transparent 60%)' }}></div>
             <div className="absolute inset-0 border-white/10 border rounded-[1.2em]" style={{ maskImage: 'linear-gradient(135deg, transparent 60%, white)' }}></div>
-            <div className="pointer-events-none absolute -inset-px rounded-[1.3rem] bg-[radial-gradient(80%_60%_at_50%_0%,rgba(90,97,255,0.12),transparent_60%)]"></div>
+            <div className="pointer-events-none absolute -inset-px rounded-[1.3rem] bg-[radial-gradient(80%_60%_at_50%_0%,rgba(0,102,255,0.12),transparent_60%)]"></div>
 
             <div className="flex flex-col h-full p-4 md:p-6 pb-7">
                 <div className="flex justify-between items-start mb-2">
@@ -84,7 +84,7 @@ export default function AgentStudioCard() {
 
                 <div className="flex flex-wrap gap-2 mb-4">
                     {['ORCHESTRATOR', 'ANALYTICS', 'WORKFLOW'].map((tag, i) => (
-                        <span key={tag} className={`inline-flex items-center gap-1 text-xs px-2 py-1 rounded-full border cursor-pointer transition-all duration-300 hover:-translate-y-px hover:shadow-lg ${i === 0 ? 'bg-violet-500/10 border-violet-500/20 text-violet-300' :
+                        <span key={tag} className={`inline-flex items-center gap-1 text-xs px-2 py-1 rounded-full border cursor-pointer transition-all duration-300 hover:-translate-y-px hover:shadow-lg ${i === 0 ? 'bg-primary/10 border-primary/20 text-primary' :
                             i === 1 ? 'bg-blue-500/10 border-blue-500/20 text-blue-300' :
                                 'bg-emerald-500/10 border-emerald-500/20 text-emerald-300'
                             }`}>
@@ -100,7 +100,7 @@ export default function AgentStudioCard() {
                     <div className="flex flex-col items-end">
                         <span className="opacity-70 flex items-center gap-2 text-sm mb-1 text-foreground">
                             <span className="font-sans">AUTONOMOUS</span>
-                            <div className="w-2 h-2 rounded-full bg-violet-400" style={{ boxShadow: '0 0 6px rgba(139, 92, 246, 0.4)' }}></div>
+                            <div className="w-2 h-2 rounded-full bg-primary" style={{ boxShadow: '0 0 6px rgba(0, 102, 255, 0.4)' }}></div>
                         </span>
                     </div>
                 </div>

@@ -45,7 +45,7 @@ export default function TelegramNotification() {
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     className="fixed bottom-6 right-6 z-50 max-w-[320px] w-full"
                 >
-                    <div className="relative overflow-hidden rounded-2xl bg-card border border-border shadow-2xl p-4">
+                    <div className="relative overflow-hidden rounded-2xl bg-card border border-border shadow-2xl p-4 md:backdrop-blur">
                         <div className="flex gap-3">
                             {/* Icon */}
                             <div className="shrink-0 relative h-10 w-10">

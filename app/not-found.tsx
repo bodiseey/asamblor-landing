@@ -6,10 +6,10 @@ import { Home, ArrowLeft, Ghost } from "lucide-react";
 
 export default function NotFound() {
     return (
-        <main className="relative min-h-screen bg-black text-white flex flex-col items-center justify-center p-8 overflow-hidden">
+        <main className="relative min-h-screen bg-background text-foreground flex flex-col items-center justify-center p-8 overflow-hidden">
             {/* Background Texture */}
-            <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-purple-500/10 blur-[150px] rounded-full pointer-events-none" />
+            <div className="absolute inset-0 bg-dotted-grid opacity-20" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/10 blur-[150px] rounded-full pointer-events-none" />
 
             <div className="relative z-10 text-center space-y-8 max-w-md">
                 <motion.div
@@ -18,9 +18,9 @@ export default function NotFound() {
                     transition={{ duration: 0.5 }}
                     className="flex justify-center"
                 >
-                    <div className="p-5 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl relative group">
-                        <Ghost size={64} className="text-purple-400 animate-bounce" />
-                        <div className="absolute -inset-1 bg-purple-500/20 blur-xl opacity-50 group-hover:opacity-100 transition-opacity" />
+                    <div className="p-5 rounded-3xl bg-white/5 border border-white/10 md:backdrop-blur-xl relative group">
+                        <Ghost size={64} className="text-primary animate-bounce" />
+                        <div className="absolute -inset-1 bg-primary/20 blur-xl opacity-50 group-hover:opacity-100 transition-opacity" />
                     </div>
                 </motion.div>
 

@@ -16,7 +16,7 @@ export default function FeatureHighlights() {
             </div>
 
             {/* Heading */}
-            <h1 className="section-heading">
+            <h1 className="section-heading text-center">
                 The Asamblor Stack: <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">
                     Premium Managed Infrastructure
@@ -86,7 +86,7 @@ function RealtimeCard() {
                                 </div>
                                 <div className="mt-2 h-2 w-full rounded-full bg-foreground/10 overflow-hidden">
                                     <motion.div
-                                        className="h-full rounded-full bg-gradient-to-r from-purple-400 to-blue-500"
+                                        className="h-full rounded-full bg-gradient-to-r from-primary to-blue-500"
                                         initial={{ width: 0 }}
                                         animate={{ width: `${usWidth}%` }}
                                         transition={{ duration: 1, ease: "easeOut" }}
@@ -150,7 +150,7 @@ function BordersCard() {
             <div className="rounded-2xl bg-gradient-to-b from-white/5 to-white/[0.03] p-4 ring-1 ring-white/10 md:backdrop-blur">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 text-white/80 text-sm">
-                        <Globe2 className="h-4 w-4 text-indigo-300" />
+                        <Globe2 className="h-4 w-4 text-primary" />
                         <span className="font-medium">Nationwide Reach</span>
                     </div>
                     <div className="flex items-center gap-2">
@@ -275,7 +275,7 @@ function AutomationCard() {
             <div className="rounded-2xl bg-gradient-to-b from-white/5 to-white/[0.03] p-4 ring-1 ring-white/10 md:backdrop-blur">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 text-white/80 text-sm">
-                        <Workflow className="h-4 w-4 text-fuchsia-300" />
+                        <Workflow className="h-4 w-4 text-primary" />
                         <span className="font-medium">Team Workspace</span>
                     </div>
                     <button className="inline-flex items-center gap-1 rounded-full bg-white/5 px-2 py-1 text-[11px] text-white/80 ring-1 ring-white/10 hover:bg-white/10 transition">

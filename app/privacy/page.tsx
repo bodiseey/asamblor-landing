@@ -8,12 +8,12 @@ import { ShieldAlert, Eye, Lock, ArrowLeft } from "lucide-react";
 
 export default function PrivacyPage() {
     return (
-        <main className="relative min-h-screen bg-black text-white selection:bg-purple-500/30">
+        <main className="relative min-h-screen bg-background text-foreground selection:bg-primary/30">
             <Navbar />
 
             {/* Background Texture */}
-            <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
-            <div className="absolute top-0 right-1/4 w-1/2 h-1/2 bg-blue-500/10 blur-[120px] rounded-full pointer-events-none" />
+            <div className="absolute inset-0 bg-dotted-grid opacity-20" />
+            <div className="hidden md:block absolute top-0 right-1/4 w-1/2 h-1/2 bg-primary/10 blur-[120px] rounded-full pointer-events-none" />
 
             <div className="relative pt-32 pb-24 max-w-[900px] mx-auto px-8">
                 <motion.div
@@ -28,7 +28,7 @@ export default function PrivacyPage() {
                         <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Privacy Policy</h1>
                     </div>
 
-                    <Link href="/" className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors mb-8 group">
+                    <Link href="/" className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mb-8 group">
                         <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
                         <span className="text-sm font-medium">Back to Home</span>
                     </Link>
@@ -53,9 +53,9 @@ export default function PrivacyPage() {
                         </section>
 
                         <section>
-                            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 backdrop-blur-sm">
-                                <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                                    <Lock className="text-blue-400" size={20} /> Data Sovereignty
+                            <div className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 md:backdrop-blur-sm">
+                                <h2 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2">
+                                    <Lock className="text-primary" size={20} /> Data Sovereignty
                                 </h2>
                                 <p>
                                     Any lead data qualified by our system specifically for your fleet remains your property. We do not sell or share your specific leads with other clients or third parties for marketing purposes.
