@@ -76,17 +76,17 @@ export default function Footer() {
                 </div>
 
                 {/* Partners Section */}
-                <div className="mb-16">
-                    <h4 className="text-muted-foreground text-[10px] font-mono tracking-[0.2em] uppercase mb-8 text-center md:text-left">Asamblor Official Partners</h4>
-                    <div className="flex flex-wrap items-center justify-center md:justify-start gap-8 md:gap-12 opacity-50 hover:opacity-100 transition-opacity duration-500">
-                        <Link href="https://refer.instantly.ai/2i1jvrjr3jv4" target="_blank" className="grayscale hover:grayscale-0 transition-all duration-300">
-                            <Image src="/images/instantly.png" alt="Instantly Partner" width={120} height={40} className="h-8 w-auto object-contain" />
+                <div className="mb-16 flex flex-col items-center md:items-end w-full">
+                    <h4 className="text-muted-foreground text-[10px] font-mono tracking-[0.2em] uppercase mb-6 text-center md:text-right">Asamblor Official Partners</h4>
+                    <div className="flex flex-wrap items-center justify-center md:justify-end gap-10 md:gap-14 opacity-60 hover:opacity-100 transition-opacity duration-500">
+                        <Link href="https://refer.instantly.ai/2i1jvrjr3jv4" target="_blank" className="grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110">
+                            <Image src="/images/instantly.png" alt="Instantly Partner" width={110} height={36} className="h-6 w-auto object-contain" />
                         </Link>
-                        <Link href="https://get.quo.com/64cw1cxkz56i" target="_blank" className="grayscale hover:grayscale-0 transition-all duration-300">
-                            <Image src="/images/quo.png" alt="Quo Partner" width={100} height={40} className="h-8 w-auto object-contain" />
+                        <Link href="https://get.quo.com/64cw1cxkz56i" target="_blank" className="grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110">
+                            <Image src="/images/quo.png" alt="Quo Partner" width={90} height={36} className="h-6 w-auto object-contain" />
                         </Link>
-                        <Link href="https://manychat.partnerlinks.io/r6n2p787cmg9-ogcg6e" target="_blank" className="grayscale hover:grayscale-0 transition-all duration-300">
-                            <Image src="/images/manychat.png" alt="Manychat Partner" width={130} height={40} className="h-7 w-auto object-contain" />
+                        <Link href="https://manychat.partnerlinks.io/r6n2p787cmg9-ogcg6e" target="_blank" className="grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110">
+                            <Image src="/images/manychat.png" alt="Manychat Partner" width={120} height={36} className="h-5 w-auto object-contain" />
                         </Link>
                     </div>
                 </div>
