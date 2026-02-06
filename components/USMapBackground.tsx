@@ -50,7 +50,7 @@ export default function USMapBackground() {
                 <svg
                     viewBox="100 0 1000 750"
                     className="w-full h-full opacity-50"
-                    preserveAspectRatio="xMidYMid meet"
+                    preserveAspectRatio="xMidYMin meet"
                 >
                     {/* High-Accuracy Realistic Map Backdrop */}
                     <g opacity="0.35" stroke="rgba(255, 255, 255, 0.45)" strokeWidth="0.8" fill="none">
