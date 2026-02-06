@@ -81,11 +81,11 @@ export default function Hero() {
     return (
         <section className="relative z-10 flex min-h-screen flex-col items-center justify-center overflow-hidden pt-28 pb-12">
             <div className="max-w-[1200px] mx-auto px-8 text-center space-y-6">
-                <h1 className="text-[32px] md:text-[80px] leading-[1.1] font-bold text-foreground tracking-tight text-center" style={{ filter: 'drop-shadow(0 0 80px rgba(0,102,255,0.45))' }}>
+                <h1 className="text-[32px] md:text-[80px] leading-[1.1] font-bold text-foreground tracking-tight text-center md:[filter:drop-shadow(0_0_80px_rgba(0,102,255,0.45))]">
                     The Ultimate
-                    <span className="relative inline-block animate-pill mx-3">
+                    <span className="relative inline-block md:animate-pill mx-3">
                         <span className="relative inline-block" style={{ perspective: "1000px" }}>
-                            <span className="inline-flex items-center bg-primary/5 border-primary/20 border rounded-full pt-2 pr-6 pb-2 pl-6 backdrop-blur-sm italic text-primary font-playfair animate-sway3d">
+                            <span className="inline-flex items-center bg-primary/5 border-primary/20 border rounded-full pt-2 pr-6 pb-2 pl-6 md:backdrop-blur-sm italic text-primary font-playfair md:animate-sway3d">
                                 Capacity
                             </span>
                         </span>
@@ -99,9 +99,9 @@ export default function Hero() {
                 </p>
 
                 {/* Neon CTA */}
-                <div className="inline-flex shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05),0_20px_60px_rgba(0,0,0,0.50)] bg-background/80 dark:bg-neutral-900/80 ring-border dark:ring-white/10 ring-1 rounded-full mt-6 pt-1 pr-1 pb-1 pl-1 backdrop-blur-md items-center relative">
-                    {/* Neon perimeter tracers */}
-                    <svg aria-hidden="true" className="pointer-events-none absolute inset-0 w-full h-full" style={{ zIndex: 1, overflow: 'visible' }} preserveAspectRatio="none">
+                <div className="inline-flex shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05),0_20px_60px_rgba(0,0,0,0.50)] bg-background/80 dark:bg-neutral-900/80 ring-border dark:ring-white/10 ring-1 rounded-full mt-6 pt-1 pr-1 pb-1 pl-1 md:backdrop-blur-md items-center relative">
+                    {/* Neon perimeter tracers - Hidden on mobile for performance */}
+                    <svg aria-hidden="true" className="hidden md:block pointer-events-none absolute inset-0 w-full h-full" style={{ zIndex: 1, overflow: 'visible' }} preserveAspectRatio="none">
                         <defs>
                             <linearGradient id="aura-neon-stroke" x1="0%" y1="0%" x2="100%" y2="0%">
                                 <stop offset="0%" stopColor="#0066FF" stopOpacity="0" />
@@ -138,9 +138,9 @@ export default function Hero() {
             </div>
 
             <div className="relative mt-12 max-w-[1200px] mx-auto px-8 w-full">
-                {/* Framed background */}
-                <div className="absolute inset-x-0 -top-6 -bottom-10 bg-primary/10 rounded-[40px] blur-2xl opacity-20" />
-                <div className="relative overflow-hidden bg-card border border-border rounded-3xl shadow-2xl backdrop-blur-xl">
+                {/* Framed background - Hidden on mobile */}
+                <div className="hidden md:block absolute inset-x-0 -top-6 -bottom-10 bg-primary/10 rounded-[40px] blur-2xl opacity-20" />
+                <div className="relative overflow-hidden bg-card border border-border rounded-3xl shadow-2xl md:backdrop-blur-xl">
 
                     <div className="grid lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-border">
                         {/* LEFT: PIPELINE PERFORMANCE */}

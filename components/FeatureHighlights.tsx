@@ -68,7 +68,7 @@ function RealtimeCard() {
             <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-primary/10 blur-3xl"></div>
 
             {/* Inset UI preview */}
-            <div className="rounded-2xl bg-white/5 dark:bg-gradient-to-b dark:from-white/5 dark:to-white/[0.03] p-4 border border-black/5 dark:border-white/10 backdrop-blur">
+            <div className="rounded-2xl bg-white/5 dark:bg-gradient-to-b dark:from-white/5 dark:to-white/[0.03] p-4 border border-black/5 dark:border-white/10 md:backdrop-blur">
                 <div className="flex items-center gap-2 text-foreground/80 text-sm mb-3">
                     <BarChart3 className="h-4 w-4 text-primary" />
                     <span className="font-medium">Realtime KPI Monitor</span>
@@ -147,7 +147,7 @@ function BordersCard() {
             <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl"></div>
 
             {/* Inset UI */}
-            <div className="rounded-2xl bg-gradient-to-b from-white/5 to-white/[0.03] p-4 ring-1 ring-white/10 backdrop-blur">
+            <div className="rounded-2xl bg-gradient-to-b from-white/5 to-white/[0.03] p-4 ring-1 ring-white/10 md:backdrop-blur">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 text-white/80 text-sm">
                         <Globe2 className="h-4 w-4 text-indigo-300" />
@@ -215,7 +215,7 @@ function CollabCard() {
             <div className="absolute inset-0 bg-gradient-to-br from-blue-400/10 via-transparent to-transparent pointer-events-none"></div>
             <div className="absolute -right-24 -bottom-24 h-72 w-72 rounded-full bg-blue-400/10 blur-3xl"></div>
 
-            <div className="rounded-2xl bg-gradient-to-b from-white/5 to-white/[0.03] p-4 ring-1 ring-white/10 backdrop-blur">
+            <div className="rounded-2xl bg-gradient-to-b from-white/5 to-white/[0.03] p-4 ring-1 ring-white/10 md:backdrop-blur">
                 <div className="flex items-center gap-2 text-white/80 text-sm">
                     <Boxes className="h-4 w-4 text-emerald-300" />
                     <span className="font-medium">Connects with your tools</span>
@@ -272,7 +272,7 @@ function AutomationCard() {
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent pointer-events-none"></div>
             <div className="absolute -left-24 -bottom-24 h-72 w-72 rounded-full bg-primary/5 blur-3xl"></div>
 
-            <div className="rounded-2xl bg-gradient-to-b from-white/5 to-white/[0.03] p-4 ring-1 ring-white/10 backdrop-blur">
+            <div className="rounded-2xl bg-gradient-to-b from-white/5 to-white/[0.03] p-4 ring-1 ring-white/10 md:backdrop-blur">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 text-white/80 text-sm">
                         <Workflow className="h-4 w-4 text-fuchsia-300" />

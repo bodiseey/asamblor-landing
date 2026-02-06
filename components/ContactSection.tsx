@@ -89,7 +89,7 @@ export default function ContactSection() {
                                 <Mail size={12} />
                                 <span>Let&apos;s Work Together</span>
                             </div>
-                            <h2 className="section-heading text-left mb-4">
+                            <h2 className="section-heading-sm text-left mb-4">
                                 Ready to scale your fleet?
                             </h2>
                             <p className="text-[15px] text-muted-foreground leading-relaxed">
@@ -202,7 +202,7 @@ export default function ContactSection() {
                     {/* RIGHT COLUMN: FAQ */}
                     <div>
                         <div className="mb-8 lg:mt-0 mt-12">
-                            <h3 className="section-heading text-left">
+                            <h3 className="section-heading-sm text-left">
                                 Frequently Asked Questions
                             </h3>
                             <p className="text-[15px] text-muted-foreground leading-relaxed">

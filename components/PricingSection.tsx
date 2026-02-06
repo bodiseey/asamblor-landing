@@ -15,10 +15,10 @@ export default function PricingSection() {
                     </p>
                 </div>
 
-                <div className="relative rounded-3xl border border-border bg-card/50 shadow-2xl backdrop-blur-xl overflow-hidden">
-                    {/* Background Effects */}
-                    <div className="absolute top-0 right-0 -mr-20 -mt-20 w-[500px] h-[500px] bg-primary/10 blur-[120px] rounded-full pointer-events-none" />
-                    <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-[500px] h-[500px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
+                <div className="relative rounded-3xl border border-border bg-card/50 shadow-2xl md:backdrop-blur-xl overflow-hidden">
+                    {/* Background Effects - Hidden on mobile */}
+                    <div className="hidden md:block absolute top-0 right-0 -mr-20 -mt-20 w-[500px] h-[500px] bg-primary/10 blur-[120px] rounded-full pointer-events-none" />
+                    <div className="hidden md:block absolute bottom-0 left-0 -ml-20 -mb-20 w-[500px] h-[500px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
 
                     <div className="grid lg:grid-cols-12 gap-0 relative z-10">
                         {/* LEFT: Plan Details & Features */}

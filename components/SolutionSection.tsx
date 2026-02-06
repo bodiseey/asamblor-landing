@@ -54,9 +54,9 @@ const steps = [
 export default function SolutionSection() {
     return (
         <section className="py-16 relative bg-background overflow-hidden" id="workflow">
-            {/* Background Elements */}
-            <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-primary/10 blur-[120px] rounded-full pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
+            {/* Background Elements - Hidden on mobile for performance */}
+            <div className="hidden md:block absolute top-0 right-0 w-1/2 h-1/2 bg-primary/10 blur-[120px] rounded-full pointer-events-none" />
+            <div className="hidden md:block absolute bottom-0 left-0 w-1/2 h-1/2 bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
 
             <div className="max-w-[1200px] mx-auto px-8 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
@@ -69,7 +69,7 @@ export default function SolutionSection() {
                                 initial={{ opacity: 0, x: -20 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="bg-white/5 dark:bg-neutral-900/70 border-black/5 dark:border-white/10 border rounded-2xl p-4 backdrop-blur-md hover:border-black/10 dark:hover:border-white/20 transition-all group"
+                                className="bg-white/5 dark:bg-neutral-900/70 border-black/5 dark:border-white/10 border rounded-2xl p-4 md:backdrop-blur-md hover:border-black/10 dark:hover:border-white/20 transition-all group"
                             >
                                 <div className="grid grid-cols-[auto_1fr] items-center gap-5">
                                     {/* Indicator */}
@@ -105,15 +105,15 @@ export default function SolutionSection() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6 }}
                         >
-                            <h2 className="section-heading text-left">
+                            <h2 className="section-heading text-left lg:text-right">
                                 The Operational <br />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary to-blue-400">Engine Logic.</span>
                             </h2>
-                            <p className="text-gray-400 text-[15px] leading-relaxed mb-8">
+                            <p className="text-gray-400 text-[15px] leading-relaxed mb-8 text-left lg:text-right">
                                 From raw data to a booked interview, Asamblor handles the entire recruitment funnel. We automate the grunt work so you can focus on closing.
                             </p>
 
-                            <div className="flex flex-wrap gap-3">
+                            <div className="flex flex-wrap lg:justify-end gap-3">
                                 <span className="px-3 py-1 rounded-full border border-border bg-card text-sm text-muted-foreground">
                                     Full Autopilot
                                 </span>

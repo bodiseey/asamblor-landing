@@ -11,7 +11,7 @@ export default function Preloader() {
         // Force a minimum loading time for the experience
         const timer = setTimeout(() => {
             setLoading(false);
-        }, 1500);
+        }, 600);
 
         return () => clearTimeout(timer);
     }, []);
@@ -74,8 +74,6 @@ export default function Preloader() {
                         </div>
                     </div>
 
-                    {/* Background Ambient Glow */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 blur-[150px] rounded-full" />
                 </motion.div>
             )}
         </AnimatePresence>

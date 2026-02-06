@@ -23,7 +23,7 @@ export default function AdvantageSection() {
                             <span>The Asamblor Advantage</span>
                         </div>
 
-                        <h2 className="section-heading">
+                        <h2 className="section-heading text-left">
                             Bypass the <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary to-blue-400">
                                 Broker Wall.
@@ -64,7 +64,7 @@ export default function AdvantageSection() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="relative flex justify-center lg:justify-end"
                     >
-                        <div className="bg-card border border-border rounded-[1.2em] overflow-hidden relative transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] shadow-2xl backdrop-blur-xl">
+                        <div className="bg-card border border-border rounded-[1.2em] overflow-hidden relative transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] shadow-2xl md:backdrop-blur-xl">
 
                             <div className="flex flex-col h-full p-4 md:p-6 pb-7 min-h-[400px]">
                                 {/* Header */}

@@ -14,7 +14,7 @@ export default function IncludedSection() {
                     </p>
                 </div>
 
-                <div className="overflow-x-auto rounded-3xl border border-border bg-card/50 backdrop-blur-xl">
+                <div className="overflow-x-auto rounded-3xl border border-border bg-card/50 md:backdrop-blur-xl">
                     <table className="w-full text-left border-collapse min-w-[800px]">
                         <thead>
                             <tr className="border-b border-border text-xs uppercase tracking-widest text-muted-foreground">

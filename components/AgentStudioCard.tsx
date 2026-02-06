@@ -6,7 +6,10 @@ export default function AgentStudioCard() {
     return (
         <div
             className="card-top max-w-[32rem] mx-auto overflow-hidden relative transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] bg-card rounded-[1.2em] border border-border"
-            style={{ backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)' }}
+            style={{
+                backdropFilter: typeof window !== 'undefined' && window.innerWidth >= 768 ? 'blur(16px)' : 'none',
+                WebkitBackdropFilter: typeof window !== 'undefined' && window.innerWidth >= 768 ? 'blur(16px)' : 'none'
+            }}
         >
             <div className="absolute inset-0 rounded-[1.2em] border border-border/50" style={{ maskImage: 'linear-gradient(135deg, white, transparent 60%)' }}></div>
             <div className="absolute inset-0 border-white/10 border rounded-[1.2em]" style={{ maskImage: 'linear-gradient(135deg, transparent 60%, white)' }}></div>
