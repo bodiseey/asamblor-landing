@@ -3,12 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Home, ArrowLeft, Ghost } from "lucide-react";
-import { Metadata } from "next";
 
-export const metadata: Metadata = {
-    title: "404 - Page Not Found | Asamblor",
-    description: "The page you are looking for does not exist.",
-};
 
 export default function NotFound() {
     return (
