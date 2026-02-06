@@ -81,7 +81,7 @@ export default function Hero() {
     return (
         <section className="relative z-10 flex min-h-screen flex-col items-center justify-center overflow-hidden pt-28 pb-12">
             <div className="max-w-[1200px] mx-auto px-8 text-center space-y-6">
-                <h1 className="drop-shadow-[0_0_80px_rgba(0,102,255,0.45)] text-[40px] md:text-[64px] leading-[1.1] font-bold text-foreground tracking-tight text-center">
+                <h1 className="drop-shadow-[0_0_80px_rgba(0,102,255,0.45)] text-[44px] md:text-[80px] leading-[1.1] font-bold text-foreground tracking-tight text-center">
                     The Ultimate
                     <span className="relative inline-block animate-pill mx-3">
                         <span className="relative inline-block" style={{ perspective: "1000px" }}>

@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Menu } from "lucide-react";
 import { useState } from "react";
-import { ModeToggle } from "./mode-toggle";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -42,7 +41,6 @@ export default function Navbar() {
 
                 {/* CTA */}
                 <div className="hidden md:flex items-center gap-4">
-                    <ModeToggle />
                     <Link href="/book">
                         <button className="bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2 rounded-full text-sm font-medium transition-all shadow-lg shadow-primary/20">
                             Book an Appointment
