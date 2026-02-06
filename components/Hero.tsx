@@ -19,7 +19,7 @@ const TypewriterCode = () => {
     const [displayedCode, setDisplayedCode] = useState("");
     const [currentIndex, setCurrentIndex] = useState(0);
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
+    const isInView = useInView(ref, { once: true, margin: "200px" });
 
     useEffect(() => {
         if (isInView && currentIndex < codeString.length) {
@@ -44,7 +44,7 @@ const CountUp = ({ end, decimals = 0, duration = 2 }: { end: string | number, de
     const [count, setCount] = useState(0);
     const target = typeof end === 'string' ? parseFloat(end.replace(/,/g, '')) : end;
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: true });
+    const isInView = useInView(ref, { once: true, margin: "200px" });
 
     useEffect(() => {
         if (!isInView) return;

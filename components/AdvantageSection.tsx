@@ -15,8 +15,7 @@ export default function AdvantageSection() {
                     {/* Content */}
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6 }}
                     >
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold uppercase tracking-wider mb-6">
@@ -61,8 +60,7 @@ export default function AdvantageSection() {
                     {/* Visual - Glass Mission Control Card */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
+                        animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="relative flex justify-center lg:justify-end"
                     >

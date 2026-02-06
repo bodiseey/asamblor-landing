@@ -67,8 +67,7 @@ export default function SolutionSection() {
                             <motion.article
                                 key={index}
                                 initial={{ opacity: 0, x: -20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true, margin: "-50px" }}
+                                animate={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 className="bg-white/5 dark:bg-neutral-900/70 border-black/5 dark:border-white/10 border rounded-2xl p-4 backdrop-blur-md hover:border-black/10 dark:hover:border-white/20 transition-all group"
                             >
@@ -103,8 +102,7 @@ export default function SolutionSection() {
                     <div className="order-1 lg:order-2 lg:sticky lg:top-32 self-start text-left">
                         <motion.div
                             initial={{ opacity: 0, x: 20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
+                            animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6 }}
                         >
                             <h2 className="section-heading text-left">

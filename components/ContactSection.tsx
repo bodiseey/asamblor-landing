@@ -99,8 +99,7 @@ export default function ContactSection() {
 
                         <motion.div
                             initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
+                            animate={{ opacity: 1, y: 0 }}
                             className="bg-card border border-border rounded-2xl p-6 shadow-xl relative"
                         >
                             <AnimatePresence>

@@ -44,8 +44,7 @@ export default function CapacityTracks() {
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
+                            animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             className={`p-8 rounded-[2rem] bg-gradient-to-br ${track.color} border ${track.border} backdrop-blur-sm relative group hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500`}
                         >

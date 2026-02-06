@@ -52,7 +52,7 @@ function RealtimeCard() {
                     setBdWidth(44); // Target %
                 }
             },
-            { threshold: 0.4 }
+            { threshold: 0.1 }
         );
 
         if (cardRef.current) {
