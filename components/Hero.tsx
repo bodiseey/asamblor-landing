@@ -69,7 +69,7 @@ const CountUp = ({ end, decimals = 0, duration = 2 }: { end: string | number, de
 };
 
 export default function Hero() {
-    const [timeRange, setTimeRange] = useState("Weekly");
+    const [timeRange, setTimeRange] = useState("Monthly");
 
     const data = {
         Daily: { leads: 1200, qualified: 6, tokens: 1000, emails: 1200, growth: "+15%" },
@@ -150,14 +150,14 @@ export default function Hero() {
                         {/* LEFT: PIPELINE PERFORMANCE */}
                         <div className="p-6 md:p-8 flex flex-col justify-between h-full">
                             {/* Header */}
-                            <div className="flex items-center justify-between mb-8">
+                            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 sm:mb-8 gap-4 sm:gap-0">
                                 <div className="flex items-center gap-2">
                                     <div className="p-1.5 rounded-lg bg-primary/10 border border-primary/20">
                                         <TrendingUp className="text-primary" size={16} />
                                     </div>
-                                    <h3 className="text-xl font-semibold tracking-tight text-foreground">Capacity Engine Dashboard</h3>
+                                    <h3 className="text-lg sm:text-xl font-semibold tracking-tight text-foreground">Capacity Engine Dashboard</h3>
                                 </div>
-                                <div className="flex bg-muted/50 dark:bg-black/40 rounded-lg p-1 border border-border shadow-inner">
+                                <div className="flex bg-muted/50 dark:bg-black/40 rounded-lg p-1 border border-border shadow-inner self-start sm:self-auto">
                                     {["Daily", "Weekly", "Monthly"].map((range) => (
                                         <button
                                             key={range}
