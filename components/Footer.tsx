@@ -75,6 +75,22 @@ export default function Footer() {
                     </div>
                 </div>
 
+                {/* Partners Section */}
+                <div className="mb-16">
+                    <h4 className="text-muted-foreground text-[10px] font-mono tracking-[0.2em] uppercase mb-8 text-center md:text-left">Asamblor Official Partners</h4>
+                    <div className="flex flex-wrap items-center justify-center md:justify-start gap-8 md:gap-12 opacity-50 hover:opacity-100 transition-opacity duration-500">
+                        <Link href="https://refer.instantly.ai/2i1jvrjr3jv4" target="_blank" className="grayscale hover:grayscale-0 transition-all duration-300">
+                            <Image src="/images/instantly.png" alt="Instantly Partner" width={120} height={40} className="h-8 w-auto object-contain" />
+                        </Link>
+                        <Link href="https://get.quo.com/64cw1cxkz56i" target="_blank" className="grayscale hover:grayscale-0 transition-all duration-300">
+                            <Image src="/images/quo.png" alt="Quo Partner" width={100} height={40} className="h-8 w-auto object-contain" />
+                        </Link>
+                        <Link href="https://manychat.partnerlinks.io/r6n2p787cmg9-ogcg6e" target="_blank" className="grayscale hover:grayscale-0 transition-all duration-300">
+                            <Image src="/images/manychat.png" alt="Manychat Partner" width={130} height={40} className="h-7 w-auto object-contain" />
+                        </Link>
+                    </div>
+                </div>
+
                 {/* Bottom Branding */}
                 <div className="flex flex-col gap-6">
                     <div className="space-y-4">
