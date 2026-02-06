@@ -5,9 +5,9 @@ import { Database, ShieldCheck, TrendingUp, Users, Activity } from "lucide-react
 
 export default function AdvantageSection() {
     return (
-        <section className="py-16 bg-black relative overflow-hidden">
+        <section className="py-16 bg-background relative overflow-hidden">
             {/* Background Elements */}
-            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent" />
+            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
 
             <div className="max-w-[1200px] mx-auto px-8 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -19,41 +19,40 @@ export default function AdvantageSection() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-semibold uppercase tracking-wider mb-6">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold uppercase tracking-wider mb-6">
                             <Database size={12} />
                             <span>The Asamblor Advantage</span>
                         </div>
 
-                        <h2 className="text-[34px] font-semibold tracking-tight text-white leading-[1.1] mb-6">
-                            The Asamblor Advantage. <br />
-                            Access the Hidden <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-br from-white to-white/40">
-                                &quot;Out of Service&quot; Pool.
+                        <h2 className="text-[34px] font-semibold tracking-tight text-foreground leading-[1.1] mb-6">
+                            Bypass the <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary to-blue-400">
+                                Broker Wall.
                             </span>
                         </h2>
 
-                        <p className="text-gray-400 text-[15px] leading-relaxed mb-8">
-                            While other fleets fight over the same job board leads, we target CDL drivers from &quot;Out of Service&quot; (OOS) companies. These are experienced drivers who suddenly need a new home because their current carrier shut down.
+                        <p className="text-muted-foreground text-[15px] leading-relaxed mb-8">
+                            Newly formed companies with &quot;fresh MCs&quot; often cannot find work because brokers refuse to work with them for the first 6–12 months. Asamblor identifies these high-tier Owner-Operators and helps them lease onto established fleets to access consistent freight and fuel cards.
                         </p>
 
                         <div className="space-y-4">
                             <div className="flex items-start gap-4">
-                                <div className="p-2 rounded-lg bg-white/5 border border-white/10 shrink-0">
-                                    <Database className="text-purple-400" size={20} />
+                                <div className="p-2 rounded-lg bg-white/5 border border-black/5 dark:border-white/10 shrink-0">
+                                    <Database className="text-primary" size={20} />
                                 </div>
                                 <div>
-                                    <h3 className="text-white font-semibold mb-1">2.6 Million Records</h3>
-                                    <p className="text-sm text-gray-500">Real-time database of OOS/Not Authorized fleet records.</p>
+                                    <h3 className="text-foreground font-semibold mb-1">2.6 Million Records</h3>
+                                    <p className="text-sm text-muted-foreground">Precision mining of OOS (Out of Service) records and Fresh MC data.</p>
                                 </div>
                             </div>
 
                             <div className="flex items-start gap-4">
-                                <div className="p-2 rounded-lg bg-white/5 border border-white/10 shrink-0">
+                                <div className="p-2 rounded-lg bg-white/5 border border-black/5 dark:border-white/10 shrink-0">
                                     <ShieldCheck className="text-green-400" size={20} />
                                 </div>
                                 <div>
-                                    <h3 className="text-white font-semibold mb-1">Pre-Validated Data</h3>
-                                    <p className="text-sm text-gray-500">We verify contacts and authority status before outreach.</p>
+                                    <h3 className="text-foreground font-semibold mb-1">Lease-On Strategy</h3>
+                                    <p className="text-sm text-muted-foreground">Bridge the gap between fresh authorities and established freight access.</p>
                                 </div>
                             </div>
                         </div>
@@ -116,18 +115,18 @@ export default function AdvantageSection() {
                                 {/* Bottom Metrics */}
                                 <div className="flex justify-between items-end">
                                     <div className="flex flex-col">
-                                        <div className="text-4xl font-semibold leading-tight font-mono bg-gradient-to-r from-white/95 to-neutral-200/80 bg-clip-text text-transparent">
-                                            4-5
+                                        <div className="text-4xl font-semibold leading-tight font-mono bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent">
+                                            30+
                                         </div>
-                                        <div className="text-xs opacity-70 uppercase tracking-wide text-neutral-400 mt-1">Qualified Leads / Day</div>
+                                        <div className="text-xs opacity-70 uppercase tracking-wide text-muted-foreground mt-1">Interested Leads / 30 Days</div>
                                     </div>
-                                    <div className="p-3 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-600/5 border border-purple-500/20 shadow-lg text-purple-300">
+                                    <div className="p-3 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/20 shadow-lg text-primary">
                                         <Activity size={24} />
                                     </div>
                                 </div>
 
-                                <div className="rounded px-2 py-0.5 font-mono text-[10px] relative overflow-hidden mt-6 text-center border border-white/5 bg-white/5" >
-                                    <span className="text-neutral-400">DATA SYNC: <span className="text-green-400">CONNECTED</span></span>
+                                <div className="rounded px-2 py-0.5 font-mono text-[10px] relative overflow-hidden mt-6 text-center border border-black/5 dark:border-white/5 bg-white/5" >
+                                    <span className="text-muted-foreground">ENGINE STATUS: <span className="text-green-400">ACTIVE & ENGAGED</span></span>
                                 </div>
                             </div>
                         </div>

@@ -33,12 +33,12 @@ const steps = [
     },
     {
         icon: Mic2,
-        title: "AI Voice Qualification",
+        title: "AI & Qualification Layer",
         number: "04",
-        description: "Our AI agents call every lead, vetting them for experience, record, and interest.",
-        color: "text-purple-400",
-        ring: "ring-purple-400/60",
-        bg: "bg-purple-400/10"
+        description: "Our AI agents vet leads for experience, safety records, and interest—handling objections in real-time.",
+        color: "text-primary",
+        ring: "ring-primary/60",
+        bg: "bg-primary/10"
     },
     {
         icon: CalendarCheck2,
@@ -53,10 +53,10 @@ const steps = [
 
 export default function SolutionSection() {
     return (
-        <section className="py-16 relative bg-black overflow-hidden" id="workflow">
+        <section className="py-16 relative bg-background overflow-hidden" id="workflow">
             {/* Background Elements */}
-            <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-purple-500/10 blur-[120px] rounded-full pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-blue-500/10 blur-[120px] rounded-full pointer-events-none" />
+            <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-primary/10 blur-[120px] rounded-full pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
 
             <div className="max-w-[1200px] mx-auto px-8 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
@@ -107,9 +107,9 @@ export default function SolutionSection() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
                         >
-                            <h2 className="text-[34px] font-semibold tracking-tight text-white leading-[1.1] mb-6">
-                                The Hands-Off <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-br from-white to-white/40">Workflow.</span>
+                            <h2 className="text-[34px] font-semibold tracking-tight text-foreground leading-[1.1] mb-6">
+                                The Operational <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary to-blue-400">Engine Logic.</span>
                             </h2>
                             <p className="text-gray-400 text-[15px] leading-relaxed mb-8">
                                 From raw data to a booked interview, Asamblor handles the entire recruitment funnel. We automate the grunt work so you can focus on closing.
@@ -117,13 +117,13 @@ export default function SolutionSection() {
 
                             <div className="flex flex-wrap gap-3">
                                 <span className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-sm text-gray-300">
-                                    Full Automation
+                                    Full Autopilot
                                 </span>
                                 <span className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-sm text-gray-300">
-                                    24/7 Operation
+                                    24/5 Engagement
                                 </span>
                                 <span className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-sm text-gray-300">
-                                    Real-time Sync
+                                    CRM Integration
                                 </span>
                             </div>
                         </motion.div>

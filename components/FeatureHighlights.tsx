@@ -16,14 +16,14 @@ export default function FeatureHighlights() {
             </div>
 
             {/* Heading */}
-            <h1 className="mt-6 text-center text-3xl md:text-[34px] font-semibold tracking-tight text-white leading-tight">
-                Everything You Need to
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">
-                    Hire Drivers—Automated
+            <h1 className="mt-6 text-center text-3xl md:text-[34px] font-semibold tracking-tight text-foreground leading-tight">
+                The Asamblor Stack: <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">
+                    Premium Managed Infrastructure
                 </span>
             </h1>
-            <p className="mx-auto mt-4 max-w-2xl text-center text-base text-white/70 font-normal">
-                Stop managing spreadsheets and start managing interviews. Tools to track, automate, and scale your pipeline.
+            <p className="mx-auto mt-4 max-w-2xl text-center text-base text-muted-foreground font-normal">
+                We don&apos;t just provide leads; we deploy a complete, white-labeled recruitment ecosystem for your fleet.
             </p>
 
             {/* Grid */}
@@ -64,13 +64,13 @@ function RealtimeCard() {
 
     return (
         <section ref={cardRef} className="group relative overflow-hidden rounded-3xl bg-white/[0.04] ring-1 ring-white/10 p-5 md:p-6 transition-all duration-300 hover:bg-white/[0.06]">
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-transparent pointer-events-none"></div>
-            <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-purple-500/10 blur-3xl"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent pointer-events-none"></div>
+            <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-primary/10 blur-3xl"></div>
 
             {/* Inset UI preview */}
             <div className="rounded-2xl bg-gradient-to-b from-white/5 to-white/[0.03] p-4 ring-1 ring-white/10 backdrop-blur">
-                <div className="flex items-center gap-2 text-white/80 text-sm mb-3">
-                    <BarChart3 className="h-4 w-4 text-purple-300" />
+                <div className="flex items-center gap-2 text-foreground/80 text-sm mb-3">
+                    <BarChart3 className="h-4 w-4 text-primary" />
                     <span className="font-medium">Realtime KPI Monitor</span>
                 </div>
 
@@ -132,9 +132,9 @@ function RealtimeCard() {
                 </div>
             </div>
 
-            <h3 className="mt-5 text-xl md:text-2xl font-semibold tracking-tight text-white">Real‑Time Performance Tracking</h3>
-            <p className="mt-1.5 text-sm text-white/70">
-                See KPIs, qualified drivers, and booked interview trends as they happen. Make confident decisions with instant insight.
+            <h3 className="mt-5 text-xl md:text-2xl font-semibold tracking-tight text-foreground">Asamblor Command Center</h3>
+            <p className="mt-1.5 text-sm text-muted-foreground">
+                Your exclusive CRM to track leads from &apos;First Contact&apos; to &apos;Deployment&apos;. Manage SMS, emails, and call recordings in one unified inbox.
             </p>
         </section>
     );
@@ -143,8 +143,8 @@ function RealtimeCard() {
 function BordersCard() {
     return (
         <section className="group relative overflow-hidden rounded-3xl bg-white/[0.04] ring-1 ring-white/10 p-5 md:p-6 transition-all duration-300 hover:bg-white/[0.06]">
-            <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-transparent to-transparent pointer-events-none"></div>
-            <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-indigo-500/10 blur-3xl"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-transparent pointer-events-none"></div>
+            <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl"></div>
 
             {/* Inset UI */}
             <div className="rounded-2xl bg-gradient-to-b from-white/5 to-white/[0.03] p-4 ring-1 ring-white/10 backdrop-blur">
@@ -190,9 +190,9 @@ function BordersCard() {
                 </div>
             </div>
 
-            <h3 className="mt-5 text-xl md:text-2xl font-semibold tracking-tight text-white">Hire Without Borders</h3>
-            <p className="mt-1.5 text-sm text-white/70">
-                Target drivers across regions (&quot;Out of Service&quot; pools) with localized compliance checks to scale confidently.
+            <h3 className="mt-5 text-xl md:text-2xl font-semibold tracking-tight text-foreground">Dedicated US Infrastructure</h3>
+            <p className="mt-1.5 text-sm text-muted-foreground">
+                Receive exclusive U.S. phone numbers for your fleet. Our AI agents use these numbers to engage leads via text and call with consistent branding.
             </p>
         </section>
     );
@@ -212,8 +212,8 @@ function CollabCard() {
                 card.style.setProperty('--mouse-y', `${y}px`);
             }}
         >
-            <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-transparent to-transparent pointer-events-none"></div>
-            <div className="absolute -right-24 -bottom-24 h-72 w-72 rounded-full bg-emerald-500/10 blur-3xl"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-400/10 via-transparent to-transparent pointer-events-none"></div>
+            <div className="absolute -right-24 -bottom-24 h-72 w-72 rounded-full bg-blue-400/10 blur-3xl"></div>
 
             <div className="rounded-2xl bg-gradient-to-b from-white/5 to-white/[0.03] p-4 ring-1 ring-white/10 backdrop-blur">
                 <div className="flex items-center gap-2 text-white/80 text-sm">
@@ -258,9 +258,9 @@ function CollabCard() {
                 </div>
             </div>
 
-            <h3 className="mt-5 text-xl md:text-2xl font-semibold tracking-tight text-white">Seamless Collaboration</h3>
-            <p className="mt-1.5 text-sm text-white/70">
-                Keep your team aligned with integrations to email, SMS, calendars, and your CRM—all in one place.
+            <h3 className="mt-5 text-xl md:text-2xl font-semibold tracking-tight text-foreground">Instant Telegram Intelligence</h3>
+            <p className="mt-1.5 text-sm text-muted-foreground">
+                Custom Telegram bot for real-time lead notifications. Your team gets notified the instant a new Interested Lead (QIL) is generated.
             </p>
         </section>
     );
@@ -269,8 +269,8 @@ function CollabCard() {
 function AutomationCard() {
     return (
         <section className="group relative overflow-hidden rounded-3xl bg-white/[0.04] ring-1 ring-white/10 p-5 md:p-6 transition-all duration-300 hover:bg-white/[0.06]">
-            <div className="absolute inset-0 bg-gradient-to-br from-fuchsia-500/10 via-transparent to-transparent pointer-events-none"></div>
-            <div className="absolute -left-24 -bottom-24 h-72 w-72 rounded-full bg-fuchsia-500/10 blur-3xl"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent pointer-events-none"></div>
+            <div className="absolute -left-24 -bottom-24 h-72 w-72 rounded-full bg-primary/5 blur-3xl"></div>
 
             <div className="rounded-2xl bg-gradient-to-b from-white/5 to-white/[0.03] p-4 ring-1 ring-white/10 backdrop-blur">
                 <div className="flex items-center justify-between">
@@ -314,9 +314,9 @@ function AutomationCard() {
                 </div>
             </div>
 
-            <h3 className="mt-5 text-xl md:text-2xl font-semibold tracking-tight text-white">Automate Recruitment Workflows</h3>
-            <p className="mt-1.5 text-sm text-white/70">
-                Automate follow‑ups, reminders, and handoffs so your team can focus on verifying drivers and closing hires.
+            <h3 className="mt-5 text-xl md:text-2xl font-semibold tracking-tight text-foreground">Mobile Lead Connector</h3>
+            <p className="mt-1.5 text-sm text-muted-foreground">
+                Full lead management via the &apos;Lead Connector&apos; app. Monitor the generation engine and respond to leads on the go, directly from your smartphone.
             </p>
         </section>
     );

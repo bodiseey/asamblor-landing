@@ -112,6 +112,7 @@ const config: Config = {
 					subtext: '#94A3B8', // slate-400
 					border: 'rgba(255,255,255,0.08)',
 					bg: '#050505', // Almost black
+					blue: '#0066FF', // Asamblor Electric Blue
 				}
 			}
 		}

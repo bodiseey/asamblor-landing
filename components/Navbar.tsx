@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Menu } from "lucide-react";
 import { useState } from "react";
+import { ModeToggle } from "./mode-toggle";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -31,15 +32,16 @@ export default function Navbar() {
                 </Link>
 
                 {/* Desktop Links */}
-                <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
-                    <Link href="/#workflow" className="hover:text-white transition-colors">How It Works</Link>
-                    <Link href="/#testimonials" className="hover:text-white transition-colors">Results</Link>
-                    <Link href="/#pricing" className="hover:text-white transition-colors">Pricing</Link>
-                    <Link href="/#faq" className="hover:text-white transition-colors">FAQ</Link>
+                <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
+                    <Link href="/#workflow" className="hover:text-foreground transition-colors">How It Works</Link>
+                    <Link href="/#testimonials" className="hover:text-foreground transition-colors">Results</Link>
+                    <Link href="/#pricing" className="hover:text-foreground transition-colors">Pricing</Link>
+                    <Link href="/#faq" className="hover:text-foreground transition-colors">FAQ</Link>
                 </div>
 
                 {/* CTA */}
                 <div className="hidden md:flex items-center gap-4">
+                    <ModeToggle />
                     <Link href="/book">
                         <button className="glass-button px-4 py-2 rounded-full text-sm font-medium text-white hover:bg-white/10 transition-all">
                             Book an Appointment

@@ -7,32 +7,32 @@ export default function PricingSection() {
             <div className="max-w-[1200px] mx-auto px-8 relative z-10">
 
                 <div className="text-center mb-16">
-                    <h2 className="text-[40px] md:text-[50px] font-semibold tracking-tight text-white leading-[1.1] mb-6">
-                        One Plan. <span className="text-purple-400">Total Dominance.</span>
+                    <h2 className="text-[40px] md:text-[50px] font-semibold tracking-tight text-foreground leading-[1.1] mb-6">
+                        One Plan. <span className="text-primary">Total Dominance.</span>
                     </h2>
-                    <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                         Stop complicating your growth. Get the full engine for a flat rate.
                     </p>
                 </div>
 
                 <div className="relative rounded-3xl border border-white/10 bg-neutral-900/50 backdrop-blur-xl overflow-hidden">
                     {/* Background Effects */}
-                    <div className="absolute top-0 right-0 -mr-20 -mt-20 w-[500px] h-[500px] bg-purple-500/10 blur-[120px] rounded-full pointer-events-none" />
+                    <div className="absolute top-0 right-0 -mr-20 -mt-20 w-[500px] h-[500px] bg-primary/10 blur-[120px] rounded-full pointer-events-none" />
                     <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-[500px] h-[500px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
 
                     <div className="grid lg:grid-cols-12 gap-0 relative z-10">
                         {/* LEFT: Plan Details & Features */}
                         <div className="lg:col-span-7 p-8 md:p-12 border-b lg:border-b-0 lg:border-r border-white/10 flex flex-col justify-center">
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-semibold uppercase tracking-wider w-fit mb-6">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold uppercase tracking-wider w-fit mb-6">
                                 <ShieldCheck size={14} />
-                                <span>All-Inclusive System</span>
+                                <span>Risk-Mitigated RaaS Model</span>
                             </div>
 
-                            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
+                            <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-4 tracking-tight">
                                 The Full Autopilot Engine
                             </h3>
-                            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-                                Everything you need to fill your trucks. No hidden fees. No per-lead charges.
+                            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                                Everything you need to scale your capacity. No-Refund Integrity ensures intensive technical configuration and precision mining.
                             </p>
 
                             <div className="space-y-5 mb-10">
@@ -46,12 +46,12 @@ export default function PricingSection() {
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
-                                    <div className="p-2 rounded-lg bg-purple-500/10 border border-purple-500/20 shrink-0">
-                                        <Mic className="text-purple-400" size={20} />
+                                    <div className="p-2 rounded-lg bg-primary/10 border border-primary/20 shrink-0 text-primary">
+                                        <Mic size={20} />
                                     </div>
                                     <div>
-                                        <h4 className="text-white font-medium">AI Voice Agent</h4>
-                                        <p className="text-sm text-gray-400">24/7 Qualifying & Booking directly to calendar.</p>
+                                        <h4 className="text-foreground font-medium">Dual-Track Capacity Engine</h4>
+                                        <p className="text-sm text-muted-foreground">Specialized pathways for Owner-Operators &amp; Company Drivers.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
@@ -90,10 +90,10 @@ export default function PricingSection() {
                                 </div>
                                 <h4 className="text-yellow-400 font-semibold mb-2 flex items-center gap-2">
                                     <ShieldCheck size={18} />
-                                    The Asamblor Guarantee
+                                    The 30-Lead Guarantee
                                 </h4>
                                 <p className="text-sm text-yellow-200/80 leading-relaxed relative z-10">
-                                    If we don&apos;t generate at least <strong>20 qualified driver interviews</strong> in your first 30 days, we work for free until we do.
+                                    If we don&apos;t deliver <strong>30 Qualified Interested Leads in 30 days</strong>, we run the system for free until we do—zero questions asked.
                                 </p>
                             </div>
                         </div>
@@ -103,10 +103,10 @@ export default function PricingSection() {
                             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-transparent opacity-50" />
 
                             <div className="relative z-10 text-center lg:text-left">
-                                <p className="text-sm text-gray-400 uppercase tracking-widest font-semibold mb-4">Simple Pricing</p>
+                                <p className="text-sm text-muted-foreground uppercase tracking-widest font-semibold mb-4">Simple Pricing</p>
                                 <div className="flex flex-col items-center lg:items-start gap-1">
-                                    <span className="text-5xl md:text-6xl font-bold text-white tracking-tight">$1,550<span className="text-2xl text-gray-500 font-normal">/mo</span></span>
-                                    <span className="text-lg text-gray-400">+ $700 Setup Fee</span>
+                                    <span className="text-5xl md:text-6xl font-bold text-foreground tracking-tight">$1,500<span className="text-2xl text-muted-foreground font-normal">/mo</span></span>
+                                    <span className="text-lg text-muted-foreground">+ $700 Configuration Fee</span>
                                 </div>
 
                                 <div className="mt-8 space-y-4">

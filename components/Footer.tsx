@@ -17,9 +17,9 @@ export default function Footer() {
                     <div className="flex flex-col gap-4">
                         <h4 className="text-white font-bold">Company</h4>
                         <div className="flex flex-col gap-2 text-sm text-gray-500">
-                            <Link href="/about" className="hover:text-purple-400 transition-colors">About Us</Link>
-                            <Link href="/#faq" className="hover:text-purple-400 transition-colors">Contact</Link>
-                            <Link href="/affiliate" className="hover:text-purple-400 transition-colors">Affiliate</Link>
+                            <Link href="/about" className="hover:text-primary transition-colors">About Us</Link>
+                            <Link href="/#faq" className="hover:text-primary transition-colors">Contact</Link>
+                            <Link href="/affiliate" className="hover:text-primary transition-colors">Affiliate</Link>
                         </div>
                     </div>
 
@@ -88,7 +88,7 @@ export default function Footer() {
                             />
                         </div>
                         <p className="text-gray-500 text-[11px] font-medium tracking-tight">
-                            &copy; 2026 Asamblor / Powered by BODISHTYAN SOLUTIONS SRL
+                            &copy; 2026 Asamblor | Operated by BODISHTYAN SOLUTIONS SRL (IDNO: 1023600021052)
                         </p>
                         <div className="flex gap-4 text-gray-400">
                             <Link href="#" className="hover:text-white transition-colors"><Github size={20} /></Link>
