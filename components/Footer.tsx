@@ -104,7 +104,7 @@ export default function Footer() {
                         <h4 className="text-muted-foreground text-[10px] font-mono tracking-[0.2em] uppercase text-center md:text-right">Asamblor Official Partners</h4>
                         <div className="flex flex-wrap items-center justify-center md:justify-end gap-8 md:gap-12">
                             <Link href="https://refer.instantly.ai/2i1jvrjr3jv4" target="_blank" className="opacity-40 hover:opacity-100 transition-all duration-300 grayscale brightness-0 invert">
-                                <Image src="/images/instantly.png" alt="Instantly Partner" width={100} height={32} className="h-5 w-auto object-contain" />
+                                <Image src="/images/instantly.svg" alt="Instantly Partner" width={100} height={32} className="h-5 w-auto object-contain" />
                             </Link>
                             <Link href="https://get.quo.com/64cw1cxkz56i" target="_blank" className="opacity-40 hover:opacity-100 transition-all duration-300 grayscale brightness-0 invert">
                                 <Image src="/images/quo.png" alt="Quo Partner" width={80} height={32} className="h-5 w-auto object-contain" />
