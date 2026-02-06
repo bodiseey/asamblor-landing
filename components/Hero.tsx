@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { ArrowRight, Terminal, TrendingUp, CheckCircle2, Zap, Mail, Cpu } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
+import USMapBackground from "./USMapBackground";
 
 // Typewriter Component
 const TypewriterCode = () => {
@@ -80,7 +81,10 @@ export default function Hero() {
 
     return (
         <section className="relative z-10 flex min-h-screen flex-col items-center justify-center overflow-hidden pt-28 pb-12">
-            <div className="max-w-[1200px] mx-auto px-8 text-center space-y-6">
+            {/* Interactive US Map Background */}
+            <USMapBackground />
+
+            <div className="max-w-[1200px] mx-auto px-8 text-center space-y-6 relative z-10">
                 <h1 className="text-[32px] md:text-[80px] leading-[1.1] font-bold text-foreground tracking-tight text-center md:[filter:drop-shadow(0_0_80px_rgba(0,102,255,0.45))]">
                     The Ultimate
                     <span className="relative inline-block md:animate-pill mx-3">
