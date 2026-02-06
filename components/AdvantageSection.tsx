@@ -68,7 +68,7 @@ export default function AdvantageSection() {
                     >
                         <div className="bg-card border border-border rounded-[1.2em] overflow-hidden relative transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] shadow-2xl backdrop-blur-xl">
 
-                            <div className="flex flex-col h-full p-6 pb-7 min-h-[400px]">
+                            <div className="flex flex-col h-full p-4 md:p-6 pb-7 min-h-[400px]">
                                 {/* Header */}
                                 <div className="flex justify-between items-start mb-6">
                                     <div className="w-3/4">

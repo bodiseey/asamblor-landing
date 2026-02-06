@@ -13,7 +13,8 @@
   }
 
   .section-heading {
-    @apply text-[44px] md:text-[80px] leading-[1.05] font-bold tracking-tight text-foreground text-center mb-10 drop-shadow-[0_0_80px_rgba(0, 102, 255, 0.45)] text-balance;
+    @apply text-[32px] md:text-[80px] leading-[1.05] font-bold tracking-tight text-foreground text-center mb-10 text-balance;
+    filter: drop-shadow(0 0 80px rgba(0, 102, 255, 0.45));
   }
 }
 

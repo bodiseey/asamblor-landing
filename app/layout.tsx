@@ -28,8 +28,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className="scroll-smooth">
-      <body className={`${inter.className} ${playfair.variable} bg-background text-foreground antialiased tracking-tight selection:bg-primary/30 selection:text-primary-foreground relative min-h-screen`}>
+    <html lang="en" suppressHydrationWarning className="scroll-smooth overflow-x-hidden">
+      <body className={`${inter.className} ${playfair.variable} bg-background text-foreground antialiased tracking-tight selection:bg-primary/30 selection:text-primary-foreground relative min-h-screen overflow-x-hidden`}>
         <div data-us-project="cqcLtDwfoHqqRPttBbQE" className="fixed inset-0 -z-50 w-full h-full pointer-events-none"></div>
         <UnicornStudio />
         {children}

@@ -25,7 +25,7 @@ export default function BookPage() {
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-500/10 blur-[150px] rounded-full pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/10 blur-[150px] rounded-full pointer-events-none" />
 
-            <div className="relative pt-32 pb-24 max-w-[1400px] mx-auto px-8">
+            <div className="relative pt-24 pb-16 md:pt-32 md:pb-24 max-w-[1400px] mx-auto px-4 md:px-8">
                 {/* Header Section */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
                     <motion.div
@@ -39,7 +39,7 @@ export default function BookPage() {
                                 <Calendar size={12} />
                                 <span>Kick off your hiring process</span>
                             </div>
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-[1.1]">
+                            <h1 className="text-[32px] md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-[1.1] text-balance">
                                 Book Your <br />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-br from-white to-white/40 italic">Hiring Engine.</span>
                             </h1>
@@ -56,7 +56,7 @@ export default function BookPage() {
 
                         {/* Analytics/Automation Stats Card */}
                         <div className="grid grid-cols-1 gap-4 pt-4">
-                            <div className="p-6 rounded-3xl bg-white/[0.03] border border-white/10 backdrop-blur-xl relative group overflow-hidden">
+                            <div className="p-4 md:p-6 rounded-3xl bg-white/[0.03] border border-white/10 backdrop-blur-xl relative group overflow-hidden">
                                 <div className="absolute top-0 right-0 p-4 opacity-10">
                                     <BarChart3 size={80} />
                                 </div>
@@ -107,10 +107,10 @@ export default function BookPage() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="lg:col-span-7"
                     >
-                        <div className="relative group p-[1px] rounded-[32px] overflow-hidden bg-gradient-to-b from-white/20 to-transparent min-h-[700px]">
-                            <div className="absolute inset-0 bg-neutral-900/90 backdrop-blur-3xl rounded-[32px] overflow-hidden">
+                        <div className="relative group p-[1px] rounded-[24px] md:rounded-[32px] overflow-hidden bg-gradient-to-b from-white/20 to-transparent min-h-[600px] md:min-h-[700px]">
+                            <div className="absolute inset-0 bg-neutral-900/90 backdrop-blur-3xl rounded-[24px] md:rounded-[32px] overflow-hidden">
                                 {/* Cal.com Embed Library Component */}
-                                <div className="w-full h-full min-h-[700px]">
+                                <div className="w-full h-full min-h-[600px] md:min-h-[700px]">
                                     <Cal namespace="kick-off"
                                         calLink="bodishtyan-solutions-llc-vsaga6/kick-off"
                                         style={{ width: "100%", height: "100%" }}

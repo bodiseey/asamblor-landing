@@ -12,7 +12,7 @@ export default function AgentStudioCard() {
             <div className="absolute inset-0 border-white/10 border rounded-[1.2em]" style={{ maskImage: 'linear-gradient(135deg, transparent 60%, white)' }}></div>
             <div className="pointer-events-none absolute -inset-px rounded-[1.3rem] bg-[radial-gradient(80%_60%_at_50%_0%,rgba(90,97,255,0.12),transparent_60%)]"></div>
 
-            <div className="flex flex-col h-full p-6 pb-7">
+            <div className="flex flex-col h-full p-4 md:p-6 pb-7">
                 <div className="flex justify-between items-start mb-2">
                     <div className="w-3/4">
                         <h1 className="text-[26px] leading-tight tracking-tight font-medium text-foreground">Agent Studio</h1>

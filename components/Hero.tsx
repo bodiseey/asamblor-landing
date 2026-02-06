@@ -81,7 +81,7 @@ export default function Hero() {
     return (
         <section className="relative z-10 flex min-h-screen flex-col items-center justify-center overflow-hidden pt-28 pb-12">
             <div className="max-w-[1200px] mx-auto px-8 text-center space-y-6">
-                <h1 className="drop-shadow-[0_0_80px_rgba(0,102,255,0.45)] text-[44px] md:text-[80px] leading-[1.1] font-bold text-foreground tracking-tight text-center">
+                <h1 className="text-[32px] md:text-[80px] leading-[1.1] font-bold text-foreground tracking-tight text-center" style={{ filter: 'drop-shadow(0 0 80px rgba(0,102,255,0.45))' }}>
                     The Ultimate
                     <span className="relative inline-block animate-pill mx-3">
                         <span className="relative inline-block" style={{ perspective: "1000px" }}>
@@ -170,7 +170,7 @@ export default function Hero() {
                             </div>
 
                             {/* Stats Compact Grid */}
-                            <div className="grid grid-cols-2 gap-3 mb-6">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
                                 {/* Total Leads */}
                                 <div className="p-4 rounded-xl bg-gradient-to-br from-primary/10 to-transparent border border-primary/10 relative overflow-hidden group">
                                     <div className="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-20 transition-opacity">
