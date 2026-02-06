@@ -75,25 +75,9 @@ export default function Footer() {
                     </div>
                 </div>
 
-                {/* Partners Section */}
-                <div className="mb-16 flex flex-col items-center md:items-end w-full">
-                    <h4 className="text-muted-foreground text-[10px] font-mono tracking-[0.2em] uppercase mb-6 text-center md:text-right">Asamblor Official Partners</h4>
-                    <div className="flex flex-wrap items-center justify-center md:justify-end gap-10 md:gap-14 opacity-60 hover:opacity-100 transition-opacity duration-500">
-                        <Link href="https://refer.instantly.ai/2i1jvrjr3jv4" target="_blank" className="grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110">
-                            <Image src="/images/instantly.png" alt="Instantly Partner" width={110} height={36} className="h-6 w-auto object-contain" />
-                        </Link>
-                        <Link href="https://get.quo.com/64cw1cxkz56i" target="_blank" className="grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110">
-                            <Image src="/images/quo.png" alt="Quo Partner" width={90} height={36} className="h-6 w-auto object-contain" />
-                        </Link>
-                        <Link href="https://manychat.partnerlinks.io/r6n2p787cmg9-ogcg6e" target="_blank" className="grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110">
-                            <Image src="/images/manychat.png" alt="Manychat Partner" width={120} height={36} className="h-5 w-auto object-contain" />
-                        </Link>
-                    </div>
-                </div>
-
-                {/* Bottom Branding */}
-                <div className="flex flex-col gap-6">
-                    <div className="space-y-4">
+                {/* Bottom Branding & Partners */}
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 pt-12 border-t border-border">
+                    <div className="space-y-6">
                         <div className="flex items-center gap-2">
                             <Image
                                 src="/logo.png"
@@ -103,19 +87,37 @@ export default function Footer() {
                                 className="h-8 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
                             />
                         </div>
-                        <p className="text-muted-foreground text-[11px] font-medium tracking-tight">
-                            &copy; 2026 Asamblor | Operated by BODISHTYAN SOLUTIONS SRL (IDNO: 1023600021052)
-                        </p>
-                        <div className="flex gap-4 text-muted-foreground">
-                            <Link href="#" className="hover:text-foreground transition-colors"><Github size={20} /></Link>
-                            <Link href="#" className="hover:text-foreground transition-colors"><Send size={20} /></Link>
-                            <Link href="#" className="hover:text-foreground transition-colors"><Twitter size={20} /></Link>
+                        <div className="space-y-4">
+                            <p className="text-muted-foreground text-[11px] font-medium tracking-tight">
+                                &copy; 2026 Asamblor | Operated by BODISHTYAN SOLUTIONS SRL (IDNO: 1023600021052)
+                            </p>
+                            <div className="flex gap-4 text-muted-foreground">
+                                <Link href="#" className="hover:text-foreground transition-colors"><Github size={20} /></Link>
+                                <Link href="#" className="hover:text-foreground transition-colors"><Send size={20} /></Link>
+                                <Link href="#" className="hover:text-foreground transition-colors"><Twitter size={20} /></Link>
+                            </div>
                         </div>
                     </div>
 
-                    <div className="text-muted-foreground/60 text-xs">
-                        Asamblor is an independent organisation not affiliated with other fleet management platforms.
+                    {/* Partners Section */}
+                    <div className="flex flex-col items-center md:items-end gap-6">
+                        <h4 className="text-muted-foreground text-[10px] font-mono tracking-[0.2em] uppercase text-center md:text-right">Asamblor Official Partners</h4>
+                        <div className="flex flex-wrap items-center justify-center md:justify-end gap-8 md:gap-12">
+                            <Link href="https://refer.instantly.ai/2i1jvrjr3jv4" target="_blank" className="opacity-40 hover:opacity-100 transition-all duration-300 grayscale brightness-0 invert">
+                                <Image src="/images/instantly.png" alt="Instantly Partner" width={100} height={32} className="h-5 w-auto object-contain" />
+                            </Link>
+                            <Link href="https://get.quo.com/64cw1cxkz56i" target="_blank" className="opacity-40 hover:opacity-100 transition-all duration-300 grayscale brightness-0 invert">
+                                <Image src="/images/quo.png" alt="Quo Partner" width={80} height={32} className="h-5 w-auto object-contain" />
+                            </Link>
+                            <Link href="https://manychat.partnerlinks.io/r6n2p787cmg9-ogcg6e" target="_blank" className="opacity-40 hover:opacity-100 transition-all duration-300 grayscale brightness-0 invert">
+                                <Image src="/images/manychat.png" alt="Manychat Partner" width={110} height={32} className="h-5 w-auto object-contain" />
+                            </Link>
+                        </div>
                     </div>
+                </div>
+
+                <div className="mt-12 text-muted-foreground/60 text-xs">
+                    Asamblor is an independent organisation not affiliated with other fleet management platforms.
                 </div>
             </div>
         </footer>
