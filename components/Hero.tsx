@@ -99,7 +99,7 @@ export default function Hero() {
                 </p>
 
                 {/* Neon CTA */}
-                <div className="inline-flex shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05),0_20px_60px_rgba(0,0,0,0.50)] bg-neutral-900/80 ring-white/10 ring-1 rounded-full mt-6 pt-1 pr-1 pb-1 pl-1 backdrop-blur-md items-center relative">
+                <div className="inline-flex shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05),0_20px_60px_rgba(0,0,0,0.50)] bg-background/80 dark:bg-neutral-900/80 ring-border dark:ring-white/10 ring-1 rounded-full mt-6 pt-1 pr-1 pb-1 pl-1 backdrop-blur-md items-center relative">
                     {/* Neon perimeter tracers */}
                     <svg aria-hidden="true" className="pointer-events-none absolute inset-0 w-full h-full" style={{ zIndex: 1, overflow: 'visible' }} preserveAspectRatio="none">
                         <defs>
@@ -140,10 +140,9 @@ export default function Hero() {
             <div className="relative mt-12 max-w-[1200px] mx-auto px-8 w-full">
                 {/* Framed background */}
                 <div className="absolute inset-x-0 -top-6 -bottom-10 bg-primary/10 rounded-[40px] blur-2xl opacity-20" />
-                <div className="relative overflow-hidden bg-white/5 border border-black/5 dark:border-white/10 rounded-3xl shadow-2xl backdrop-blur-xl"
-                    style={{ background: 'rgba(10, 10, 10, 0.8)', backdropFilter: 'blur(24px)' }}>
+                <div className="relative overflow-hidden bg-card border border-border rounded-3xl shadow-2xl backdrop-blur-xl">
 
-                    <div className="grid lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-white/10">
+                    <div className="grid lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-border">
                         {/* LEFT: PIPELINE PERFORMANCE */}
                         <div className="p-6 md:p-8 flex flex-col justify-between h-full">
                             {/* Header */}
@@ -154,13 +153,13 @@ export default function Hero() {
                                     </div>
                                     <h3 className="text-xl font-semibold tracking-tight text-foreground">Capacity Engine Dashboard</h3>
                                 </div>
-                                <div className="flex bg-black/40 rounded-lg p-1 border border-white/5 shadow-inner">
+                                <div className="flex bg-muted/50 dark:bg-black/40 rounded-lg p-1 border border-border shadow-inner">
                                     {["Daily", "Weekly", "Monthly"].map((range) => (
                                         <button
                                             key={range}
                                             onClick={() => setTimeRange(range)}
                                             className={`px-3 py-1 rounded-md text-[10px] font-medium transition-all ${timeRange === range
-                                                ? "bg-primary/20 text-primary border border-primary/20 shadow-sm"
+                                                ? "bg-primary text-primary-foreground border border-primary dark:bg-primary/20 dark:text-primary dark:border-primary/20 shadow-sm"
                                                 : "text-muted-foreground hover:text-foreground"
                                                 }`}
                                         >
@@ -195,7 +194,7 @@ export default function Hero() {
                                     <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2 group-hover:scale-105 origin-left">
                                         <CountUp end={currentData.qualified} decimals={0} />
                                     </h3>
-                                    <div className="w-full bg-blue-900/30 h-1 rounded-full overflow-hidden mt-2 border border-white/5">
+                                    <div className="w-full bg-muted dark:bg-blue-900/30 h-1 rounded-full overflow-hidden mt-2 border border-border">
                                         <motion.div
                                             key={timeRange}
                                             className="h-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.5)]"
@@ -233,7 +232,7 @@ export default function Hero() {
                             </div>
 
                             {/* Activity Feed / Velocity */}
-                            <div className="relative h-28 w-full bg-black/40 rounded-xl border border-white/10 overflow-hidden flex flex-col pt-3 px-3">
+                            <div className="relative h-28 w-full bg-muted/30 dark:bg-black/40 rounded-xl border border-border overflow-hidden flex flex-col pt-3 px-3">
                                 <div className="text-[10px] text-gray-500 font-mono flex items-center justify-between px-1 mb-2">
                                     <div className="flex items-center gap-2">
                                         <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(0,102,255,0.8)]" />
@@ -259,7 +258,7 @@ export default function Hero() {
                         </div>
 
                         {/* RIGHT: AGENT STUDIO */}
-                        <div className="p-6 md:p-8 flex flex-col justify-center bg-white/[0.02]">
+                        <div className="p-6 md:p-8 flex flex-col justify-center bg-muted/10 dark:bg-white/[0.02]">
                             <div className="flex justify-between items-start mb-6">
                                 <div>
                                     <h3 className="text-xl text-foreground font-medium">Capacity Engine Workspace</h3>
@@ -271,7 +270,7 @@ export default function Hero() {
                             </div>
 
                             {/* Card Container */}
-                            <div className="relative w-full bg-black/40 rounded-xl border border-white/10 p-5 backdrop-blur-md overflow-hidden">
+                            <div className="relative w-full bg-background dark:bg-black/40 rounded-xl border border-border p-5 backdrop-blur-md overflow-hidden">
                                 {/* Decoration */}
                                 <div className="absolute -top-10 -right-10 w-32 h-32 bg-purple-500/20 blur-2xl rounded-full pointer-events-none"></div>
 

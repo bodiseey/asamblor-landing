@@ -24,7 +24,7 @@ export default function AdvantageSection() {
                             <span>The Asamblor Advantage</span>
                         </div>
 
-                        <h2 className="text-[34px] font-semibold tracking-tight text-foreground leading-[1.1] mb-6">
+                        <h2 className="section-heading">
                             Bypass the <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary to-blue-400">
                                 Broker Wall.
@@ -66,23 +66,17 @@ export default function AdvantageSection() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="relative flex justify-center lg:justify-end"
                     >
-                        <div
-                            className="bg-gradient-to-r from-white/10 to-white/5 w-full max-w-[32rem] rounded-[1.2em] overflow-hidden relative transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]"
-                            style={{ backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)' }}
-                        >
-                            {/* Card Borders/Masks */}
-                            <div className="absolute inset-0 rounded-[1.2em] border border-white/20" style={{ maskImage: 'linear-gradient(135deg, white, transparent 60%)' }}></div>
-                            <div className="absolute inset-0 border-neutral-400/30 border rounded-[1.2em]" style={{ maskImage: 'linear-gradient(135deg, transparent 60%, white)' }}></div>
+                        <div className="bg-card border border-border rounded-[1.2em] overflow-hidden relative transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] shadow-2xl backdrop-blur-xl">
 
                             <div className="flex flex-col h-full p-6 pb-7 min-h-[400px]">
                                 {/* Header */}
                                 <div className="flex justify-between items-start mb-6">
                                     <div className="w-3/4">
-                                        <h1 className="text-[26px] leading-tight tracking-tight font-medium text-white">Live Data Feed</h1>
-                                        <p className="text-neutral-400 text-sm font-light mt-1">Real-time OOS Database</p>
+                                        <h1 className="text-[26px] leading-tight tracking-tight font-medium text-foreground">Live Data Feed</h1>
+                                        <p className="text-muted-foreground text-sm font-light mt-1">Real-time OOS Database</p>
                                     </div>
                                     <div className="w-1/4 text-right">
-                                        <div className="text-[20px] font-semibold font-mono text-white/50">ASAMBLOR</div>
+                                        <div className="text-[20px] font-semibold font-mono text-foreground/30">ASAMBLOR</div>
                                         <div className="flex items-center justify-end gap-1 mt-1">
                                             <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" style={{ boxShadow: '0 0 6px rgba(16, 185, 129, 0.6)' }}></div>
                                             <span className="text-xs text-green-300">LIVE</span>
@@ -98,13 +92,13 @@ export default function AdvantageSection() {
                                                 <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
                                             </div>
                                             <div className="flex-1 min-w-0">
-                                                <div className="text-sm text-neutral-200 font-mono truncate">DOT#{1008460 + i * 241}</div>
+                                                <div className="text-sm text-foreground font-mono truncate">DOT#{1008460 + i * 241}</div>
                                             </div>
                                             <div className="flex items-center gap-3">
                                                 <span className="text-[10px] items-center px-1.5 py-0.5 rounded border border-red-500/20 bg-red-500/10 text-red-400 hidden sm:flex">
                                                     INACTIVE
                                                 </span>
-                                                <span className="text-sm text-neutral-400 font-medium whitespace-nowrap">{3 + i} Drivers</span>
+                                                <span className="text-sm text-muted-foreground font-medium whitespace-nowrap">{3 + i} Drivers</span>
                                             </div>
                                         </div>
                                     ))}
@@ -125,8 +119,8 @@ export default function AdvantageSection() {
                                     </div>
                                 </div>
 
-                                <div className="rounded px-2 py-0.5 font-mono text-[10px] relative overflow-hidden mt-6 text-center border border-black/5 dark:border-white/5 bg-white/5" >
-                                    <span className="text-muted-foreground">ENGINE STATUS: <span className="text-green-400">ACTIVE & ENGAGED</span></span>
+                                <div className="rounded px-2 py-0.5 font-mono text-[10px] relative overflow-hidden mt-6 text-center border border-border bg-muted/50" >
+                                    <span className="text-muted-foreground">ENGINE STATUS: <span className="text-green-500">ACTIVE & ENGAGED</span></span>
                                 </div>
                             </div>
                         </div>

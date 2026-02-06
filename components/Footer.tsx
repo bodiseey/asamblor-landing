@@ -7,16 +7,16 @@ import { ArrowRight, Github, Send, Twitter } from "lucide-react";
 
 export default function Footer() {
     return (
-        <footer className="relative border-t border-white/10 bg-black pt-24 pb-0 overflow-hidden">
+        <footer className="relative border-t border-border bg-background pt-24 pb-0 overflow-hidden">
 
 
             {/* Footer Bottom / Links */}
-            <div className="max-w-[1200px] mx-auto px-8 border-t border-white/5 pt-12 pb-8">
+            <div className="max-w-[1200px] mx-auto px-8 border-t border-border pt-12 pb-8">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
                     {/* Company Column */}
                     <div className="flex flex-col gap-4">
-                        <h4 className="text-white font-bold">Company</h4>
-                        <div className="flex flex-col gap-2 text-sm text-gray-500">
+                        <h4 className="text-foreground font-bold">Company</h4>
+                        <div className="flex flex-col gap-2 text-sm text-muted-foreground">
                             <Link href="/about" className="hover:text-primary transition-colors">About Us</Link>
                             <Link href="/#faq" className="hover:text-primary transition-colors">Contact</Link>
                             <Link href="/affiliate" className="hover:text-primary transition-colors">Affiliate</Link>
@@ -25,32 +25,32 @@ export default function Footer() {
 
                     {/* Resources Column */}
                     <div className="flex flex-col gap-4">
-                        <h4 className="text-white font-bold">Resources</h4>
-                        <div className="flex flex-col gap-2 text-sm text-gray-500">
-                            <Link href="/docs" className="hover:text-purple-400 transition-colors">Documentation</Link>
-                            <Link href="/help" className="hover:text-purple-400 transition-colors">Help Center</Link>
-                            <Link href="/changelog" className="hover:text-purple-400 transition-colors">Changelog</Link>
-                            <Link href="/roadmap" className="hover:text-purple-400 transition-colors">Roadmap</Link>
+                        <h4 className="text-foreground font-bold">Resources</h4>
+                        <div className="flex flex-col gap-2 text-sm text-muted-foreground">
+                            <Link href="/docs" className="hover:text-primary transition-colors">Documentation</Link>
+                            <Link href="/help" className="hover:text-primary transition-colors">Help Center</Link>
+                            <Link href="/changelog" className="hover:text-primary transition-colors">Changelog</Link>
+                            <Link href="/roadmap" className="hover:text-primary transition-colors">Roadmap</Link>
                         </div>
                     </div>
 
                     {/* Legal Column */}
                     <div className="flex flex-col gap-4">
-                        <h4 className="text-white font-bold">Legal</h4>
-                        <div className="flex flex-col gap-2 text-sm text-gray-500">
-                            <Link href="/terms" className="hover:text-purple-400 transition-colors">Terms of Service</Link>
-                            <Link href="/privacy" className="hover:text-purple-400 transition-colors">Privacy Policy</Link>
+                        <h4 className="text-foreground font-bold">Legal</h4>
+                        <div className="flex flex-col gap-2 text-sm text-muted-foreground">
+                            <Link href="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
+                            <Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
                         </div>
                     </div>
 
                     {/* System Status Column */}
                     <div className="flex flex-col gap-4">
-                        <h4 className="text-white font-bold">Core Infrastructure</h4>
+                        <h4 className="text-foreground font-bold">Core Infrastructure</h4>
                         <div className="relative group">
                             <div className="absolute -inset-2 bg-gradient-to-r from-emerald-500/10 to-blue-500/10 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity" />
-                            <div className="relative flex items-center justify-between p-3 rounded-xl bg-white/[0.03] border border-white/5 backdrop-blur-sm overflow-hidden min-w-[180px]">
+                            <div className="relative flex items-center justify-between p-3 rounded-xl bg-muted/50 border border-border backdrop-blur-sm overflow-hidden min-w-[180px]">
                                 <div className="flex flex-col gap-0.5">
-                                    <span className="text-[10px] text-gray-500 font-mono tracking-widest uppercase">Global Status</span>
+                                    <span className="text-[10px] text-muted-foreground font-mono tracking-widest uppercase">Global Status</span>
                                     <div className="flex items-center gap-2">
                                         <div className="relative flex h-2 w-2">
                                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -87,17 +87,17 @@ export default function Footer() {
                                 className="h-8 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
                             />
                         </div>
-                        <p className="text-gray-500 text-[11px] font-medium tracking-tight">
+                        <p className="text-muted-foreground text-[11px] font-medium tracking-tight">
                             &copy; 2026 Asamblor | Operated by BODISHTYAN SOLUTIONS SRL (IDNO: 1023600021052)
                         </p>
-                        <div className="flex gap-4 text-gray-400">
-                            <Link href="#" className="hover:text-white transition-colors"><Github size={20} /></Link>
-                            <Link href="#" className="hover:text-white transition-colors"><Send size={20} /></Link>
-                            <Link href="#" className="hover:text-white transition-colors"><Twitter size={20} /></Link>
+                        <div className="flex gap-4 text-muted-foreground">
+                            <Link href="#" className="hover:text-foreground transition-colors"><Github size={20} /></Link>
+                            <Link href="#" className="hover:text-foreground transition-colors"><Send size={20} /></Link>
+                            <Link href="#" className="hover:text-foreground transition-colors"><Twitter size={20} /></Link>
                         </div>
                     </div>
 
-                    <div className="text-gray-600 text-xs">
+                    <div className="text-muted-foreground/60 text-xs">
                         Asamblor is an independent organisation not affiliated with other fleet management platforms.
                     </div>
                 </div>

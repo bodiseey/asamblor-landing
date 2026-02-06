@@ -2,33 +2,31 @@ import { Check, X, AlertTriangle, ShieldCheck, Zap } from "lucide-react";
 
 export default function IncludedSection() {
     return (
-        <section className="py-20 relative bg-black/95">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-7xl h-[400px] bg-purple-900/10 blur-[150px] rounded-full pointer-events-none" />
-
+        <section className="py-20 relative bg-background">
             <div className="max-w-[1200px] mx-auto px-8 relative z-10">
                 <div className="text-center mb-12">
-                    <h2 className="text-[34px] font-semibold tracking-tight text-white leading-[1.1] mb-6">
+                    <h2 className="section-heading">
                         Stop Competing. <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-br from-white to-white/40">Start Dominating.</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary to-blue-400">Start Dominating.</span>
                     </h2>
-                    <p className="text-[15px] text-gray-400 leading-relaxed max-w-2xl mx-auto">
+                    <p className="text-[15px] text-muted-foreground leading-relaxed max-w-2xl mx-auto">
                         See why Asamblor is the unfair advantage for modern fleets.
                     </p>
                 </div>
 
-                <div className="overflow-x-auto rounded-3xl border border-white/10 bg-neutral-900/50 backdrop-blur-xl">
+                <div className="overflow-x-auto rounded-3xl border border-border bg-card/50 backdrop-blur-xl">
                     <table className="w-full text-left border-collapse min-w-[800px]">
                         <thead>
-                            <tr className="border-b border-white/10 text-xs uppercase tracking-widest text-gray-500">
+                            <tr className="border-b border-border text-xs uppercase tracking-widest text-muted-foreground">
                                 <th className="py-8 px-8 font-semibold w-1/3"></th>
-                                <th className="py-8 px-8 font-bold text-white text-lg min-w-[200px]">
+                                <th className="py-8 px-8 font-bold text-foreground text-lg min-w-[200px]">
                                     <div className="flex items-center gap-2">
-                                        <div className="h-2 w-2 rounded-full bg-purple-500 animate-pulse"></div>
+                                        <div className="h-2 w-2 rounded-full bg-primary animate-pulse"></div>
                                         Asamblor
                                     </div>
                                 </th>
-                                <th className="py-8 px-8 font-semibold text-gray-400 min-w-[200px]">DIY Hiring</th>
-                                <th className="py-8 px-8 font-semibold text-gray-400 min-w-[200px]">Other Agencies</th>
+                                <th className="py-8 px-8 font-semibold text-muted-foreground/60 min-w-[200px]">DIY Hiring</th>
+                                <th className="py-8 px-8 font-semibold text-muted-foreground/60 min-w-[200px]">Other Agencies</th>
                             </tr>
                         </thead>
                         <tbody className="text-sm">
@@ -81,9 +79,9 @@ export default function IncludedSection() {
                                     other: { status: "warning", text: "Weekly Reports Only" }
                                 }
                             ].map((row, index) => (
-                                <tr key={index} className="border-b border-white/5 hover:bg-white/5 transition-colors group">
-                                    <td className="py-5 px-8 font-medium text-gray-300 flex items-center gap-3">
-                                        {row.icon && <span className="p-1.5 rounded-lg bg-white/5 border border-white/10">{row.icon}</span>}
+                                <tr key={index} className="border-b border-border hover:bg-muted/5 transition-colors group">
+                                    <td className="py-5 px-8 font-medium text-foreground flex items-center gap-3">
+                                        {row.icon && <span className="p-1.5 rounded-lg bg-muted border border-border">{row.icon}</span>}
                                         {row.feature}
                                     </td>
 
@@ -98,21 +96,20 @@ export default function IncludedSection() {
                                     </td>
 
                                     {/* DIY Column */}
-                                    <td className="py-5 px-8 font-medium text-gray-500">
+                                    <td className="py-5 px-8 font-medium text-muted-foreground">
                                         <div className="flex items-center gap-2">
                                             {row.diy.status === false && <X size={16} className="text-red-500" />}
                                             {row.diy.status === 'warning' && <AlertTriangle size={16} className="text-yellow-500" />}
-                                            <span className={row.diy.status === false ? 'text-gray-500' : 'text-gray-400'}>{row.diy.text}</span>
+                                            <span className={row.diy.status === false ? 'text-muted-foreground/60' : 'text-muted-foreground'}>{row.diy.text}</span>
                                         </div>
                                     </td>
 
                                     {/* Other Agencies Column */}
-                                    <td className="py-5 px-8 font-medium text-gray-500">
+                                    <td className="py-5 px-8 font-medium text-muted-foreground">
                                         <div className="flex items-center gap-2">
                                             {row.other.status === false && <X size={16} className="text-red-500" />}
                                             {row.other.status === 'warning' && <AlertTriangle size={16} className="text-yellow-500" />}
-                                            {/* Neutral status has no icon */}
-                                            <span className={row.other.status === false ? 'text-gray-500' : 'text-gray-400'}>{row.other.text}</span>
+                                            <span className={row.other.status === false ? 'text-muted-foreground/60' : 'text-muted-foreground'}>{row.other.text}</span>
                                         </div>
                                     </td>
                                 </tr>
@@ -120,7 +117,7 @@ export default function IncludedSection() {
                         </tbody>
                     </table>
                 </div>
-            </div>
-        </section>
+            </div >
+        </section >
     );
 }

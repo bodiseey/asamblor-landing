@@ -68,29 +68,29 @@ export default function SolutionSection() {
                                 key={index}
                                 initial={{ opacity: 0, x: -20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
+                                viewport={{ once: true, margin: "-50px" }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="bg-neutral-900/70 border-white/10 border rounded-2xl p-4 backdrop-blur-md hover:border-white/20 transition-all group"
+                                className="bg-white/5 dark:bg-neutral-900/70 border-black/5 dark:border-white/10 border rounded-2xl p-4 backdrop-blur-md hover:border-black/10 dark:hover:border-white/20 transition-all group"
                             >
                                 <div className="grid grid-cols-[auto_1fr] items-center gap-5">
                                     {/* Indicator */}
                                     <div className="flex flex-col items-center">
                                         <span className={`text-[10px] font-mono mb-1 ${step.color}`}>{step.number}</span>
-                                        <span className={`inline-flex h-8 w-8 items-center justify-center rounded-full ring-2 ${step.ring} bg-neutral-950 relative`}>
-                                            <span className={`h-2.5 w-2.5 rounded-full bg-white`}></span>
+                                        <span className={`inline-flex h-8 w-8 items-center justify-center rounded-full ring-2 ${step.ring} bg-background dark:bg-neutral-950 relative`}>
+                                            <span className={`h-2.5 w-2.5 rounded-full bg-foreground`}></span>
                                             {/* Connecting Line */}
                                             {index !== steps.length - 1 && (
-                                                <span className="absolute top-8 left-1/2 -translate-x-1/2 w-px h-12 bg-white/10 group-hover:bg-white/20 transition-colors"></span>
+                                                <span className="absolute top-8 left-1/2 -translate-x-1/2 w-px h-12 bg-black/10 dark:bg-white/10 group-hover:bg-black/20 dark:group-hover:bg-white/20 transition-colors"></span>
                                             )}
                                         </span>
                                     </div>
 
                                     {/* Content */}
                                     <div>
-                                        <p className="text-base text-zinc-100 font-medium tracking-tight group-hover:text-white transition-colors mb-0.5">
+                                        <p className="text-base text-foreground font-medium tracking-tight group-hover:opacity-80 transition-opacity mb-0.5">
                                             {step.title}
                                         </p>
-                                        <p className="text-sm text-zinc-400 font-normal leading-relaxed group-hover:text-zinc-300 transition-colors">
+                                        <p className="text-sm text-muted-foreground font-normal leading-relaxed">
                                             {step.description}
                                         </p>
                                     </div>
@@ -107,7 +107,7 @@ export default function SolutionSection() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
                         >
-                            <h2 className="text-[34px] font-semibold tracking-tight text-foreground leading-[1.1] mb-6">
+                            <h2 className="section-heading text-left">
                                 The Operational <br />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary to-blue-400">Engine Logic.</span>
                             </h2>
@@ -116,13 +116,13 @@ export default function SolutionSection() {
                             </p>
 
                             <div className="flex flex-wrap gap-3">
-                                <span className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-sm text-gray-300">
+                                <span className="px-3 py-1 rounded-full border border-border bg-card text-sm text-muted-foreground">
                                     Full Autopilot
                                 </span>
-                                <span className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-sm text-gray-300">
+                                <span className="px-3 py-1 rounded-full border border-border bg-card text-sm text-muted-foreground">
                                     24/5 Engagement
                                 </span>
-                                <span className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-sm text-gray-300">
+                                <span className="px-3 py-1 rounded-full border border-border bg-card text-sm text-muted-foreground">
                                     CRM Integration
                                 </span>
                             </div>

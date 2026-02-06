@@ -89,10 +89,10 @@ export default function ContactSection() {
                                 <Mail size={12} />
                                 <span>Let&apos;s Work Together</span>
                             </div>
-                            <h2 className="text-[34px] font-semibold tracking-tight text-white leading-[1.1] mb-4">
+                            <h2 className="section-heading text-left mb-4">
                                 Ready to scale your fleet?
                             </h2>
-                            <p className="text-[15px] text-gray-400 leading-relaxed">
+                            <p className="text-[15px] text-muted-foreground leading-relaxed">
                                 Start automating your recruitment workflow today. Fill out the form or book a call to get started immediately.
                             </p>
                         </div>
@@ -101,7 +101,7 @@ export default function ContactSection() {
                             initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm relative"
+                            className="bg-card border border-border rounded-2xl p-6 shadow-xl relative"
                         >
                             <AnimatePresence>
                                 {submitted && (
@@ -125,50 +125,50 @@ export default function ContactSection() {
                             <form className="space-y-4" onSubmit={handleSubmit}>
                                 <div className="grid grid-cols-2 gap-4">
                                     <div className="space-y-1.5">
-                                        <label className="text-xs font-medium text-gray-300">Name</label>
+                                        <label className="text-xs font-medium text-muted-foreground">Name</label>
                                         <input
                                             type="text"
                                             name="name"
                                             value={formData.name}
                                             onChange={handleChange}
                                             required
-                                            className="w-full bg-white/[0.03] border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 transition-all"
+                                            className="w-full bg-muted/30 border border-border rounded-lg px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all"
                                             placeholder="John Doe"
                                         />
                                     </div>
                                     <div className="space-y-1.5">
-                                        <label className="text-xs font-medium text-gray-300">Email</label>
+                                        <label className="text-xs font-medium text-muted-foreground">Email</label>
                                         <input
                                             type="email"
                                             name="email"
                                             value={formData.email}
                                             onChange={handleChange}
                                             required
-                                            className="w-full bg-white/[0.03] border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 transition-all"
+                                            className="w-full bg-muted/30 border border-border rounded-lg px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all"
                                             placeholder="john@company.com"
                                         />
                                     </div>
                                 </div>
                                 <div className="space-y-1.5">
-                                    <label className="text-xs font-medium text-gray-300">Phone Number</label>
+                                    <label className="text-xs font-medium text-muted-foreground">Phone Number</label>
                                     <input
                                         type="tel"
                                         name="phone"
                                         value={formData.phone}
                                         onChange={handleChange}
                                         required
-                                        className="w-full bg-white/[0.03] border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 transition-all"
+                                        className="w-full bg-muted/30 border border-border rounded-lg px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all"
                                         placeholder="+1 (555) 000-0000"
                                     />
                                 </div>
                                 <div className="space-y-1.5">
-                                    <label className="text-xs font-medium text-gray-300">Fleet Size</label>
+                                    <label className="text-xs font-medium text-muted-foreground">Fleet Size</label>
                                     <select
                                         name="fleetSize"
                                         value={formData.fleetSize}
                                         onChange={handleChange}
                                         required
-                                        className="w-full bg-white/[0.03] border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 transition-all [&>option]:bg-neutral-900"
+                                        className="w-full bg-muted/30 border border-border rounded-lg px-3 py-2.5 text-sm text-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all [&>option]:bg-background"
                                     >
                                         <option value="">Select fleet size</option>
                                         <option value="1-10">1 - 10 Trucks</option>
@@ -178,20 +178,20 @@ export default function ContactSection() {
                                     </select>
                                 </div>
                                 <div className="space-y-1.5">
-                                    <label className="text-xs font-medium text-gray-300">Message</label>
+                                    <label className="text-xs font-medium text-muted-foreground">Message</label>
                                     <textarea
                                         name="message"
                                         value={formData.message}
                                         onChange={handleChange}
                                         rows={3}
                                         required
-                                        className="w-full bg-white/[0.03] border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 transition-all"
+                                        className="w-full bg-muted/30 border border-border rounded-lg px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all"
                                         placeholder="Tell us about your hiring goals..."></textarea>
                                 </div>
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="w-full bg-white text-black font-semibold rounded-lg py-3 text-sm hover:bg-gray-200 transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="w-full bg-primary text-primary-foreground font-semibold rounded-lg py-3 text-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
                                     {isSubmitting ? "Sending..." : "Send Message"}
                                     {!isSubmitting && <Send size={14} />}
@@ -203,10 +203,10 @@ export default function ContactSection() {
                     {/* RIGHT COLUMN: FAQ */}
                     <div>
                         <div className="mb-8 lg:mt-0 mt-12">
-                            <h3 className="text-[28px] font-semibold tracking-tight text-white leading-[1.1] mb-4">
+                            <h3 className="section-heading text-left">
                                 Frequently Asked Questions
                             </h3>
-                            <p className="text-[15px] text-gray-400 leading-relaxed">
+                            <p className="text-[15px] text-muted-foreground leading-relaxed">
                                 Common questions about our AI-driven recruitment process.
                             </p>
                         </div>
@@ -215,18 +215,18 @@ export default function ContactSection() {
                             {faqs.map((faq, index) => (
                                 <div
                                     key={index}
-                                    className={`border rounded-xl overflow-hidden transition-all duration-300 ${openIndex === index ? 'bg-white/[0.03] border-white/10' : 'bg-transparent border-transparent hover:bg-white/[0.02]'}`}
+                                    className={`border rounded-xl overflow-hidden transition-all duration-300 ${openIndex === index ? 'bg-muted/50 border-border' : 'bg-transparent border-transparent hover:bg-muted/30'}`}
                                 >
                                     <button
                                         onClick={() => setOpenIndex(openIndex === index ? null : index)}
                                         className="w-full flex items-start justify-between p-4 text-left transition-colors gap-4"
                                     >
-                                        <span className={`text-[15px] font-medium leading-normal ${openIndex === index ? 'text-white' : 'text-gray-300'}`}>
+                                        <span className={`text-[15px] font-medium leading-normal ${openIndex === index ? 'text-foreground' : 'text-muted-foreground'}`}>
                                             {faq.question}
                                         </span>
                                         <ChevronDown
                                             size={16}
-                                            className={`text-gray-500 shrink-0 mt-1 transition-transform duration-300 ${openIndex === index ? 'rotate-180 text-purple-400' : ''}`}
+                                            className={`text-muted-foreground shrink-0 mt-1 transition-transform duration-300 ${openIndex === index ? 'rotate-180 text-primary' : ''}`}
                                         />
                                     </button>
                                     <AnimatePresence>
@@ -237,7 +237,7 @@ export default function ContactSection() {
                                                 exit={{ height: 0, opacity: 0 }}
                                                 transition={{ duration: 0.2 }}
                                             >
-                                                <div className="px-4 pb-4 pt-0 text-[14px] text-gray-400 leading-relaxed">
+                                                <div className="px-4 pb-4 pt-0 text-[14px] text-muted-foreground leading-relaxed">
                                                     {faq.answer}
                                                 </div>
                                             </motion.div>

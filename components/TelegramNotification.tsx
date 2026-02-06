@@ -45,7 +45,7 @@ export default function TelegramNotification() {
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     className="fixed bottom-6 right-6 z-50 max-w-[320px] w-full"
                 >
-                    <div className="relative overflow-hidden rounded-2xl bg-neutral-900/60 backdrop-blur-md border border-white/10 shadow-2xl p-4">
+                    <div className="relative overflow-hidden rounded-2xl bg-card border border-border shadow-2xl p-4">
                         <div className="flex gap-3">
                             {/* Icon */}
                             <div className="shrink-0 relative h-10 w-10">
@@ -60,14 +60,14 @@ export default function TelegramNotification() {
                             {/* Content */}
                             <div className="flex-1 min-w-0">
                                 <div className="flex items-center justify-between mb-0.5">
-                                    <h4 className="text-white font-bold text-[15px] truncate">Asamblor Mate</h4>
-                                    <span className="text-xs text-neutral-400 shrink-0">Just now</span>
+                                    <h4 className="text-foreground font-bold text-[15px] truncate">Asamblor Mate</h4>
+                                    <span className="text-xs text-muted-foreground shrink-0">Just now</span>
                                 </div>
                                 <div className="space-y-1">
-                                    <p className="text-white text-[14px] font-medium leading-none">
+                                    <p className="text-foreground text-[14px] font-medium leading-none">
                                         🚀 New Interested Lead Alert!
                                     </p>
-                                    <p className="text-neutral-300 text-[13px] leading-tight">
+                                    <p className="text-muted-foreground text-[13px] leading-tight">
                                         Check your CRM and please reach out ASAP! ✅
                                     </p>
                                 </div>

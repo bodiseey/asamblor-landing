@@ -7,22 +7,22 @@ export default function PricingSection() {
             <div className="max-w-[1200px] mx-auto px-8 relative z-10">
 
                 <div className="text-center mb-16">
-                    <h2 className="text-[40px] md:text-[50px] font-semibold tracking-tight text-foreground leading-[1.1] mb-6">
-                        One Plan. <span className="text-primary">Total Dominance.</span>
+                    <h2 className="section-heading">
+                        Stop Competing. <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">Start Dominating.</span>
                     </h2>
                     <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                         Stop complicating your growth. Get the full engine for a flat rate.
                     </p>
                 </div>
 
-                <div className="relative rounded-3xl border border-white/10 bg-neutral-900/50 backdrop-blur-xl overflow-hidden">
+                <div className="relative rounded-3xl border border-border bg-card/50 shadow-2xl backdrop-blur-xl overflow-hidden">
                     {/* Background Effects */}
                     <div className="absolute top-0 right-0 -mr-20 -mt-20 w-[500px] h-[500px] bg-primary/10 blur-[120px] rounded-full pointer-events-none" />
                     <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-[500px] h-[500px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
 
                     <div className="grid lg:grid-cols-12 gap-0 relative z-10">
                         {/* LEFT: Plan Details & Features */}
-                        <div className="lg:col-span-7 p-8 md:p-12 border-b lg:border-b-0 lg:border-r border-white/10 flex flex-col justify-center">
+                        <div className="lg:col-span-7 p-8 md:p-12 border-b lg:border-b-0 lg:border-r border-border flex flex-col justify-center">
                             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold uppercase tracking-wider w-fit mb-6">
                                 <ShieldCheck size={14} />
                                 <span>Risk-Mitigated RaaS Model</span>
@@ -41,8 +41,8 @@ export default function PricingSection() {
                                         <Database className="text-blue-400" size={20} />
                                     </div>
                                     <div>
-                                        <h4 className="text-white font-medium">Access to 2.6M Driver Database</h4>
-                                        <p className="text-sm text-gray-400">Exclusive &apos;Out of Service&apos; &amp; Inactive pool.</p>
+                                        <h4 className="text-foreground font-medium">Access to 2.6M Driver Database</h4>
+                                        <p className="text-sm text-muted-foreground">Exclusive &apos;Out of Service&apos; &amp; Inactive pool.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
@@ -59,8 +59,8 @@ export default function PricingSection() {
                                         <BarChart3 className="text-green-400" size={20} />
                                     </div>
                                     <div>
-                                        <h4 className="text-white font-medium">Custom GHL Recruitment CRM</h4>
-                                        <p className="text-sm text-gray-400">Pre-built pipelines and automation workflows.</p>
+                                        <h4 className="text-foreground font-medium">Custom GHL Recruitment CRM</h4>
+                                        <p className="text-sm text-muted-foreground">Pre-built pipelines and automation workflows.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
@@ -68,8 +68,8 @@ export default function PricingSection() {
                                         <Mail className="text-orange-400" size={20} />
                                     </div>
                                     <div>
-                                        <h4 className="text-white font-medium">High-Volume Email Infrastructure</h4>
-                                        <p className="text-sm text-gray-400">Done-for-you domain warmup & management.</p>
+                                        <h4 className="text-foreground font-medium">High-Volume Email Infrastructure</h4>
+                                        <p className="text-sm text-muted-foreground">Done-for-you domain warmup & management.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
@@ -77,8 +77,8 @@ export default function PricingSection() {
                                         <Bell className="text-pink-400" size={20} />
                                     </div>
                                     <div>
-                                        <h4 className="text-white font-medium">Real-time Lead Notifications</h4>
-                                        <p className="text-sm text-gray-400">Instant alerts via SMS/Email for hot leads.</p>
+                                        <h4 className="text-foreground font-medium">Real-time Lead Notifications</h4>
+                                        <p className="text-sm text-muted-foreground">Instant alerts via SMS/Email for hot leads.</p>
                                     </div>
                                 </div>
                             </div>
@@ -121,16 +121,16 @@ export default function PricingSection() {
                                     </p>
                                 </div>
 
-                                <div className="mt-10 pt-8 border-t border-white/5 space-y-4">
-                                    <div className="flex items-center gap-3 text-sm text-gray-400">
+                                <div className="mt-10 pt-8 border-t border-border space-y-4">
+                                    <div className="flex items-center gap-3 text-sm text-muted-foreground">
                                         <Check className="text-green-500 shrink-0" size={16} />
                                         <span>Full Account Setup & Onboarding</span>
                                     </div>
-                                    <div className="flex items-center gap-3 text-sm text-gray-400">
+                                    <div className="flex items-center gap-3 text-sm text-muted-foreground">
                                         <Check className="text-green-500 shrink-0" size={16} />
                                         <span>Weekly Performance Reviews</span>
                                     </div>
-                                    <div className="flex items-center gap-3 text-sm text-gray-400">
+                                    <div className="flex items-center gap-3 text-sm text-muted-foreground">
                                         <Check className="text-green-500 shrink-0" size={16} />
                                         <span>Dedicated Success Manager</span>
                                     </div>

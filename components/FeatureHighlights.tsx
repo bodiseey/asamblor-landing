@@ -16,7 +16,7 @@ export default function FeatureHighlights() {
             </div>
 
             {/* Heading */}
-            <h1 className="mt-6 text-center text-3xl md:text-[34px] font-semibold tracking-tight text-foreground leading-tight">
+            <h1 className="section-heading">
                 The Asamblor Stack: <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">
                     Premium Managed Infrastructure
@@ -63,12 +63,12 @@ function RealtimeCard() {
     }, [animated]);
 
     return (
-        <section ref={cardRef} className="group relative overflow-hidden rounded-3xl bg-white/[0.04] ring-1 ring-white/10 p-5 md:p-6 transition-all duration-300 hover:bg-white/[0.06]">
+        <section ref={cardRef} className="group relative overflow-hidden rounded-3xl bg-white/[0.04] dark:bg-white/[0.04] border border-black/5 dark:border-white/10 p-5 md:p-6 transition-all duration-300 hover:bg-white/[0.06] dark:hover:bg-white/[0.06]">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent pointer-events-none"></div>
             <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-primary/10 blur-3xl"></div>
 
             {/* Inset UI preview */}
-            <div className="rounded-2xl bg-gradient-to-b from-white/5 to-white/[0.03] p-4 ring-1 ring-white/10 backdrop-blur">
+            <div className="rounded-2xl bg-white/5 dark:bg-gradient-to-b dark:from-white/5 dark:to-white/[0.03] p-4 border border-black/5 dark:border-white/10 backdrop-blur">
                 <div className="flex items-center gap-2 text-foreground/80 text-sm mb-3">
                     <BarChart3 className="h-4 w-4 text-primary" />
                     <span className="font-medium">Realtime KPI Monitor</span>
@@ -81,10 +81,10 @@ function RealtimeCard() {
                             <div className="h-5 w-5 rounded-full bg-blue-500/20 ring-1 ring-white/20 flex items-center justify-center text-[10px] text-blue-200 font-bold">L</div>
                             <div className="flex-1">
                                 <div className="flex items-center justify-between">
-                                    <p className="text-sm font-medium text-white/90">Lead Velocity</p>
-                                    <p className="text-xs text-white/60">84/week</p>
+                                    <p className="text-sm font-medium text-foreground/90">Lead Velocity</p>
+                                    <p className="text-xs text-muted-foreground">84/week</p>
                                 </div>
-                                <div className="mt-2 h-2 w-full rounded-full bg-white/10 overflow-hidden">
+                                <div className="mt-2 h-2 w-full rounded-full bg-foreground/10 overflow-hidden">
                                     <motion.div
                                         className="h-full rounded-full bg-gradient-to-r from-purple-400 to-blue-500"
                                         initial={{ width: 0 }}
@@ -93,7 +93,7 @@ function RealtimeCard() {
                                     />
                                 </div>
                             </div>
-                            <span className="text-xs text-white/70">{usWidth}%</span>
+                            <span className="text-xs text-muted-foreground">{usWidth}%</span>
                         </div>
                     </div>
 
@@ -103,10 +103,10 @@ function RealtimeCard() {
                             <div className="h-5 w-5 rounded-full bg-green-500/20 ring-1 ring-white/20 flex items-center justify-center text-[10px] text-green-200 font-bold">Q</div>
                             <div className="flex-1">
                                 <div className="flex items-center justify-between">
-                                    <p className="text-sm font-medium text-white/90">Qualification Rate</p>
-                                    <p className="text-xs text-white/60">Top 10%</p>
+                                    <p className="text-sm font-medium text-foreground/90">Qualification Rate</p>
+                                    <p className="text-xs text-muted-foreground">Top 10%</p>
                                 </div>
-                                <div className="mt-2 h-2 w-full rounded-full bg-white/10 overflow-hidden">
+                                <div className="mt-2 h-2 w-full rounded-full bg-foreground/10 overflow-hidden">
                                     <motion.div
                                         className="h-full rounded-full bg-gradient-to-r from-emerald-400 to-teal-500"
                                         initial={{ width: 0 }}
@@ -115,17 +115,17 @@ function RealtimeCard() {
                                     />
                                 </div>
                             </div>
-                            <span className="text-xs text-white/70">{bdWidth}%</span>
+                            <span className="text-xs text-muted-foreground">{bdWidth}%</span>
                         </div>
                     </div>
                 </div>
 
                 <div className="mt-4 flex items-center justify-between">
-                    <button className="inline-flex items-center gap-2 rounded-full bg-purple-500/15 px-3 py-1.5 text-xs text-purple-200 ring-1 ring-purple-400/30 hover:bg-purple-500/20 transition">
+                    <button className="inline-flex items-center gap-2 rounded-full bg-primary/15 px-3 py-1.5 text-xs text-primary ring-1 ring-primary/30 hover:bg-primary/20 transition">
                         <Sparkles className="h-3 w-3" />
                         AI Insights
                     </button>
-                    <div className="flex items-center gap-2 text-[11px] text-white/50">
+                    <div className="flex items-center gap-2 text-[11px] text-muted-foreground">
                         <div className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></div>
                         Live
                     </div>
@@ -169,12 +169,12 @@ function BordersCard() {
                             viewport={{ once: true }}
                         >
                             {[1, 2, 3, 4, 1, 2, 3, 4].map((i, index) => (
-                                <div key={index} className="flex pt-2 pr-3 pb-2 pl-3 items-center justify-between border-b border-white/5 last:border-0">
+                                <div key={index} className="flex pt-2 pr-3 pb-2 pl-3 items-center justify-between border-b border-border last:border-0">
                                     <div className="flex items-center gap-2">
-                                        <div className={`h-6 w-6 rounded-full ring-1 ring-white/20 bg-gray-700 flex items-center justify-center text-[10px] text-white`}>{i}</div>
+                                        <div className={`h-6 w-6 rounded-full ring-1 ring-border bg-muted flex items-center justify-center text-[10px] text-foreground`}>{i}</div>
                                         <div>
-                                            <p className="text-sm text-white/90">Driver Position #{100 + i}</p>
-                                            <p className="text-[11px] text-white/50">TX • OTR</p>
+                                            <p className="text-sm text-foreground/90">Driver Position #{100 + i}</p>
+                                            <p className="text-[11px] text-muted-foreground">TX • OTR</p>
                                         </div>
                                     </div>
                                     <Star className="h-4 w-4 text-amber-300" />
@@ -222,21 +222,21 @@ function CollabCard() {
                 </div>
 
                 <div className="mt-3 grid grid-cols-4 gap-3">
-                    <div className="flex flex-col items-center gap-2 rounded-xl bg-white/[0.04] p-3 ring-1 ring-white/10">
-                        <Inbox className="h-5 w-5 text-white/80" />
-                        <span className="text-xs text-white/70">Email</span>
+                    <div className="flex flex-col items-center gap-2 rounded-xl bg-card border border-border p-3">
+                        <Inbox className="h-5 w-5 text-foreground/80" />
+                        <span className="text-xs text-muted-foreground">Email</span>
                     </div>
-                    <div className="flex flex-col items-center gap-2 rounded-xl bg-white/[0.04] p-3 ring-1 ring-white/10">
-                        <MessageSquare className="h-5 w-5 text-white/80" />
-                        <span className="text-xs text-white/70">SMS</span>
+                    <div className="flex flex-col items-center gap-2 rounded-xl bg-card border border-border p-3">
+                        <MessageSquare className="h-5 w-5 text-foreground/80" />
+                        <span className="text-xs text-muted-foreground">SMS</span>
                     </div>
-                    <div className="flex flex-col items-center gap-2 rounded-xl bg-white/[0.04] p-3 ring-1 ring-white/10">
-                        <Calendar className="h-5 w-5 text-white/80" />
-                        <span className="text-xs text-white/70">Cal</span>
+                    <div className="flex flex-col items-center gap-2 rounded-xl bg-card border border-border p-3">
+                        <Calendar className="h-5 w-5 text-foreground/80" />
+                        <span className="text-xs text-muted-foreground">Cal</span>
                     </div>
-                    <div className="flex flex-col items-center gap-2 rounded-xl bg-white/[0.04] p-3 ring-1 ring-white/10">
-                        <Database className="h-5 w-5 text-white/80" />
-                        <span className="text-xs text-white/70">CRM</span>
+                    <div className="flex flex-col items-center gap-2 rounded-xl bg-card border border-border p-3">
+                        <Database className="h-5 w-5 text-foreground/80" />
+                        <span className="text-xs text-muted-foreground">CRM</span>
                     </div>
                 </div>
 
@@ -285,28 +285,28 @@ function AutomationCard() {
                 </div>
 
                 <div className="mt-3 space-y-2">
-                    <div className="flex items-center justify-between rounded-xl bg-white/[0.04] p-3 ring-1 ring-white/10">
+                    <div className="flex items-center justify-between rounded-xl bg-card p-3 border border-border">
                         <div className="flex items-center gap-3">
-                            <div className="h-7 w-7 rounded-full bg-purple-500/20 ring-1 ring-white/20 flex items-center justify-center text-xs text-white">AM</div>
+                            <div className="h-7 w-7 rounded-full bg-primary/20 flex items-center justify-center text-xs text-primary font-bold">AM</div>
                             <div>
-                                <p className="text-sm text-white/90">Ava Morgan</p>
-                                <p className="text-[11px] text-white/50">Recruiter</p>
+                                <p className="text-sm text-foreground font-medium">Ava Morgan</p>
+                                <p className="text-[11px] text-muted-foreground font-medium">Recruiter</p>
                             </div>
                         </div>
-                        <div className="flex items-center gap-2 text-[11px] text-white/60">
+                        <div className="flex items-center gap-2 text-[11px] text-muted-foreground">
                             <Clock className="h-3.5 w-3.5" />
                             Auto-reminders
                         </div>
                     </div>
-                    <div className="flex items-center justify-between rounded-xl bg-white/[0.04] p-3 ring-1 ring-white/10">
+                    <div className="flex items-center justify-between rounded-xl bg-card p-3 border border-border">
                         <div className="flex items-center gap-3">
-                            <div className="h-7 w-7 rounded-full bg-blue-500/20 ring-1 ring-white/20 flex items-center justify-center text-xs text-white">ER</div>
+                            <div className="h-7 w-7 rounded-full bg-blue-500/20 flex items-center justify-center text-xs text-blue-500 font-bold">ER</div>
                             <div>
-                                <p className="text-sm text-white/90">Ethan Reed</p>
-                                <p className="text-[11px] text-white/50">Safety Manager</p>
+                                <p className="text-sm text-foreground font-medium">Ethan Reed</p>
+                                <p className="text-[11px] text-muted-foreground font-medium">Safety Manager</p>
                             </div>
                         </div>
-                        <div className="flex items-center gap-2 text-[11px] text-white/60">
+                        <div className="flex items-center gap-2 text-[11px] text-muted-foreground">
                             <BellRing className="h-3.5 w-3.5" />
                             Follow-ups
                         </div>

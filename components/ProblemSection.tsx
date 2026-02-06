@@ -10,37 +10,37 @@ export default function ProblemSection() {
                         <span className="text-sm font-medium">The Cost of Empty Seats</span>
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-balance">
+                    <h2 className="section-heading mb-6">
                         Your Trucks Are Sitting. <br />
                         <span className="text-red-500">Your Revenue Is Bleeding.</span>
                     </h2>
 
-                    <p className="text-lg text-gray-400 leading-relaxed max-w-2xl mx-auto mb-12">
+                    <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-12">
                         Cold calls that go nowhere. Job board applicants who ghost. No-shows. Manual follow-ups.
                         Hiring drivers shouldn&apos;t be this hard, and every day a truck sits empty costs you money.
                     </p>
 
                     <div className="grid md:grid-cols-3 gap-6 text-left">
-                        <div className="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-white/10 transition-colors">
+                        <div className="p-6 rounded-2xl bg-card border border-border hover:border-primary/50 transition-colors">
                             <div className="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center mb-4 text-red-500">
                                 1
                             </div>
                             <h3 className="text-xl font-semibold mb-2">Ghosting Applicants</h3>
-                            <p className="text-gray-400 text-sm">You call, they don&apos;t answer. You schedule, they don&apos;t show.</p>
+                            <p className="text-muted-foreground text-sm">You call, they don&apos;t answer. You schedule, they don&apos;t show.</p>
                         </div>
-                        <div className="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-white/10 transition-colors">
+                        <div className="p-6 rounded-2xl bg-card border border-border hover:border-primary/50 transition-colors">
                             <div className="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center mb-4 text-red-500">
                                 2
                             </div>
                             <h3 className="text-xl font-semibold mb-2">Wasted Time</h3>
-                            <p className="text-gray-400 text-sm">Hours spent screening unqualified leads instead of growing your fleet.</p>
+                            <p className="text-muted-foreground text-sm">Hours spent screening unqualified leads instead of growing your fleet.</p>
                         </div>
-                        <div className="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-white/10 transition-colors">
+                        <div className="p-6 rounded-2xl bg-card border border-border hover:border-primary/50 transition-colors">
                             <div className="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center mb-4 text-red-500">
                                 3
                             </div>
                             <h3 className="text-xl font-semibold mb-2">Lost Revenue</h3>
-                            <p className="text-gray-400 text-sm">Every idle truck is thousands of dollars in lost potential revenue.</p>
+                            <p className="text-muted-foreground text-sm">Every idle truck is thousands of dollars in lost potential revenue.</p>
                         </div>
                     </div>
                 </div>

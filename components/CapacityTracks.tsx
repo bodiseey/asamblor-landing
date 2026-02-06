@@ -30,7 +30,7 @@ export default function CapacityTracks() {
         <section className="py-16 bg-background relative overflow-hidden">
             <div className="max-w-[1200px] mx-auto px-8 relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-[34px] font-semibold tracking-tight text-foreground leading-[1.1] mb-6">
+                    <h2 className="section-heading">
                         Dual-Track <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary to-blue-400">Capacity Architecture.</span>
                     </h2>

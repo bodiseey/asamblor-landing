@@ -66,32 +66,32 @@ export default function TestimonialsSection() {
                         <span>Verified Partners</span>
                     </div>
 
-                    <h2 className="text-[34px] font-semibold tracking-tight text-white leading-[1.1]">
+                    <h2 className="section-heading text-left">
                         Real Fleets. <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-br from-white to-white/40">Real Results.</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary to-blue-400">Real Results.</span>
                     </h2>
 
-                    <p className="text-[15px] text-gray-400 leading-relaxed max-w-lg">
+                    <p className="text-[15px] text-muted-foreground leading-relaxed max-w-lg">
                         See how modern fleets are automating their recruitment pipeline and filling trucks faster than ever before.
                     </p>
 
                     <div className="flex flex-wrap gap-2.5">
-                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-2xl bg-white/[0.03] border border-white/5 backdrop-blur-sm">
+                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-2xl bg-muted/50 border border-border backdrop-blur-sm">
                             <Star size={14} className="text-yellow-500/80" />
-                            <span className="text-xs text-white/70">Trusted by 500+</span>
+                            <span className="text-xs text-muted-foreground">Trusted by 500+</span>
                         </div>
-                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-2xl bg-white/[0.03] border border-white/5 backdrop-blur-sm">
+                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-2xl bg-muted/50 border border-border backdrop-blur-sm">
                             <ShieldCheck size={14} className="text-green-500/80" />
-                            <span className="text-xs text-white/70">Verified Reviews</span>
+                            <span className="text-xs text-muted-foreground">Verified Reviews</span>
                         </div>
                     </div>
 
                     <div className="pt-4 flex items-center gap-4">
-                        <Link href="/book" className="group inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-white text-black text-sm font-medium hover:bg-gray-100 transition-all hover:-translate-y-0.5">
-                            <Play size={16} className="fill-black" />
+                        <Link href="/book" className="group inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-all hover:-translate-y-0.5 shadow-lg shadow-primary/20">
+                            <Play size={16} className="fill-current" />
                             <span>Book Live Demo</span>
                         </Link>
-                        <Link href="/book" className="group inline-flex items-center gap-2 px-5 py-3 rounded-2xl border border-white/10 hover:bg-white/5 text-sm font-medium text-white transition-all hover:-translate-y-0.5">
+                        <Link href="/book" className="group inline-flex items-center gap-2 px-5 py-3 rounded-2xl border border-border hover:bg-muted/50 text-sm font-medium text-foreground transition-all hover:-translate-y-0.5">
                             <span>Get started</span>
                             <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
                         </Link>
@@ -103,7 +103,7 @@ export default function TestimonialsSection() {
                             <button
                                 key={idx}
                                 onClick={() => setActiveIndex(idx)}
-                                className={`h-2 rounded-full transition-all duration-300 ${idx === activeIndex ? "w-6 bg-white" : "w-2 bg-white/20 hover:bg-white/40"
+                                className={`h-2 rounded-full transition-all duration-300 ${idx === activeIndex ? "w-6 bg-primary" : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50"
                                     }`}
                             />
                         ))}
@@ -165,35 +165,35 @@ export default function TestimonialsSection() {
                                     transition={{ duration: 0.6, ease: [0.32, 0.72, 0, 1] }}
                                     viewport={{ once: true }}
                                 >
-                                    <div className="h-full w-full rounded-3xl border border-white/10 bg-neutral-900/60 p-8 backdrop-blur-xl shadow-2xl flex flex-col justify-between">
+                                    <div className="h-full w-full rounded-3xl border border-border bg-card p-8 backdrop-blur-xl shadow-2xl flex flex-col justify-between">
 
                                         {/* Header of Card */}
                                         <div className="flex justify-between items-start">
-                                            <div className="h-12 w-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
-                                                <item.icon className="text-white/80" size={20} />
+                                            <div className="h-12 w-12 rounded-2xl bg-muted border border-border flex items-center justify-center">
+                                                <item.icon className="text-foreground/80" size={20} />
                                             </div>
                                             <div className="text-right">
-                                                <div className="text-xs text-white/40 uppercase tracking-wider font-semibold">{item.metricLabel}</div>
-                                                <div className="text-xl font-bold text-white mt-1">{item.metricValue}</div>
+                                                <div className="text-xs text-muted-foreground uppercase tracking-wider font-semibold">{item.metricLabel}</div>
+                                                <div className="text-xl font-bold text-foreground mt-1">{item.metricValue}</div>
                                             </div>
                                         </div>
 
                                         {/* Quote */}
                                         <div className="relative">
-                                            <Quote className="absolute -top-4 -left-2 text-white/5 rotate-180" size={60} />
-                                            <p className="relative text-lg md:text-xl text-white/90 font-medium leading-relaxed">
+                                            <Quote className="absolute -top-4 -left-2 text-foreground/5 rotate-180" size={60} />
+                                            <p className="relative text-lg md:text-xl text-foreground/90 font-medium leading-relaxed">
                                                 &quot;{item.quote}&quot;
                                             </p>
                                         </div>
 
                                         {/* Author */}
-                                        <div className="flex items-center gap-4 pt-6 border-t border-white/5">
-                                            <div className="h-10 w-10 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-sm font-bold text-white">
+                                        <div className="flex items-center gap-4 pt-6 border-t border-black/5 dark:border-white/5">
+                                            <div className="h-10 w-10 rounded-full bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center text-sm font-bold text-white">
                                                 {item.author.charAt(0)}
                                             </div>
                                             <div>
-                                                <div className="text-sm font-semibold text-white">{item.author}</div>
-                                                <div className="text-xs text-white/50">{item.role}</div>
+                                                <div className="text-sm font-semibold text-foreground">{item.author}</div>
+                                                <div className="text-xs text-muted-foreground">{item.role}</div>
                                             </div>
                                         </div>
 
