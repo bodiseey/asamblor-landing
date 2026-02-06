@@ -95,6 +95,11 @@ export default function PricingSection() {
                                 <p className="text-sm text-yellow-200/80 leading-relaxed relative z-10">
                                     If we don&apos;t deliver <strong>30 Qualified Interested Leads in 30 days</strong>, we run the system for free until we do—zero questions asked.
                                 </p>
+                                <div className="mt-4 pt-4 border-t border-yellow-500/10">
+                                    <p className="text-[11px] text-yellow-200/50 leading-relaxed italic">
+                                        Note: Asamblor provides the lead flow and engagement infrastructure. Final qualification, follow-ups, and all hiring decisions remain the exclusive operational responsibility of the client company.
+                                    </p>
+                                </div>
                             </div>
                         </div>
 
