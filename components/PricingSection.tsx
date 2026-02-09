@@ -111,7 +111,7 @@ export default function PricingSection() {
                                 <p className="text-sm text-muted-foreground uppercase tracking-widest font-semibold mb-4">Simple Pricing</p>
                                 <div className="flex flex-col items-center lg:items-start gap-1">
                                     <span className="text-5xl md:text-6xl font-bold text-foreground tracking-tight">$1,500<span className="text-2xl text-muted-foreground font-normal">/mo</span></span>
-                                    <span className="text-lg text-muted-foreground">+ $700 Configuration Fee</span>
+                                    <span className="text-lg text-muted-foreground">+ $750 Configuration Fee</span>
                                 </div>
 
                                 <div className="mt-8 space-y-4">
