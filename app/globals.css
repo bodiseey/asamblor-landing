@@ -12,6 +12,12 @@
     background-size: 24px 24px;
   }
 
+  .dashboard-emerald {
+    --primary: 160 84% 39%;
+    /* Emerald/Teal */
+    --ring: 160 84% 39%;
+  }
+
   .section-heading {
     @apply text-[32px] md:text-[80px] leading-[1.05] font-bold tracking-tight text-foreground text-balance mb-10;
   }

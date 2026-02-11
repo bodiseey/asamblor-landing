@@ -43,7 +43,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     if (!mounted) return null;
 
     return (
-        <div className="flex min-h-screen bg-background text-foreground animate-in fade-in duration-500">
+        <div className="flex min-h-screen bg-background text-foreground animate-in fade-in duration-500 dashboard-emerald">
             {/* Desktop Sidebar */}
             <aside
                 className={cn(
