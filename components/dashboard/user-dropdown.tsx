@@ -44,6 +44,8 @@ export function UserDropdown({ isCollapsed }: { isCollapsed: boolean }) {
             const { data: profileData } = await supabase
                 .from('profiles')
                 .select(`
+                    first_name,
+                    last_name,
                     full_name,
                     avatar_url,
                     role,
@@ -55,13 +57,14 @@ export function UserDropdown({ isCollapsed }: { isCollapsed: boolean }) {
                 .single();
 
             if (profileData) {
-                const fullName = profileData.full_name || user.email?.split('@')[0] || 'User';
+                const firstName = profileData.first_name || '';
+                const lastName = profileData.last_name || '';
+                const fullName = profileData.full_name || `${firstName} ${lastName}`.trim() || user.email?.split('@')[0] || 'User';
                 const tenantName = (profileData.tenants as any)?.name || 'My Company';
 
                 // Generate initials
-                const parts = fullName.trim().split(' ');
-                const initials = parts.length >= 2
-                    ? `${parts[0][0]}${parts[parts.length - 1][0]}`.toUpperCase()
+                const initials = firstName && lastName
+                    ? `${firstName[0]}${lastName[0]}`.toUpperCase()
                     : fullName.substring(0, 2).toUpperCase();
 
                 setProfile({
