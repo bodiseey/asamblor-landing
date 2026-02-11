@@ -15,6 +15,9 @@ import {
     Search,
     Bell,
     Plus,
+    Truck,
+    UserCircle,
+    Package,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -26,8 +29,9 @@ import { UserDropdown } from "@/components/dashboard/user-dropdown";
 const sidebarItems = [
     { icon: LayoutDashboard, label: "Dashboard", href: "/dashboard" },
     { icon: Users, label: "People", href: "/dashboard/contacts" },
-    { icon: KanbanSquare, label: "Opportunities", href: "/dashboard/pipeline" },
-    { icon: CalendarDays, label: "Calendar", href: "/dashboard/calendar" },
+    { icon: Package, label: "Loads", href: "/dashboard/loads" },
+    { icon: UserCircle, label: "Drivers", href: "/dashboard/drivers" },
+    { icon: Truck, label: "Vehicles", href: "/dashboard/vehicles" },
     { icon: Settings, label: "Settings", href: "/dashboard/settings" },
 ];
 
@@ -165,7 +169,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                         <div className="relative w-full max-w-md">
                             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground h-4 w-4" />
                             <Input
-                                placeholder="Search people, opportunities..."
+                                placeholder="Search people, loads, drivers..."
                                 className="pl-10 bg-muted/30 border-border focus:bg-background transition-all rounded-lg h-9"
                             />
                         </div>

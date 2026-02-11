@@ -104,43 +104,72 @@ CREATE TABLE people (
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
--- 7. Standard Object: OPPORTUNITIES (Pipeline)
-CREATE TABLE pipeline_stages (
+-- 7. Standard Object: LOADS (Specialized Opportunities)
+CREATE TABLE loads (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     tenant_id UUID REFERENCES tenants(id) ON DELETE CASCADE NOT NULL,
+    driver_id UUID, -- References drivers table defined below
+    customer_id UUID REFERENCES companies(id) ON DELETE SET NULL,
     name TEXT NOT NULL,
-    position INTEGER DEFAULT 0,
-    color TEXT,
-    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-);
-
-CREATE TABLE opportunities (
-    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    tenant_id UUID REFERENCES tenants(id) ON DELETE CASCADE NOT NULL,
-    person_id UUID REFERENCES people(id) ON DELETE CASCADE,
-    company_id UUID REFERENCES companies(id) ON DELETE CASCADE,
-    name TEXT NOT NULL,
+    load_number TEXT,
+    status TEXT DEFAULT 'Unassigned', -- Unassigned, Assigned, In Transit, Delivered, Cancelled
+    pickup_city TEXT,
+    pickup_state TEXT,
+    pickup_date TIMESTAMP WITH TIME ZONE,
+    delivery_city TEXT,
+    delivery_state TEXT,
+    delivery_date TIMESTAMP WITH TIME ZONE,
     amount_value DECIMAL(15, 2) DEFAULT 0,
     amount_currency_code TEXT DEFAULT 'USD',
-    stage_id UUID REFERENCES pipeline_stages(id) ON DELETE SET NULL,
-    close_date DATE,
-    probability INTEGER,
-    position INTEGER DEFAULT 0,
+    weight DECIMAL(10, 2),
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
 
--- 8. Standard Object: TASKS & NOTES
+-- 8. Standard Object: VEHICLES (Trucks/Trailers)
+CREATE TABLE vehicles (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    tenant_id UUID REFERENCES tenants(id) ON DELETE CASCADE NOT NULL,
+    unit_number TEXT NOT NULL,
+    vin TEXT,
+    make TEXT,
+    model TEXT,
+    year INTEGER,
+    type TEXT NOT NULL, -- Semi, Reefer, Flatbed, etc.
+    status TEXT DEFAULT 'Available', -- Available, Dispatched, Maintenance
+    last_inspection_date DATE,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- 9. Standard Object: DRIVERS (Specialized People)
+CREATE TABLE drivers (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    tenant_id UUID REFERENCES tenants(id) ON DELETE CASCADE NOT NULL,
+    person_id UUID REFERENCES people(id) ON DELETE CASCADE,
+    license_number TEXT,
+    license_state TEXT,
+    license_expiration DATE,
+    years_experience INTEGER,
+    assigned_vehicle_id UUID REFERENCES vehicles(id) ON DELETE SET NULL,
+    status TEXT DEFAULT 'Active', -- Active, Inactive, On Leave
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- 10. Standard Object: TASKS & NOTES (Universal)
+-- (Tasks & Notes modified to link to Loads/Drivers)
 CREATE TABLE tasks (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     tenant_id UUID REFERENCES tenants(id) ON DELETE CASCADE NOT NULL,
     person_id UUID REFERENCES people(id) ON DELETE SET NULL,
     company_id UUID REFERENCES companies(id) ON DELETE SET NULL,
-    opportunity_id UUID REFERENCES opportunities(id) ON DELETE SET NULL,
+    load_id UUID REFERENCES loads(id) ON DELETE SET NULL,
+    driver_id UUID REFERENCES drivers(id) ON DELETE SET NULL,
     title TEXT NOT NULL,
     description TEXT,
     due_at TIMESTAMP WITH TIME ZONE,
-    status TEXT DEFAULT 'Todo', -- Todo, In Progress, Done
+    status TEXT DEFAULT 'Todo',
     priority TEXT DEFAULT 'Medium',
     created_by_user_id UUID REFERENCES auth.users(id),
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
@@ -151,7 +180,8 @@ CREATE TABLE notes (
     tenant_id UUID REFERENCES tenants(id) ON DELETE CASCADE NOT NULL,
     person_id UUID REFERENCES people(id) ON DELETE SET NULL,
     company_id UUID REFERENCES companies(id) ON DELETE SET NULL,
-    opportunity_id UUID REFERENCES opportunities(id) ON DELETE SET NULL,
+    load_id UUID REFERENCES loads(id) ON DELETE SET NULL,
+    driver_id UUID REFERENCES drivers(id) ON DELETE SET NULL,
     content TEXT NOT NULL,
     created_by_user_id UUID REFERENCES auth.users(id),
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
@@ -234,24 +264,34 @@ BEGIN
 
     -- 2. Seed Object Metadata
     INSERT INTO object_metadata (tenant_id, name, label_singular, label_plural, icon)
-    VALUES (NEW.id, 'person', 'Person', 'People', 'User')
-    RETURNING id INTO person_obj_id;
-
-    INSERT INTO object_metadata (tenant_id, name, label_singular, label_plural, icon)
-    VALUES (NEW.id, 'company', 'Company', 'Companies', 'Building')
-    RETURNING id INTO company_obj_id;
+    VALUES 
+    (NEW.id, 'person', 'Person', 'People', 'User'),
+    (NEW.id, 'company', 'Company', 'Companies', 'Building'),
+    (NEW.id, 'load', 'Load', 'Loads', 'Truck'),
+    (NEW.id, 'vehicle', 'Vehicle', 'Vehicles', 'Truck'),
+    (NEW.id, 'driver', 'Driver', 'Drivers', 'UserCheck')
+    RETURNING id, name INTO person_obj_id, person_name_check; -- Using a dummy to handle the returning
 
     -- 3. Seed Field Metadata (Examples)
-    INSERT INTO field_metadata (object_id, name, label, type) VALUES
-    (person_obj_id, 'firstName', 'First Name', 'text'),
-    (person_obj_id, 'lastName', 'Last Name', 'text'),
-    (person_obj_id, 'email', 'Email', 'text'),
-    (company_obj_id, 'name', 'Company Name', 'text'),
-    (company_obj_id, 'domainName', 'Domain', 'text');
+    -- Drivers specialized fields
+    INSERT INTO field_metadata (object_id, name, label, type) 
+    SELECT id, 'licenseNumber', 'License Number', 'text' FROM object_metadata WHERE tenant_id = NEW.id AND name = 'driver';
+    
+    INSERT INTO field_metadata (object_id, name, label, type) 
+    SELECT id, 'pickupCity', 'Pickup City', 'text' FROM object_metadata WHERE tenant_id = NEW.id AND name = 'load';
 
     RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
+
+-- 13. Update RLS for new tables
+ALTER TABLE loads ENABLE ROW LEVEL SECURITY;
+ALTER TABLE vehicles ENABLE ROW LEVEL SECURITY;
+ALTER TABLE drivers ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Tenant isolation" ON loads FOR ALL USING (tenant_id = get_current_tenant_id());
+CREATE POLICY "Tenant isolation" ON vehicles FOR ALL USING (tenant_id = get_current_tenant_id());
+CREATE POLICY "Tenant isolation" ON drivers FOR ALL USING (tenant_id = get_current_tenant_id());
 
 CREATE TRIGGER on_tenant_created
 AFTER INSERT ON tenants

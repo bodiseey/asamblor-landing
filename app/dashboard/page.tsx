@@ -1,100 +1,127 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import {
     Users,
-    MessageSquare,
+    Package,
+    Truck,
+    UserCircle,
+    ArrowUpRight,
+    ArrowDownRight,
     CalendarCheck,
     TrendingUp,
-    ArrowUpRight,
-    ArrowDownRight
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { createClient } from "@/util/supabase/client";
+import { ActivityTimeline } from "@/components/crm/ActivityTimeline";
 
 export default function DashboardPage() {
+    const [stats, setStats] = useState({
+        people: 0,
+        loads: 0,
+        drivers: 0,
+        vehicles: 0,
+    });
+
+    useEffect(() => {
+        async function fetchStats() {
+            const supabase = createClient();
+
+            const [
+                { count: peopleCount },
+                { count: loadsCount },
+                { count: driversCount },
+                { count: vehiclesCount }
+            ] = await Promise.all([
+                supabase.from('people').select('*', { count: 'exact', head: true }),
+                supabase.from('loads').select('*', { count: 'exact', head: true }),
+                supabase.from('drivers').select('*', { count: 'exact', head: true }),
+                supabase.from('vehicles').select('*', { count: 'exact', head: true }),
+            ]);
+
+            setStats({
+                people: peopleCount || 0,
+                loads: loadsCount || 0,
+                drivers: driversCount || 0,
+                vehicles: vehiclesCount || 0,
+            });
+        }
+
+        fetchStats();
+    }, []);
+
     return (
         <div className="space-y-8">
             <div className="flex items-center justify-between">
                 <div>
-                    <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
-                    <p className="text-muted-foreground">Overview of your recruitment pipeline.</p>
+                    <h2 className="text-3xl font-bold tracking-tight">Command Center</h2>
+                    <p className="text-muted-foreground">Industrial-scale operations hub.</p>
                 </div>
                 <div className="flex items-center gap-2">
-                    <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 text-xs font-medium animate-pulse">
-                        <div className="h-1.5 w-1.5 rounded-full bg-amber-500" />
-                        SYSTEM IN CONSTRUCTION
+                    <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-xs font-medium animate-pulse">
+                        <div className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                        LIVE OPERATIONS
                     </div>
-                    <Button variant="outline" size="sm" className="hidden sm:flex">
-                        <CalendarCheck className="mr-2 h-4 w-4" />
-                        Last 30 Days
-                    </Button>
-                    <Button size="sm">Download Report</Button>
                 </div>
             </div>
 
             {/* Metrics Cards */}
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-                <Card>
+                <Card className="glass-card hover:border-primary/50 transition-colors">
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                        <CardTitle className="text-sm font-medium">Total Leads</CardTitle>
+                        <CardTitle className="text-sm font-medium">Total People</CardTitle>
                         <Users className="h-4 w-4 text-muted-foreground" />
                     </CardHeader>
                     <CardContent>
-                        <div className="text-2xl font-bold">1,248</div>
+                        <div className="text-2xl font-bold">{stats.people}</div>
                         <p className="text-xs text-muted-foreground flex items-center mt-1">
                             <span className="text-emerald-500 flex items-center mr-1">
                                 <ArrowUpRight className="h-3 w-3 mr-0.5" />
                                 +12%
                             </span>
-                            from last month
+                            growth
                         </p>
                     </CardContent>
                 </Card>
-                <Card>
+                <Card className="glass-card hover:border-primary/50 transition-colors">
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                        <CardTitle className="text-sm font-medium">Response Rate</CardTitle>
-                        <MessageSquare className="h-4 w-4 text-muted-foreground" />
+                        <CardTitle className="text-sm font-medium">Active Loads</CardTitle>
+                        <Package className="h-4 w-4 text-muted-foreground" />
                     </CardHeader>
                     <CardContent>
-                        <div className="text-2xl font-bold">8.4%</div>
+                        <div className="text-2xl font-bold">{stats.loads}</div>
+                        <p className="text-xs text-muted-foreground flex items-center mt-1 text-emerald-500">
+                            <TrendingUp className="h-3 w-3 mr-1" />
+                            On schedule
+                        </p>
+                    </CardContent>
+                </Card>
+                <Card className="glass-card hover:border-primary/50 transition-colors">
+                    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                        <CardTitle className="text-sm font-medium">Active Drivers</CardTitle>
+                        <UserCircle className="h-4 w-4 text-muted-foreground" />
+                    </CardHeader>
+                    <CardContent>
+                        <div className="text-2xl font-bold">{stats.drivers}</div>
                         <p className="text-xs text-muted-foreground flex items-center mt-1">
                             <span className="text-emerald-500 flex items-center mr-1">
                                 <ArrowUpRight className="h-3 w-3 mr-0.5" />
-                                +2.1%
+                                100%
                             </span>
-                            optimized engagement
+                            on-duty
                         </p>
                     </CardContent>
                 </Card>
-                <Card>
+                <Card className="glass-card hover:border-primary/50 transition-colors">
                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                        <CardTitle className="text-sm font-medium">Interviews Booked</CardTitle>
-                        <CalendarCheck className="h-4 w-4 text-muted-foreground" />
+                        <CardTitle className="text-sm font-medium">Fleet Capacity</CardTitle>
+                        <Truck className="h-4 w-4 text-muted-foreground" />
                     </CardHeader>
                     <CardContent>
-                        <div className="text-2xl font-bold">42</div>
+                        <div className="text-2xl font-bold">{stats.vehicles}</div>
                         <p className="text-xs text-muted-foreground flex items-center mt-1">
-                            <span className="text-red-500 flex items-center mr-1">
-                                <ArrowDownRight className="h-3 w-3 mr-0.5" />
-                                -4%
-                            </span>
-                            schedule capacity full
-                        </p>
-                    </CardContent>
-                </Card>
-                <Card>
-                    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                        <CardTitle className="text-sm font-medium">Hired Drivers</CardTitle>
-                        <TrendingUp className="h-4 w-4 text-muted-foreground" />
-                    </CardHeader>
-                    <CardContent>
-                        <div className="text-2xl font-bold">12</div>
-                        <p className="text-xs text-muted-foreground flex items-center mt-1">
-                            <span className="text-emerald-500 flex items-center mr-1">
-                                <ArrowUpRight className="h-3 w-3 mr-0.5" />
-                                +3 target
-                            </span>
-                            this month
+                            Units available
                         </p>
                     </CardContent>
                 </Card>
@@ -102,53 +129,32 @@ export default function DashboardPage() {
 
             {/* Recent Activity / Charts Placeholder */}
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
-                <Card className="col-span-4">
+                <Card className="col-span-4 glass-card">
                     <CardHeader>
-                        <CardTitle>Overview</CardTitle>
+                        <CardTitle>Fleet Performance</CardTitle>
                         <CardDescription>
-                            Weekly lead volume and engagement metrics.
+                            Capacity utilization vs active loads.
                         </CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">
-                        <div className="h-[350px] w-full bg-muted/20 rounded-lg flex items-center justify-center border border-dashed border-border text-muted-foreground">
-                            Chart Visualization Component (Recharts)
+                        <div className="h-[400px] w-full bg-primary/5 rounded-lg flex items-center justify-center border border-dashed border-primary/20 text-muted-foreground">
+                            Analytics Visualization
                         </div>
                     </CardContent>
                 </Card>
-                <Card className="col-span-3">
+                <Card className="col-span-3 glass-card">
                     <CardHeader>
-                        <CardTitle>Recent Activity</CardTitle>
+                        <CardTitle>Global Activity</CardTitle>
                         <CardDescription>
-                            Latest lead interactions.
+                            Real-time outreach & operation updates.
                         </CardDescription>
                     </CardHeader>
                     <CardContent>
-                        <div className="space-y-8">
-                            {[
-                                { name: "John Smith", action: "replied to email", time: "2 min ago", avatar: "JS" },
-                                { name: "Sarah Connor", action: "booked an interview", time: "1 hour ago", avatar: "SC" },
-                                { name: "Mike Ross", action: "qualified by AI", time: "3 hours ago", avatar: "MR" },
-                                { name: "Jessica Pearson", action: "contract sent", time: "5 hours ago", avatar: "JP" },
-                            ].map((activity, i) => (
-                                <div key={i} className="flex items-center">
-                                    <div className="h-9 w-9 rounded-full bg-primary/10 flex items-center justify-center text-xs font-medium text-primary border border-primary/20">
-                                        {activity.avatar}
-                                    </div>
-                                    <div className="ml-4 space-y-1">
-                                        <p className="text-sm font-medium leading-none">{activity.name}</p>
-                                        <p className="text-xs text-muted-foreground">
-                                            {activity.action}
-                                        </p>
-                                    </div>
-                                    <div className="ml-auto font-medium text-xs text-muted-foreground">
-                                        {activity.time}
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
+                        <ActivityTimeline limit={6} />
                     </CardContent>
                 </Card>
             </div>
         </div>
     );
 }
+
