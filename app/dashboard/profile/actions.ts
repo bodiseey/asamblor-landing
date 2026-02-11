@@ -19,18 +19,19 @@ export async function inviteTeamMember(email: string, role: string, tenantId: st
     const { createClient: createAdminClient } = await import('@supabase/supabase-js')
     const supabaseAdmin = createAdminClient(supabaseUrl, supabaseServiceRoleKey)
 
-    // 1. Create the user
-    const tempPassword = Math.random().toString(36).slice(-12) + 'A1!'
-
-    const { data: authData, error: authError } = await supabaseAdmin.auth.admin.createUser({
+    // 1. Invite the user
+    // Using inviteUserByEmail triggers the actual "Invitation" email template in Supabase Auth
+    const { data: authData, error: authError } = await supabaseAdmin.auth.admin.inviteUserByEmail(
         email,
-        password: tempPassword,
-        email_confirm: true,
-        user_metadata: {
-            tenant_id: tenantId,
-            role: role,
+        {
+            data: {
+                tenant_id: tenantId,
+                role: role,
+            },
+            // The URL the user is redirected to after clicking the invite link
+            redirectTo: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://dash.asamblor.com'}/auth/callback`,
         }
-    })
+    )
 
     if (authError) {
         throw new Error(authError.message)
@@ -46,6 +47,7 @@ export async function inviteTeamMember(email: string, role: string, tenantId: st
                 role: role,
                 first_name: email.split('@')[0],
                 full_name: email.split('@')[0],
+                email: email, // Also store email in profile for easy viewing
             })
 
         if (profileError) {
