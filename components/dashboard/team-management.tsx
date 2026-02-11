@@ -57,6 +57,11 @@ export function TeamManagement({ tenantId, currentUserId }: { tenantId: string; 
     async function loadTeamMembers() {
         const supabase = createClient();
 
+        if (!tenantId) {
+            setLoading(false);
+            return;
+        }
+
         const { data, error } = await supabase
             .from('profiles')
             .select('*')
@@ -150,12 +155,15 @@ export function TeamManagement({ tenantId, currentUserId }: { tenantId: string; 
         }
     }
 
-    function getInitials(firstName: string, lastName: string, email: string): string {
+    function getInitials(firstName: string | null, lastName: string | null, email: string | null): string {
         if (firstName && lastName) {
             return `${firstName[0]}${lastName[0]}`.toUpperCase();
         }
-        if (firstName) return firstName.substring(0, 2).toUpperCase();
-        return email.substring(0, 2).toUpperCase();
+        if (firstName && firstName.length >= 2) return firstName.substring(0, 2).toUpperCase();
+        if (firstName && firstName.length === 1) return firstName[0].toUpperCase();
+        if (email && email.length >= 2) return email.substring(0, 2).toUpperCase();
+        if (email && email.length === 1) return email[0].toUpperCase();
+        return "??";
     }
 
     function getRoleBadgeColor(role: string) {
@@ -282,7 +290,7 @@ export function TeamManagement({ tenantId, currentUserId }: { tenantId: string; 
                                                 <p className="font-medium">
                                                     {member.first_name && member.last_name
                                                         ? `${member.first_name} ${member.last_name}`
-                                                        : member.email.split('@')[0]}
+                                                        : (member.email ? member.email.split('@')[0] : 'Unknown Member')}
                                                 </p>
                                                 {member.id === currentUserId && (
                                                     <p className="text-xs text-muted-foreground">(You)</p>

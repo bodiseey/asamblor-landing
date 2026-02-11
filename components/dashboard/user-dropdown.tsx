@@ -80,6 +80,10 @@ export function UserDropdown({ isCollapsed }: { isCollapsed: boolean }) {
         }
 
         loadProfile();
+
+        // Listen for profile updates
+        window.addEventListener('profile-updated', loadProfile);
+        return () => window.removeEventListener('profile-updated', loadProfile);
     }, []);
 
     if (loading || !profile) {

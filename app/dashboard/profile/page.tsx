@@ -190,6 +190,8 @@ export default function ProfilePage() {
 
             toast.success('Personal information updated successfully!');
             await loadProfile();
+            // Trigger instant update for other components (like sidebar)
+            window.dispatchEvent(new Event('profile-updated'));
         } catch (error: any) {
             console.error('Error updating profile:', error);
             toast.error(error.message || 'Failed to update profile');
@@ -224,6 +226,8 @@ export default function ProfilePage() {
 
             toast.success('Company information updated successfully!');
             await loadProfile();
+            // Trigger instant update for other components (like sidebar)
+            window.dispatchEvent(new Event('profile-updated'));
         } catch (error: any) {
             console.error('Error updating company:', error);
             toast.error(error.message || 'Failed to update company');
@@ -299,6 +303,8 @@ export default function ProfilePage() {
 
             setAvatarUrl(publicUrl);
             toast.success('Avatar uploaded successfully!');
+            // Trigger instant update for other components (like sidebar)
+            window.dispatchEvent(new Event('profile-updated'));
         } catch (error: any) {
             console.error('Error uploading avatar:', error);
             toast.error(error.message || 'Failed to upload avatar');
