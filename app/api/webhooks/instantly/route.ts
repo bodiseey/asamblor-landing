@@ -3,13 +3,21 @@ import { createClient } from "@supabase/supabase-js";
 
 // Initialize Supabase Admin Client (Bypass RLS for webhooks)
 // Initialize Supabase Admin Client (Bypass RLS for webhooks)
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+// Initialize Supabase Admin Client (Bypass RLS for webhooks)
 
-const supabase = createClient(supabaseUrl, supabaseKey);
 
 export async function POST(req: Request) {
     try {
+        const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+        const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+        if (!supabaseUrl || !supabaseKey) {
+            console.error('Supabase URL or Key is missing in environment variables.');
+            return NextResponse.json({ error: 'Configuration Error' }, { status: 500 });
+        }
+
+        const supabase = createClient(supabaseUrl, supabaseKey);
+
         const payload = await req.json();
 
         // Validation: Verify the webhook secret (Optional but recommended)
