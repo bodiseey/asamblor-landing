@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export default function AgentStudioCard() {
     return (
         <div
-            className="card-top max-w-[32rem] mx-auto overflow-hidden relative transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] bg-card rounded-[1.2em] border border-border"
+            className="card-top max-w-[32rem] mx-auto overflow-hidden relative transition-all duration-300 ease-in-out bg-card rounded-[1.2em] border border-border"
             style={{
                 backdropFilter: typeof window !== 'undefined' && window.innerWidth >= 768 ? 'blur(16px)' : 'none',
                 WebkitBackdropFilter: typeof window !== 'undefined' && window.innerWidth >= 768 ? 'blur(16px)' : 'none'

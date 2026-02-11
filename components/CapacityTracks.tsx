@@ -1,70 +1,132 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Truck, UserCheck, ArrowRight } from "lucide-react";
+import { User, Truck, ChevronRight, BarChart3, Users, ArrowRight } from "lucide-react";
 import Link from "next/link";
-
-const tracks = [
-    {
-        title: "Expand with Owner-Operators",
-        benchmark: "3–10 QILs / Day",
-        description: "Scale your fleet without the capital expense of buying trucks. We target and qualify high-tier Owner-Operators with fresh MCs or those looking to lease onto established authorities.",
-        icon: Truck,
-        color: "from-blue-500/20 to-blue-600/5",
-        border: "border-blue-500/20",
-        iconColor: "text-blue-400"
-    },
-    {
-        title: "Fill Empty Seats with Drivers",
-        benchmark: "3–6 QILs / Day",
-        description: "Eliminate the recruitment friction. We find, vet, and book qualified CDL company drivers directly onto your calendar, ensuring your equipment never sits idle.",
-        icon: UserCheck,
-        color: "from-primary/20 to-primary/5",
-        border: "border-primary/20",
-        iconColor: "text-primary"
-    }
-];
 
 export default function CapacityTracks() {
     return (
-        <section className="py-16 bg-background relative overflow-hidden">
+        <section className="py-24 relative overflow-hidden">
             <div className="max-w-[1200px] mx-auto px-8 relative z-10">
                 <div className="text-center mb-16">
                     <h2 className="section-heading">
-                        Dual-Track <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary to-blue-400">Capacity Architecture.</span>
+                        Two Tracks to <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">Scale.</span>
                     </h2>
-                    <p className="max-w-2xl mx-auto text-muted-foreground text-[16px] leading-relaxed">
-                        Two specialized pathways designed to solve the two biggest growth bottlenecks in the U.S. trucking industry.
+                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                        Choose your growth vector. Our dual-track engine runs specialized campaigns for both asset-light expansion and fleet utilization.
                     </p>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-8">
-                    {tracks.map((track, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className={`p-8 rounded-[2rem] bg-gradient-to-br ${track.color} border ${track.border} backdrop-blur-sm relative group hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500`}
-                        >
-                            <div className="flex flex-col h-full">
-                                <div className={`p-4 rounded-2xl bg-white/5 border border-black/5 dark:border-white/10 w-fit mb-6 ${track.iconColor} group-hover:scale-110 transition-transform duration-500`}>
-                                    <track.icon size={32} />
-                                </div>
-                                <h3 className="text-2xl font-bold text-foreground mb-2">{track.title}</h3>
-                                <div className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-500/10 text-green-400 border border-green-500/20 mb-4 w-fit">
-                                    Benchmark: {track.benchmark}
-                                </div>
-                                <p className="text-muted-foreground text-sm leading-relaxed mb-8 grow">
-                                    {track.description}
-                                </p>
-                                <Link href="/book" className="flex items-center gap-2 text-foreground font-semibold text-sm hover:gap-3 transition-all">
-                                    Deploy this Track <ArrowRight size={16} className="text-primary" />
-                                </Link>
+                    {/* Track 1: Owner Operators */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="group relative rounded-3xl border border-border bg-card p-8 hover:border-primary/50 transition-colors overflow-hidden"
+                    >
+                        <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+                            <Truck size={120} />
+                        </div>
+
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold uppercase tracking-wider w-fit mb-6">
+                            <Truck size={14} />
+                            <span>Track 1</span>
+                        </div>
+
+                        <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Expand with Owner-Operators</h3>
+                        <p className="text-muted-foreground mb-8 leading-relaxed">
+                            Bypass the Broker Wall. We identify Owner-Operators with fresh MC authorities who need to lease onto established fleets for consistent freight and insurance access.
+                        </p>
+
+                        <div className="space-y-4 mb-8">
+                            <div className="flex items-center justify-between p-4 rounded-xl bg-muted/50 border border-border">
+                                <span className="text-sm font-medium">Daily Qualified Leads</span>
+                                <span className="text-xl font-bold text-foreground">3–10</span>
                             </div>
-                        </motion.div>
-                    ))}
+                            <div className="flex items-center justify-between p-4 rounded-xl bg-muted/50 border border-border">
+                                <span className="text-sm font-medium">Lead Exclusivity</span>
+                                <span className="text-xl font-bold text-emerald-500">100%</span>
+                            </div>
+                        </div>
+
+                        <ul className="space-y-3 mb-8">
+                            <li className="flex items-start gap-3 text-sm text-muted-foreground">
+                                <ChevronRight className="text-primary shrink-0 mt-0.5" size={16} />
+                                <span>Access to <strong>2.6M Driver Database</strong> (OOS Priority)</span>
+                            </li>
+                            <li className="flex items-start gap-3 text-sm text-muted-foreground">
+                                <ChevronRight className="text-primary shrink-0 mt-0.5" size={16} />
+                                <span>Real-time MC Authority Verification</span>
+                            </li>
+                            <li className="flex items-start gap-3 text-sm text-muted-foreground">
+                                <ChevronRight className="text-primary shrink-0 mt-0.5" size={16} />
+                                <span>Automated Lease-On Pitching</span>
+                            </li>
+                        </ul>
+
+                        <div className="mt-auto">
+                            <Link href="/owner-operators" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all group/link">
+                                Learn More <ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
+                            </Link>
+                        </div>
+                    </motion.div>
+
+                    {/* Track 2: Company Drivers */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="group relative rounded-3xl border border-border bg-card p-8 hover:border-blue-400/50 transition-colors overflow-hidden"
+                    >
+                        <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+                            <Users size={120} />
+                        </div>
+
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-500 text-xs font-semibold uppercase tracking-wider w-fit mb-6">
+                            <Users size={14} />
+                            <span>Track 2</span>
+                        </div>
+
+                        <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Fill Empty Seats</h3>
+                        <p className="text-muted-foreground mb-8 leading-relaxed">
+                            Stop the bleeding. We target experienced Company Drivers with clean MVRs who are actively looking for better CPM and consistent home time.
+                        </p>
+
+                        <div className="space-y-4 mb-8">
+                            <div className="flex items-center justify-between p-4 rounded-xl bg-muted/50 border border-border">
+                                <span className="text-sm font-medium">Daily Qualified Leads</span>
+                                <span className="text-xl font-bold text-foreground">3–6</span>
+                            </div>
+                            <div className="flex items-center justify-between p-4 rounded-xl bg-muted/50 border border-border">
+                                <span className="text-sm font-medium">Candidate Quality</span>
+                                <span className="text-xl font-bold text-emerald-500">Verified</span>
+                            </div>
+                        </div>
+
+                        <ul className="space-y-3 mb-8">
+                            <li className="flex items-start gap-3 text-sm text-muted-foreground">
+                                <ChevronRight className="text-blue-500 shrink-0 mt-0.5" size={16} />
+                                <span>CDL Class A Validation</span>
+                            </li>
+                            <li className="flex items-start gap-3 text-sm text-muted-foreground">
+                                <ChevronRight className="text-blue-500 shrink-0 mt-0.5" size={16} />
+                                <span>Experience & Endorsement Filtering</span>
+                            </li>
+                            <li className="flex items-start gap-3 text-sm text-muted-foreground">
+                                <ChevronRight className="text-blue-500 shrink-0 mt-0.5" size={16} />
+                                <span>Instant Interview Scheduling</span>
+                            </li>
+                        </ul>
+
+                        <div className="mt-auto">
+                            <Link href="/drivers" className="inline-flex items-center gap-2 text-blue-500 font-semibold hover:gap-3 transition-all group/link">
+                                Learn More <ArrowRight size={16} className="group-hover/link:translate-x-1 transition-transform" />
+                            </Link>
+                        </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

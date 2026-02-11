@@ -44,7 +44,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Navbar />
-      <Hero />
+      <Hero ctaType="selection" />
       <AdvantageSection />
       <CapacityTracks />
       <SolutionSection />

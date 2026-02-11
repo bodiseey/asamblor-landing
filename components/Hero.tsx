@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView } from "framer-motion";
-import { ArrowRight, Terminal, TrendingUp, CheckCircle2, Zap, Mail, Cpu } from "lucide-react";
+import { ArrowRight, Terminal, TrendingUp, CheckCircle2, Zap, Mail, Cpu, Truck, Users, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import USMapBackground from "./USMapBackground";
@@ -68,7 +68,26 @@ const CountUp = ({ end, decimals = 0, duration = 2 }: { end: string | number, de
     return <span ref={ref}>{count.toLocaleString(undefined, { minimumFractionDigits: decimals, maximumFractionDigits: decimals })}</span>;
 };
 
-export default function Hero() {
+export default function Hero({
+    headline = (
+        <>
+            The Ultimate{" "}
+            <span className="relative inline-block md:animate-pill mx-3">
+                <span className="relative inline-block" style={{ perspective: "1000px" }}>
+                    <span className="inline-flex items-center bg-primary/5 border-primary/20 border rounded-full pt-2 pr-6 pb-2 pl-6 md:backdrop-blur-sm italic text-primary font-playfair md:animate-sway3d">
+                        Capacity
+                    </span>
+                </span>
+            </span>
+            <br className="hidden md:block" />
+            Engine for Your Fleets.
+        </>
+    ),
+    subheadline = "Scale your fleet without the friction. We automate the identification, engagement, and qualification of high-tier Owner-Operators and CDL Drivers.",
+    badgeText = "Bypass the Broker Wall",
+    badgeColor = "red",
+    ctaType = "standard"
+}: { headline?: React.ReactNode, subheadline?: string, badgeText?: string, badgeColor?: string, ctaType?: "selection" | "standard" }) {
     const [timeRange, setTimeRange] = useState("Monthly");
 
     const data = {
@@ -79,6 +98,43 @@ export default function Hero() {
 
     const currentData = data[timeRange as keyof typeof data];
 
+    interface HeroProps {
+        headline?: React.ReactNode;
+        subheadline?: string;
+        badgeText?: string;
+        badgeColor?: "red" | "blue" | "green" | "yellow";
+        ctaType?: "selection" | "standard";
+    }
+
+    const badgeStyles = {
+        red: {
+            container: "bg-red-500/10 border-red-500/20",
+            ping: "bg-red-400",
+            dot: "bg-red-500",
+            text: "text-red-500"
+        },
+        blue: {
+            container: "bg-blue-500/10 border-blue-500/20",
+            ping: "bg-blue-400",
+            dot: "bg-blue-500",
+            text: "text-blue-500"
+        },
+        green: {
+            container: "bg-green-500/10 border-green-500/20",
+            ping: "bg-green-400",
+            dot: "bg-green-500",
+            text: "text-green-500"
+        },
+        yellow: {
+            container: "bg-yellow-500/10 border-yellow-500/20",
+            ping: "bg-yellow-400",
+            dot: "bg-yellow-500",
+            text: "text-yellow-500"
+        }
+    };
+
+    const currentBadgeStyle = badgeStyles[badgeColor as keyof typeof badgeStyles] || badgeStyles.red;
+
     return (
         <section className="relative z-10 flex min-h-screen flex-col items-center justify-center overflow-hidden pt-28 pb-12">
             {/* Interactive US Map Background */}
@@ -86,59 +142,87 @@ export default function Hero() {
 
             <div className="max-w-[1200px] mx-auto px-8 text-center space-y-6 relative z-10">
                 <h1 className="text-[32px] md:text-[80px] leading-[1.1] font-bold text-foreground tracking-tight text-center md:[filter:drop-shadow(0_0_80px_rgba(0,102,255,0.45))]">
-                    The Ultimate
-                    <span className="relative inline-block md:animate-pill mx-3">
-                        <span className="relative inline-block" style={{ perspective: "1000px" }}>
-                            <span className="inline-flex items-center bg-primary/5 border-primary/20 border rounded-full pt-2 pr-6 pb-2 pl-6 md:backdrop-blur-sm italic text-primary font-playfair md:animate-sway3d">
-                                Capacity
-                            </span>
-                        </span>
-                    </span>
-                    <br className="hidden md:block" />
-                    Engine for U.S. Fleets.
+                    {headline}
                 </h1>
 
                 <p className="max-w-2xl mx-auto text-[17px] text-muted-foreground mt-6 font-light leading-relaxed">
-                    Scale your fleet without the friction. We automate the identification, engagement, and qualification of <span className="text-foreground font-medium">high-tier Owner-Operators and CDL Drivers</span>.
+                    {subheadline}
                 </p>
 
-                {/* Neon CTA */}
-                <div className="inline-flex shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05),0_20px_60px_rgba(0,0,0,0.50)] bg-background/80 dark:bg-neutral-900/80 ring-border dark:ring-white/10 ring-1 rounded-full mt-6 pt-1 pr-1 pb-1 pl-1 md:backdrop-blur-md items-center relative">
-                    {/* Neon perimeter tracers - Hidden on mobile for performance */}
-                    <svg aria-hidden="true" className="hidden md:block pointer-events-none absolute inset-0 w-full h-full" style={{ zIndex: 1, overflow: 'visible' }} preserveAspectRatio="none">
-                        <defs>
-                            <linearGradient id="aura-neon-stroke" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" stopColor="#0066FF" stopOpacity="0" />
-                                <stop offset="50%" stopColor="#0066FF" />
-                                <stop offset="100%" stopColor="#0066FF" stopOpacity="0" />
-                            </linearGradient>
-                            <filter id="aura-soft-glow" x="-50%" y="-50%" width="200%" height="200%">
-                                <feGaussianBlur stdDeviation="4" result="coloredBlur" />
-                                <feMerge>
-                                    <feMergeNode in="coloredBlur" />
-                                    <feMergeNode in="SourceGraphic" />
-                                </feMerge>
-                            </filter>
-                        </defs>
-                        <rect x="1.5" y="1.5" width="calc(100% - 3px)" height="calc(100% - 3px)" rx="49" ry="49" fill="none" stroke="url(#aura-neon-stroke)" strokeWidth="2" strokeLinecap="round" pathLength="1000" strokeDasharray="140 860" strokeDashoffset="0" style={{ vectorEffect: 'non-scaling-stroke', filter: 'url(#aura-soft-glow)', opacity: 0.9 }}>
-                            <animate attributeName="stroke-dashoffset" from="0" to="-1000" dur="3.2s" repeatCount="indefinite" />
-                        </rect>
-                        <rect x="1.5" y="1.5" width="calc(100% - 3px)" height="calc(100% - 3px)" rx="49" ry="49" fill="none" stroke="url(#aura-neon-stroke)" strokeWidth="2" strokeLinecap="round" pathLength="1000" strokeDasharray="140 860" strokeDashoffset="0" style={{ vectorEffect: 'non-scaling-stroke', filter: 'url(#aura-soft-glow)', opacity: 0.9 }}>
-                            <animate attributeName="stroke-dashoffset" from="0" to="1000" dur="3.2s" repeatCount="indefinite" />
-                        </rect>
-                    </svg>
+                {ctaType === "selection" ? (
+                    // Selection Hub Layout (Homepage)
+                    <div className="flex flex-col items-center mt-10 w-full animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
 
-                    <Link href="/#workflow" className="relative transition-colors hover:bg-white/5 ring-0 text-sm font-semibold tracking-tight rounded-full py-2.5 px-5 text-slate-400/80" style={{ zIndex: 2 }}>
-                        Telegram
-                    </Link>
+                        {/* 1. "I AM LOOKING for :" Text */}
+                        <p className="text-xs md:text-sm font-semibold text-muted-foreground uppercase tracking-[0.2em] mb-6">
+                            I am looking to recruit:
+                        </p>
 
-                    <Link href="/book" className="relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-5 py-2.5 text-sm font-semibold tracking-tight text-white bg-primary ring-1 ring-primary/30 shadow-[0_0_0_1px_rgba(0,102,255,0.25),inset_0_0_0_1px_rgba(255,255,255,0.08)] transition-all duration-300 hover:ring-primary/60 hover:shadow-[0_0_0_1px_rgba(0,102,255,0.35),0_40px_80px_rgba(0,102,255,0.18)]" style={{ zIndex: 2 }}>
-                        <span className="relative z-[1]">Kick Off Your Capacity Engine</span>
-                        <ArrowRight size={14} className="relative z-[1] text-white" />
-                        <span aria-hidden="true" className="pointer-events-none absolute inset-0 rounded-full" style={{ boxShadow: '0 0 0 1px rgba(0,102,255,0.45), 0 18px 60px rgba(0,102,255,0.25)', background: 'radial-gradient(140% 160% at 50% -20%, rgba(0,102,255,0.22) 0%, rgba(0,102,255,0.08) 35%, rgba(0,102,255,0.00) 60%)' }}></span>
-                        <span aria-hidden="true" className="pointer-events-none absolute inset-[1px] rounded-full" style={{ background: 'radial-gradient(120% 80% at 50% -20%, rgba(255,255,255,0.28) 0%, rgba(255,255,255,0.06) 55%, rgba(255,255,255,0) 60%), radial-gradient(90% 80% at 50% 120%, rgba(0,102,255,0.18) 0%, rgba(0,102,255,0) 60%)' }}></span>
-                    </Link>
-                </div>
+                        {/* 2. Centralized Button Pair */}
+                        <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 w-full max-w-xl mx-auto relative">
+
+
+
+                            {/* Button A: Owner-Operators (Primary) */}
+                            <div className="w-full relative group">
+
+
+                                <Link href="/owner-operators" className="block w-full">
+                                    <motion.button
+                                        whileHover={{ scale: 1.02 }}
+                                        whileTap={{ scale: 0.98 }}
+                                        className="w-full h-[60px] rounded-xl bg-primary text-white font-bold text-lg shadow-[0_10px_40px_-10px_rgba(0,102,255,0.5)] border border-primary/50 relative overflow-hidden flex items-center justify-center gap-3 transition-all hover:bg-primary/90"
+                                    >
+                                        <Truck size={20} />
+                                        <span>Owner-Operators</span>
+                                    </motion.button>
+                                </Link>
+                            </div>
+
+                            {/* Button B: Company Drivers (Ghost) */}
+                            <Link href="/drivers" className="block w-full">
+                                <motion.button
+                                    whileHover={{ scale: 1.02, backgroundColor: "rgba(255,255,255,0.05)" }}
+                                    whileTap={{ scale: 0.98 }}
+                                    className="w-full h-[60px] rounded-xl bg-transparent text-muted-foreground hover:text-white font-semibold text-lg border-2 border-dashed border-white/10 hover:border-white/20 relative flex items-center justify-center gap-3 transition-all"
+                                >
+                                    <Users size={20} />
+                                    <span>Company Drivers</span>
+                                </motion.button>
+                            </Link>
+
+                        </div>
+
+                        {/* Guarantee Badge - Moved below buttons to prevent overlap */}
+                        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-yellow-500/10 border border-yellow-500/20 mt-8 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-500">
+                            <ShieldCheck size={12} className="text-yellow-500" />
+                            <span className="text-[10px] font-bold text-yellow-500 uppercase tracking-wide">30-Lead Guarantee Included</span>
+                        </div>
+
+                        {/* Mobile Text for Guarantee if needed, but handled above */}
+                    </div>
+                ) : (
+                    // Standard Layout (Sub-pages)
+                    <>
+                        {/* Broker Wall / Badge Hook */}
+                        <div className={`inline-flex items-center justify-center gap-2 py-1 px-3 rounded-full ${currentBadgeStyle.container} mb-4 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-300`}>
+                            <span className="relative flex h-2 w-2">
+                                <span className={`animate-ping absolute inline-flex h-full w-full rounded-full ${currentBadgeStyle.ping} opacity-75`}></span>
+                                <span className={`relative inline-flex rounded-full h-2 w-2 ${currentBadgeStyle.dot}`}></span>
+                            </span>
+                            <span className={`text-xs font-semibold ${currentBadgeStyle.text} tracking-wide uppercase`}>{badgeText}</span>
+                        </div>
+
+                        {/* Kick Off CTA */}
+                        <div className="inline-flex mt-6 items-center relative z-20">
+                            <Link href="/book" className="relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-8 py-4 text-base font-bold tracking-tight text-white bg-primary ring-1 ring-primary/30 shadow-[0_0_0_1px_rgba(0,102,255,0.25),inset_0_0_0_1px_rgba(255,255,255,0.08)] transition-all duration-300 hover:ring-primary/60 hover:shadow-[0_0_0_1px_rgba(0,102,255,0.35),0_40px_80px_rgba(0,102,255,0.18)]">
+                                <span className="relative z-[1]">Kick Off Your Capacity Engine</span>
+                                <ArrowRight size={18} className="relative z-[1] text-white" />
+                                <span aria-hidden="true" className="pointer-events-none absolute inset-0 rounded-full" style={{ boxShadow: '0 0 0 1px rgba(0,102,255,0.45), 0 18px 60px rgba(0,102,255,0.25)', background: 'radial-gradient(140% 160% at 50% -20%, rgba(0,102,255,0.22) 0%, rgba(0,102,255,0.08) 35%, rgba(0,102,255,0.00) 60%)' }}></span>
+                            </Link>
+                        </div>
+                    </>
+                )}
             </div>
 
             <div className="relative mt-12 max-w-[1200px] mx-auto px-8 w-full">
