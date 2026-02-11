@@ -51,6 +51,7 @@ export function TeamManagement({ tenantId, currentUserId }: { tenantId: string; 
 
     useEffect(() => {
         loadTeamMembers();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [tenantId]);
 
     async function loadTeamMembers() {
@@ -230,7 +231,7 @@ export function TeamManagement({ tenantId, currentUserId }: { tenantId: string; 
                             <DialogHeader>
                                 <DialogTitle>Invite Team Member</DialogTitle>
                                 <DialogDescription>
-                                    Send an invitation to join your team. They'll receive an email with login instructions.
+                                    Send an invitation to join your team. They&apos;ll receive an email with login instructions.
                                 </DialogDescription>
                             </DialogHeader>
                             <div className="space-y-4 mt-4">
