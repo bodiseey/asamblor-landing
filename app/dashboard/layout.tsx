@@ -125,7 +125,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                                     <Menu size={20} />
                                 </Button>
                             </SheetTrigger>
-                            <SheetContent side="left" className="w-64 p-0 bg-background border-r border-border">
+                            <SheetContent side="left" className="w-64 p-0 bg-background border-r border-border flex flex-col">
                                 <div className="h-16 flex items-center px-6 border-b border-border">
                                     <span className="font-bold text-lg">Asamblor CRM</span>
                                 </div>
@@ -142,6 +142,9 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                                         </Link>
                                     ))}
                                 </nav>
+                                <div className="p-4 border-t border-border mt-auto">
+                                    <UserDropdown isCollapsed={false} />
+                                </div>
                             </SheetContent>
                         </Sheet>
                         <span className="font-bold text-lg md:hidden">CRM</span>

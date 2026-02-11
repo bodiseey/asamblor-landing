@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
@@ -19,6 +21,7 @@ interface UserProfile {
     full_name: string;
     tenant_name: string;
     initials: string;
+    avatar_url: string | null;
 }
 
 export function UserDropdown({ isCollapsed }: { isCollapsed: boolean }) {
@@ -42,6 +45,7 @@ export function UserDropdown({ isCollapsed }: { isCollapsed: boolean }) {
                 .from('profiles')
                 .select(`
                     full_name,
+                    avatar_url,
                     role,
                     tenants (
                         name
@@ -65,6 +69,7 @@ export function UserDropdown({ isCollapsed }: { isCollapsed: boolean }) {
                     full_name: fullName,
                     tenant_name: tenantName,
                     initials,
+                    avatar_url: profileData.avatar_url || null,
                 });
             }
 
@@ -89,6 +94,7 @@ export function UserDropdown({ isCollapsed }: { isCollapsed: boolean }) {
             <DropdownMenuTrigger asChild>
                 <div className={cn("flex items-center gap-3 p-2 rounded-lg hover:bg-muted cursor-pointer transition-colors w-full", isCollapsed && "justify-center p-0")}>
                     <Avatar className="h-9 w-9 border border-border">
+                        {profile.avatar_url && <AvatarImage src={profile.avatar_url} alt={profile.full_name} />}
                         <AvatarFallback className="bg-primary/10 text-primary font-semibold">
                             {profile.initials}
                         </AvatarFallback>
@@ -111,14 +117,18 @@ export function UserDropdown({ isCollapsed }: { isCollapsed: boolean }) {
                     </div>
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem className="cursor-pointer">
-                    <Users className="mr-2 h-4 w-4" />
-                    <span>Team Members</span>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">
-                    <Settings className="mr-2 h-4 w-4" />
-                    <span>Billing</span>
-                </DropdownMenuItem>
+                <Link href="/dashboard/profile">
+                    <DropdownMenuItem className="cursor-pointer">
+                        <Users className="mr-2 h-4 w-4" />
+                        <span>My Profile</span>
+                    </DropdownMenuItem>
+                </Link>
+                <Link href="/dashboard/settings">
+                    <DropdownMenuItem className="cursor-pointer">
+                        <Settings className="mr-2 h-4 w-4" />
+                        <span>Settings</span>
+                    </DropdownMenuItem>
+                </Link>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem
                     className="text-red-500 focus:text-red-500 cursor-pointer"
