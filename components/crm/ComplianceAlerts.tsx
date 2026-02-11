@@ -42,15 +42,21 @@ export function ComplianceAlerts() {
                 .limit(5)
 
             if (!error && data) {
-                const formatted = data.map((a: any) => ({
-                    id: a.id,
-                    type: a.type,
-                    severity: a.severity,
-                    message: a.message,
-                    due_date: a.due_date,
-                    driver_name: a.drivers?.people ? `${a.drivers.people.first_name} ${a.drivers.people.last_name}` : undefined,
-                    vehicle_unit: a.vehicles?.unit_number
-                }))
+                const formatted = data.map((a: any) => {
+                    const driver = Array.isArray(a.drivers) ? a.drivers[0] : a.drivers;
+                    const person = driver ? (Array.isArray(driver.people) ? driver.people[0] : driver.people) : null;
+                    const vehicle = Array.isArray(a.vehicles) ? a.vehicles[0] : a.vehicles;
+
+                    return {
+                        id: a.id,
+                        type: a.type,
+                        severity: a.severity,
+                        message: a.message,
+                        due_date: a.due_date,
+                        driver_name: person ? `${person.first_name} ${person.last_name}` : undefined,
+                        vehicle_unit: vehicle?.unit_number
+                    };
+                })
                 setAlerts(formatted)
             }
             setLoading(false)

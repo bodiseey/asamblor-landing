@@ -31,14 +31,19 @@ export function LoadMatcher({ loadId }: { loadId: string }) {
             .limit(3)
 
         if (drivers) {
-            setMatches(drivers.map((d: any) => ({
-                id: Math.random().toString(36).substr(2, 9),
-                driver_id: d.id,
-                driver_name: `${d.people.first_name} ${d.people.last_name}`,
-                vehicle_unit: d.vehicles?.unit_number || 'N/A',
-                score: Math.floor(Math.random() * (98 - 85 + 1)) + 85,
-                status: 'Pending'
-            })))
+            setMatches(drivers.map((d: any) => {
+                const person = Array.isArray(d.people) ? d.people[0] : d.people;
+                const vehicle = Array.isArray(d.vehicles) ? d.vehicles[0] : d.vehicles;
+
+                return {
+                    id: Math.random().toString(36).substr(2, 9),
+                    driver_id: d.id,
+                    driver_name: person ? `${person.first_name} ${person.last_name}` : 'Unknown',
+                    vehicle_unit: vehicle?.unit_number || 'N/A',
+                    score: Math.floor(Math.random() * (98 - 85 + 1)) + 85,
+                    status: 'Pending'
+                };
+            }))
         }
         setLoading(false)
     }

@@ -36,16 +36,21 @@ async function getData(): Promise<Driver[]> {
         return [];
     }
 
-    return (drivers || []).map(d => ({
-        id: d.id,
-        name: `${d.people?.first_name} ${d.people?.last_name}`,
-        email: d.people?.email,
-        license_number: d.license_number || 'N/A',
-        license_state: d.license_state || 'N/A',
-        status: d.status,
-        vehicle_unit: d.vehicles?.unit_number,
-        years_experience: d.years_experience || 0,
-    }));
+    return (drivers || []).map(d => {
+        const person = Array.isArray(d.people) ? d.people[0] : d.people;
+        const vehicle = Array.isArray(d.vehicles) ? d.vehicles[0] : d.vehicles;
+
+        return {
+            id: d.id,
+            name: person ? `${person.first_name || ''} ${person.last_name || ''}`.trim() : 'Unknown',
+            email: person?.email,
+            license_number: d.license_number || 'N/A',
+            license_state: d.license_state || 'N/A',
+            status: d.status,
+            vehicle_unit: vehicle?.unit_number,
+            years_experience: d.years_experience || 0,
+        };
+    });
 }
 
 export default async function DriversPage() {
