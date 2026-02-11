@@ -80,46 +80,13 @@ export function TeamManagement({ tenantId, currentUserId }: { tenantId: string; 
         }
 
         setInviting(true);
-        const supabase = createClient();
 
         try {
-            // Create a temporary password
-            const tempPassword = Math.random().toString(36).slice(-12) + 'A1!';
+            const { inviteTeamMember } = await import('@/app/dashboard/profile/actions');
+            const result = await inviteTeamMember(inviteEmail, inviteRole, tenantId);
 
-            // Create the user in Supabase Auth
-            const { data: authData, error: authError } = await supabase.auth.admin.createUser({
-                email: inviteEmail,
-                password: tempPassword,
-                email_confirm: true,
-                user_metadata: {
-                    tenant_id: tenantId,
-                    role: inviteRole,
-                }
-            });
-
-            if (authError) {
-                // If user already exists, just add them to the tenant
-                console.log('User might already exist, trying to add to tenant...');
-
-                // For now, show error - in production you'd handle this differently
-                throw new Error('User already exists or invitation failed. Please contact support.');
-            }
-
-            // The database trigger should create the profile automatically
-            // But let's verify and create if needed
-            if (authData.user) {
-                const { error: profileError } = await supabase
-                    .from('profiles')
-                    .upsert({
-                        id: authData.user.id,
-                        tenant_id: tenantId,
-                        full_name: inviteEmail.split('@')[0],
-                        role: inviteRole,
-                    });
-
-                if (profileError) {
-                    console.error('Profile creation error:', profileError);
-                }
+            if (!result.success) {
+                throw new Error('Invitation failed');
             }
 
             toast.success(`Invitation sent to ${inviteEmail}!`);
