@@ -85,26 +85,41 @@ export default function ProfilePage() {
         const supabase = createClient();
 
         try {
+            console.log('Updating profile...', { fullName, avatarUrl });
+
             // Update profile
-            const { error: profileError } = await supabase
+            const { data: profileData, error: profileError } = await supabase
                 .from('profiles')
                 .update({
                     full_name: fullName,
                     avatar_url: avatarUrl,
                 })
-                .eq('id', profile.id);
+                .eq('id', profile.id)
+                .select();
 
-            if (profileError) throw profileError;
+            if (profileError) {
+                console.error('Profile update error:', profileError);
+                throw new Error(`Profile update failed: ${profileError.message}`);
+            }
+
+            console.log('Profile updated:', profileData);
+            console.log('Updating tenant...', { companyName });
 
             // Update tenant
-            const { error: tenantError } = await supabase
+            const { data: tenantData, error: tenantError } = await supabase
                 .from('tenants')
                 .update({
                     name: companyName,
                 })
-                .eq('id', profile.tenant_id);
+                .eq('id', profile.tenant_id)
+                .select();
 
-            if (tenantError) throw tenantError;
+            if (tenantError) {
+                console.error('Tenant update error:', tenantError);
+                throw new Error(`Company update failed: ${tenantError.message}`);
+            }
+
+            console.log('Tenant updated:', tenantData);
 
             toast.success('Profile updated successfully!');
             await loadProfile(); // Reload to get fresh data
