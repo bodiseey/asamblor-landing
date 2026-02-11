@@ -15,6 +15,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { createClient } from "@/util/supabase/client";
 import { ActivityTimeline } from "@/components/crm/ActivityTimeline";
+import { ComplianceAlerts } from "@/components/crm/ComplianceAlerts";
 
 export default function DashboardPage() {
     const [stats, setStats] = useState({
@@ -127,27 +128,39 @@ export default function DashboardPage() {
                 </Card>
             </div>
 
-            {/* Recent Activity / Charts Placeholder */}
-            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
-                <Card className="col-span-4 glass-card">
+            {/* Main Operations Grid */}
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-12">
+                {/* Performance Chart */}
+                <Card className="lg:col-span-6 glass-card border-none shadow-2xl">
                     <CardHeader>
-                        <CardTitle>Fleet Performance</CardTitle>
-                        <CardDescription>
-                            Capacity utilization vs active loads.
-                        </CardDescription>
+                        <CardTitle className="text-lg font-bold">Fleet Utilization</CardTitle>
+                        <CardDescription>Capacity vs load demand over time.</CardDescription>
                     </CardHeader>
                     <CardContent className="pl-2">
-                        <div className="h-[400px] w-full bg-primary/5 rounded-lg flex items-center justify-center border border-dashed border-primary/20 text-muted-foreground">
-                            Analytics Visualization
+                        <div className="h-[400px] w-full bg-primary/5 rounded-2xl flex items-center justify-center border border-dashed border-primary/20 text-muted-foreground">
+                            Chart Visualization
                         </div>
                     </CardContent>
                 </Card>
-                <Card className="col-span-3 glass-card">
+
+                {/* Compliance Center */}
+                <Card className="lg:col-span-3 glass-card border-none shadow-xl">
                     <CardHeader>
-                        <CardTitle>Global Activity</CardTitle>
-                        <CardDescription>
-                            Real-time outreach & operation updates.
-                        </CardDescription>
+                        <CardTitle className="text-lg font-bold flex items-center gap-2">
+                            Compliance
+                        </CardTitle>
+                        <CardDescription>Certifications & safety alerts.</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                        <ComplianceAlerts />
+                    </CardContent>
+                </Card>
+
+                {/* Global Timeline */}
+                <Card className="lg:col-span-3 glass-card border-none shadow-xl">
+                    <CardHeader>
+                        <CardTitle className="text-lg font-bold">Activity</CardTitle>
+                        <CardDescription>Real-time operations stream.</CardDescription>
                     </CardHeader>
                     <CardContent>
                         <ActivityTimeline limit={6} />

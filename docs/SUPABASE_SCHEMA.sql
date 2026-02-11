@@ -246,7 +246,57 @@ CREATE POLICY "Tenant isolation" ON notes FOR ALL USING (tenant_id = get_current
 CREATE POLICY "Tenant isolation" ON activities FOR ALL USING (tenant_id = get_current_tenant_id());
 CREATE POLICY "Tenant isolation" ON integrations FOR ALL USING (tenant_id = get_current_tenant_id());
 
--- 12. Automated Infrastructure Triggers
+-- 11. Specialized Object: COMPLIANCE ALERTS
+CREATE TABLE compliance_alerts (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    tenant_id UUID REFERENCES tenants(id) ON DELETE CASCADE NOT NULL,
+    driver_id UUID REFERENCES drivers(id) ON DELETE CASCADE,
+    vehicle_id UUID REFERENCES vehicles(id) ON DELETE CASCADE,
+    type TEXT NOT NULL, -- License, Medical, Inspection, Insurance
+    severity TEXT DEFAULT 'Warning', -- Info, Warning, Critical
+    message TEXT NOT NULL,
+    due_date DATE NOT NULL,
+    resolved_at TIMESTAMP WITH TIME ZONE,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- 12. Specialized Logic: LOAD MATCHES (Automated Dispatch)
+CREATE TABLE load_matches (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    tenant_id UUID REFERENCES tenants(id) ON DELETE CASCADE NOT NULL,
+    load_id UUID REFERENCES loads(id) ON DELETE CASCADE,
+    driver_id UUID REFERENCES drivers(id) ON DELETE CASCADE,
+    score INTEGER NOT NULL, -- 0-100 logic (distance + equipment match)
+    status TEXT DEFAULT 'Pending', -- Pending, Accepted, Rejected
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- 13. Function to check compliance on update
+CREATE OR REPLACE FUNCTION check_compliance_expiration()
+RETURNS TRIGGER AS $$
+BEGIN
+    -- For Drivers
+    IF TG_TABLE_NAME = 'drivers' THEN
+        IF NEW.license_expiration < (CURRENT_DATE + INTERVAL '30 days') THEN
+            INSERT INTO compliance_alerts (tenant_id, driver_id, type, severity, message, due_date)
+            VALUES (NEW.tenant_id, NEW.id, 'License', 'Critical', 'CDL Expiring soon', NEW.license_expiration);
+        END IF;
+    END IF;
+    -- For Vehicles
+    IF TG_TABLE_NAME = 'vehicles' THEN
+        IF NEW.last_inspection_date < (CURRENT_DATE - INTERVAL '335 days') THEN
+            INSERT INTO compliance_alerts (tenant_id, vehicle_id, type, severity, message, due_date)
+            VALUES (NEW.tenant_id, NEW.id, 'Inspection', 'Warning', 'Annual inspection due', NEW.last_inspection_date + INTERVAL '1 year');
+        END IF;
+    END IF;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER tr_driver_compliance AFTER INSERT OR UPDATE ON drivers FOR EACH ROW EXECUTE FUNCTION check_compliance_expiration();
+CREATE TRIGGER tr_vehicle_compliance AFTER INSERT OR UPDATE ON vehicles FOR EACH ROW EXECUTE FUNCTION check_compliance_expiration();
+
+-- 14. Automated Infrastructure Triggers
 -- Seed default Metadata and Pipeline Stages for every new Tenant
 CREATE OR REPLACE FUNCTION initialize_tenant_metadata()
 RETURNS TRIGGER AS $$

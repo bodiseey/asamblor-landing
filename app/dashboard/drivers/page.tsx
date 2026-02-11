@@ -2,7 +2,9 @@ import { createClient } from '@/util/supabase/server';
 import { columns, Driver } from "./columns";
 import { DataTable } from "@/components/ui/data-table";
 import { Button } from "@/components/ui/button";
-import { Plus, Download, UserPlus } from "lucide-react";
+import { Plus, Download, UserPlus, ShieldAlert } from "lucide-react";
+import { ComplianceAlerts } from "@/components/crm/ComplianceAlerts";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
 async function getData(): Promise<Driver[]> {
     const supabase = createClient();
@@ -70,23 +72,41 @@ export default async function DriversPage() {
                 </div>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-3">
-                <div className="glass-card rounded-xl p-4 border-l-4 border-l-emerald-500">
-                    <div className="text-xs font-medium text-muted-foreground uppercase">Active Drivers</div>
-                    <div className="text-2xl font-bold mt-1">{data.filter(d => d.status === 'Active').length}</div>
-                </div>
-                <div className="glass-card rounded-xl p-4 border-l-4 border-l-blue-500">
-                    <div className="text-xs font-medium text-muted-foreground uppercase">Fully Dispatched</div>
-                    <div className="text-2xl font-bold mt-1">{data.filter(d => d.status === 'Active' && d.vehicle_unit).length}</div>
-                </div>
-                <div className="glass-card rounded-xl p-4 border-l-4 border-l-yellow-500">
-                    <div className="text-xs font-medium text-muted-foreground uppercase">Pending Assignment</div>
-                    <div className="text-2xl font-bold mt-1">{data.filter(d => !d.vehicle_unit).length}</div>
-                </div>
-            </div>
+            <div className="grid gap-6 md:grid-cols-12">
+                <div className="md:col-span-8 space-y-6">
+                    <div className="grid gap-4 md:grid-cols-3">
+                        <div className="glass-card rounded-xl p-4 border-l-4 border-l-emerald-500 shadow-lg">
+                            <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">Active</div>
+                            <div className="text-2xl font-bold mt-1">{data.filter(d => d.status === 'Active').length}</div>
+                        </div>
+                        <div className="glass-card rounded-xl p-4 border-l-4 border-l-blue-500 shadow-lg">
+                            <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">Dispatched</div>
+                            <div className="text-2xl font-bold mt-1">{data.filter(d => d.status === 'Active' && d.vehicle_unit).length}</div>
+                        </div>
+                        <div className="glass-card rounded-xl p-4 border-l-4 border-l-yellow-500 shadow-lg">
+                            <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">Floating</div>
+                            <div className="text-2xl font-bold mt-1">{data.filter(d => !d.vehicle_unit).length}</div>
+                        </div>
+                    </div>
 
-            <div className="glass-card rounded-2xl p-6">
-                <DataTable columns={columns} data={data} searchPlaceholder="Search driver name, license..." />
+                    <div className="glass-card rounded-2xl p-6 shadow-2xl border-none">
+                        <DataTable columns={columns} data={data} searchKey="name" />
+                    </div>
+                </div>
+
+                <div className="md:col-span-4">
+                    <Card className="glass-card border-none shadow-2xl sticky top-24">
+                        <CardHeader>
+                            <CardTitle className="text-lg font-bold flex items-center gap-2">
+                                <ShieldAlert size={18} className="text-amber-500" />
+                                Safety & Licensing
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                            <ComplianceAlerts />
+                        </CardContent>
+                    </Card>
+                </div>
             </div>
         </div>
     );
