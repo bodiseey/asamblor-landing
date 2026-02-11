@@ -50,13 +50,13 @@ export default function Footer() {
                             <div className="absolute -inset-2 bg-gradient-to-r from-emerald-500/10 to-blue-500/10 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity" />
                             <div className="relative flex items-center justify-between p-3 rounded-xl bg-muted/50 border border-border backdrop-blur-sm overflow-hidden min-w-[180px]">
                                 <div className="flex flex-col gap-0.5">
-                                    <span className="text-[10px] text-muted-foreground font-mono tracking-widest uppercase">Global Status</span>
+                                    <span className="text-[10px] text-muted-foreground font-mono tracking-widest uppercase">CRM Infrastructure</span>
                                     <div className="flex items-center gap-2">
                                         <div className="relative flex h-2 w-2">
-                                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]"></span>
+                                            <span className="animate-pulse absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                                            <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.8)]"></span>
                                         </div>
-                                        <span className="text-emerald-400 font-bold text-xs font-mono">SYSTEMS OPERATIONAL</span>
+                                        <span className="text-amber-400 font-bold text-xs font-mono uppercase">System in construction</span>
                                     </div>
                                 </div>
                                 <div className="h-6 w-px bg-white/10 mx-2" />

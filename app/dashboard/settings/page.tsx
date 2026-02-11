@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Copy, Eye, EyeOff, Save, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -102,7 +103,20 @@ export default function SettingsPage() {
                 </CardFooter>
             </Card>
 
-            {/* Team Settings Placeholder */}
+            {/* Infrastructure Status */}
+            <Card className="border-amber-500/20 bg-amber-500/5">
+                <CardHeader>
+                    <CardTitle className="text-amber-500 flex items-center gap-2">
+                        <div className="h-2 w-2 rounded-full bg-amber-500 animate-pulse" />
+                        Infrastructure Status
+                    </CardTitle>
+                    <CardDescription>
+                        Core Infrastructure for CRM is currently: <span className="text-amber-500 font-bold uppercase">System in construction</span>
+                    </CardDescription>
+                </CardHeader>
+            </Card>
+
+            {/* Team Settings */}
             <Card>
                 <CardHeader>
                     <CardTitle>Team Members</CardTitle>
@@ -111,8 +125,11 @@ export default function SettingsPage() {
                     </CardDescription>
                 </CardHeader>
                 <CardContent>
-                    <div className="text-sm text-muted-foreground py-4 text-center border-2 border-dashed rounded-lg">
-                        Team management coming soon.
+                    <div className="text-sm text-muted-foreground py-6 text-center border-2 border-dashed rounded-lg bg-muted/20">
+                        <p className="mb-4 text-muted-foreground">Team management has moved to the Profile page.</p>
+                        <Link href="/dashboard/profile">
+                            <Button variant="outline" size="sm">Go to Team Management</Button>
+                        </Link>
                     </div>
                 </CardContent>
             </Card>

@@ -53,12 +53,22 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             >
                 <div className={cn("h-16 flex items-center px-4 border-b border-border transition-all", iscollapsed ? "justify-center" : "justify-between")}>
                     {!iscollapsed && (
-                        <span className="font-bold text-xl tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
-                            Asamblor
-                        </span>
+                        <Link href="/dashboard" className="flex items-center gap-2">
+                            <img
+                                src="/logo.png"
+                                alt="Asamblor Logo"
+                                className="h-7 w-auto object-contain"
+                            />
+                        </Link>
                     )}
                     {iscollapsed && (
-                        <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center font-bold text-primary">A</div>
+                        <Link href="/dashboard">
+                            <img
+                                src="/logo.png"
+                                alt="A"
+                                className="h-6 w-auto object-contain"
+                            />
+                        </Link>
                     )}
                     <Button
                         variant="ghost"
@@ -127,7 +137,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                             </SheetTrigger>
                             <SheetContent side="left" className="w-64 p-0 bg-background border-r border-border flex flex-col">
                                 <div className="h-16 flex items-center px-6 border-b border-border">
-                                    <span className="font-bold text-lg">Asamblor CRM</span>
+                                    <img src="/logo.png" alt="Asamblor Logo" className="h-6 w-auto" />
                                 </div>
                                 <nav className="flex-1 py-6 px-4 space-y-2">
                                     {sidebarItems.map((item) => (
@@ -147,7 +157,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                                 </div>
                             </SheetContent>
                         </Sheet>
-                        <span className="font-bold text-lg md:hidden">CRM</span>
+                        <img src="/logo.png" alt="Logo" className="h-5 w-auto md:hidden" />
                     </div>
 
                     {/* Desktop Search / Actions */}

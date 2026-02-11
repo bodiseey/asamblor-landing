@@ -20,6 +20,10 @@ export default function DashboardPage() {
                     <p className="text-muted-foreground">Overview of your recruitment pipeline.</p>
                 </div>
                 <div className="flex items-center gap-2">
+                    <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 text-xs font-medium animate-pulse">
+                        <div className="h-1.5 w-1.5 rounded-full bg-amber-500" />
+                        SYSTEM IN CONSTRUCTION
+                    </div>
                     <Button variant="outline" size="sm" className="hidden sm:flex">
                         <CalendarCheck className="mr-2 h-4 w-4" />
                         Last 30 Days
