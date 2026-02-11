@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import {
     DndContext,
@@ -15,17 +15,20 @@ import {
 } from "@dnd-kit/core";
 import { SortableContext, arrayMove, useSortable, verticalListSortingStrategy } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { MoreHorizontal, Plus } from "lucide-react";
+import { MoreHorizontal, Plus, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { createClient } from "@/lib/supabase/client";
+import { toast } from "sonner";
 
 // Types
-export type Id = string | number;
+export type Id = string;
 
 export type Column = {
     id: Id;
     title: string;
+    position: number;
 };
 
 export type Task = {
@@ -34,30 +37,110 @@ export type Task = {
     content: string;
     source: string;
     value: string;
+    leadId: string;
 };
 
-// Initial Data
-const defaultCols: Column[] = [
-    { id: "New", title: "New Lead" },
-    { id: "Contacted", title: "Contacted" },
-    { id: "Qualified", title: "Qualified" },
-    { id: "Negotiation", title: "Interview" },
-    { id: "Won", title: "Hired" },
-];
-
-const initialTasks: Task[] = [
-    { id: "1", columnId: "New", content: "John Doe - CDL A", source: "Facebook", value: "$1,500" },
-    { id: "2", columnId: "New", content: "Mike Smith - Flatbed", source: "Google", value: "$1,500" },
-    { id: "3", columnId: "Contacted", content: "Jane Doe - Reefer", source: "LinkedIn", value: "$3,000" },
-    { id: "4", columnId: "Qualified", content: "Robert Johnson", source: "Referral", value: "$5,000" },
-    { id: "5", columnId: "Negotiation", content: "Emily Davis", source: "Indeed", value: "$2,200" },
-];
-
 export default function KanbanBoard() {
-    const [columns, setColumns] = useState<Column[]>(defaultCols);
-    const [tasks, setTasks] = useState<Task[]>(initialTasks);
+    const [columns, setColumns] = useState<Column[]>([]);
+    const [tasks, setTasks] = useState<Task[]>([]);
     const [activeColumn, setActiveColumn] = useState<Column | null>(null);
     const [activeTask, setActiveTask] = useState<Task | null>(null);
+    const [loading, setLoading] = useState(true);
+
+    const supabase = createClient();
+
+    useEffect(() => {
+        fetchData();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    const fetchData = async () => {
+        setLoading(true);
+        try {
+            // 1. Fetch Stages
+            const { data: stages, error: stagesError } = await supabase
+                .from('pipeline_stages')
+                .select('*')
+                .order('position', { ascending: true });
+
+            if (stagesError) throw stagesError;
+
+            // 2. Fetch Opportunities with People (Standard Object)
+            const { data: opps, error: oppsError } = await supabase
+                .from('opportunities')
+                .select(`
+                    id,
+                    stage_id,
+                    name,
+                    amount_value,
+                    people (
+                        id,
+                        source,
+                        first_name,
+                        last_name
+                    )
+                `);
+
+            if (oppsError) throw oppsError;
+
+            setColumns(stages.map(s => ({
+                id: s.id,
+                title: s.name,
+                position: s.position
+            })));
+
+            setTasks(opps.map(o => ({
+                id: o.id,
+                columnId: o.stage_id,
+                content: o.name || `${(o.people as any)?.first_name} ${(o.people as any)?.last_name}`,
+                source: (o.people as any)?.source || 'Manual',
+                value: o.amount_value ? `$${o.amount_value.toLocaleString()}` : '$0',
+                leadId: (o.people as any)?.id
+            })));
+        } catch (error: any) {
+            console.error('Error fetching pipeline data:', error);
+            toast.error("Failed to load pipeline data");
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const updateOpportunityStage = async (oppId: Id, stageId: Id) => {
+        try {
+            const { error } = await supabase
+                .from('opportunities')
+                .update({ stage_id: stageId, updated_at: new Date().toISOString() })
+                .eq('id', oppId);
+
+            if (error) throw error;
+
+            // Also update the Person's status to match the stage name
+            const stageName = columns.find(c => c.id === stageId)?.title;
+            const opp = tasks.find(t => t.id === oppId);
+
+            if (stageName && opp?.leadId) {
+                await supabase
+                    .from('people')
+                    .update({ status: stageName, updated_at: new Date().toISOString() })
+                    .eq('id', opp.leadId);
+
+                // Add an activity for the status change (Twenty style)
+                await supabase
+                    .from('activities')
+                    .insert({
+                        person_id: opp.leadId,
+                        type: 'status_change',
+                        title: `Pipeline Stage Updated: ${stageName}`,
+                        content: `Opportunity moved to ${stageName}`
+                    });
+            }
+        } catch (error: any) {
+            console.error('Error updating stage:', error);
+            toast.error("Failed to update stage in database");
+            // Revert on failure
+            fetchData();
+        }
+    };
 
     const sensors = useSensors(
         useSensor(PointerSensor, {
@@ -107,8 +190,8 @@ export default function KanbanBoard() {
         const { active, over } = event;
         if (!over) return;
 
-        const activeId = active.id;
-        const overId = over.id;
+        const activeId = active.id as string;
+        const overId = over.id as string;
 
         if (activeId === overId) return;
 
@@ -147,13 +230,37 @@ export default function KanbanBoard() {
         }
     }
 
+    if (loading) {
+        return (
+            <div className="flex h-[400px] w-full items-center justify-center">
+                <Loader2 className="h-8 w-8 animate-spin text-primary" />
+                <span className="ml-2 text-muted-foreground">Loading pipeline...</span>
+            </div>
+        );
+    }
+
+    if (columns.length === 0) {
+        return (
+            <div className="flex h-[400px] w-full flex-col items-center justify-center border-2 border-dashed rounded-xl">
+                <p className="text-muted-foreground italic">No pipeline stages configured.</p>
+                <Button variant="outline" className="mt-4" onClick={fetchData}>Retry</Button>
+            </div>
+        );
+    }
+
     return (
         <div className="flex h-[80vh] w-full items-start gap-4 overflow-x-auto overflow-y-hidden pb-4">
             <DndContext
                 sensors={sensors}
                 collisionDetection={closestCorners}
                 onDragStart={onDragStart}
-                onDragEnd={onDragEnd}
+                onDragEnd={(event) => {
+                    onDragEnd(event);
+                    const { active, over } = event;
+                    if (over && active.data.current?.type === "Task") {
+                        updateOpportunityStage(active.id as string, over.id as string);
+                    }
+                }}
                 onDragOver={onDragOver}
             >
                 <div className="flex gap-4">

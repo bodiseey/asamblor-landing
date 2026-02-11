@@ -1,50 +1,45 @@
-import { Lead, columns } from "./columns"
+import { Person, columns } from "./columns"
 import { DataTable } from "@/components/ui/data-table"
+import { createClient } from "@/lib/supabase/server"
 
-async function getData(): Promise<Lead[]> {
-    // Mock data for MVP
-    return [
-        {
-            id: "728ed52f",
-            name: "John Smith",
-            email: "m@example.com",
-            status: "New",
-            source: "Facebook Ads",
-            lastContact: "2023-01-23"
-        },
-        {
-            id: "489e1d42",
-            name: "Sarah Connors",
-            email: "sarah@example.com",
-            status: "Qualified",
-            source: "Google Search",
-            lastContact: "2023-02-14"
-        },
-        {
-            id: "d9e1c2a1",
-            name: "Mike Ross",
-            email: "mike.ross@pearson.com",
-            status: "Contacted",
-            source: "Referral",
-            lastContact: "2023-03-01"
-        },
-        {
-            id: "b2a3c4d5",
-            name: "Harvey Specter",
-            email: "harvey@specter.com",
-            status: "Closed",
-            source: "LinkedIn",
-            lastContact: "2023-03-05"
-        },
-        {
-            id: "e5f6g7h8",
-            name: "Donna Paulsen",
-            email: "donna@pearson.com",
-            status: "Qualified",
-            source: "Internal",
-            lastContact: "2023-03-10"
-        },
-    ]
+async function getData(): Promise<Person[]> {
+    const supabase = createClient();
+
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) return [];
+
+    const { data: people, error } = await supabase
+        .from('people')
+        .select(`
+            id,
+            first_name,
+            last_name,
+            email,
+            job_title,
+            status,
+            source,
+            last_activity_at,
+            companies (
+                name
+            )
+        `)
+        .order('created_at', { ascending: false });
+
+    if (error) {
+        console.error('Error fetching people:', error);
+        return [];
+    }
+
+    return people.map(p => ({
+        id: p.id,
+        name: `${p.first_name || ''} ${p.last_name || ''}`.trim() || p.email.split('@')[0],
+        email: p.email,
+        job_title: p.job_title || undefined,
+        company: (p.companies as any)?.name || undefined,
+        status: p.status || 'New',
+        source: p.source || 'Manual',
+        last_activity_at: p.last_activity_at
+    }));
 }
 
 export default async function ContactsPage() {
@@ -53,8 +48,8 @@ export default async function ContactsPage() {
     return (
         <div className="space-y-8">
             <div>
-                <h2 className="text-3xl font-bold tracking-tight">Contacts</h2>
-                <p className="text-muted-foreground">Manage your leads and driver database.</p>
+                <h2 className="text-3xl font-bold tracking-tight">People</h2>
+                <p className="text-muted-foreground">Manage your relationships and driver database.</p>
             </div>
             <DataTable columns={columns} data={data} searchKey="name" />
         </div>

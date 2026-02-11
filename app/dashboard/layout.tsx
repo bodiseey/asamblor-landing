@@ -25,7 +25,7 @@ import { UserDropdown } from "@/components/dashboard/user-dropdown";
 
 const sidebarItems = [
     { icon: LayoutDashboard, label: "Dashboard", href: "/dashboard" },
-    { icon: Users, label: "Contacts", href: "/dashboard/contacts" },
+    { icon: Users, label: "People", href: "/dashboard/contacts" },
     { icon: KanbanSquare, label: "Opportunities", href: "/dashboard/pipeline" },
     { icon: CalendarDays, label: "Calendar", href: "/dashboard/calendar" },
     { icon: Settings, label: "Settings", href: "/dashboard/settings" },
@@ -165,7 +165,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                         <div className="relative w-full max-w-md">
                             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground h-4 w-4" />
                             <Input
-                                placeholder="Search leads, opportunities..."
+                                placeholder="Search people, opportunities..."
                                 className="pl-10 bg-muted/30 border-border focus:bg-background transition-all rounded-lg h-9"
                             />
                         </div>
@@ -179,7 +179,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                         <Separator orientation="vertical" className="h-6 mx-1" />
                         <Button size="sm" className="hidden md:flex gap-2 rounded-lg font-medium shadow-lg shadow-primary/20">
                             <Plus size={16} />
-                            <span>New Lead</span>
+                            <span>New Person</span>
                         </Button>
                     </div>
                 </header>

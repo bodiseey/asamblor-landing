@@ -40,3 +40,6 @@ next-env.d.ts
 .upm/
 .replit
 replit.nix
+
+# twenty reference
+twenty_reference/

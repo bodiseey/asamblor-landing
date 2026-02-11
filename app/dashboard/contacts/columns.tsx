@@ -15,16 +15,19 @@ import {
 import { Checkbox } from "@/components/ui/checkbox"
 import { Badge } from "@/components/ui/badge"
 
-export type Lead = {
+export type Person = {
     id: string
     name: string
     email: string
-    status: "New" | "Contacted" | "Qualified" | "Closed" | "Lost"
+    job_title?: string
+    company?: string
+    status: string
     source: string
-    lastContact: string
+    last_activity_at: string | null
+    last_activity_type?: string
 }
 
-export const columns: ColumnDef<Lead>[] = [
+export const columns: ColumnDef<Person>[] = [
     {
         id: "select",
         header: ({ table }) => (
@@ -85,12 +88,32 @@ export const columns: ColumnDef<Lead>[] = [
         header: "Email",
     },
     {
+        accessorKey: "company",
+        header: "Company",
+    },
+    {
+        accessorKey: "job_title",
+        header: "Job Title",
+    },
+    {
         accessorKey: "source",
         header: "Source",
     },
     {
-        accessorKey: "lastContact",
-        header: "Last Contact",
+        accessorKey: "last_activity_at",
+        header: "Last Activity",
+        cell: ({ row }) => {
+            const date = row.getValue("last_activity_at") as string;
+            const type = row.original.last_activity_type;
+            if (!date) return <span className="text-muted-foreground text-xs">No activity</span>;
+
+            return (
+                <div className="flex flex-col">
+                    <span className="text-xs font-medium">{new Date(date).toLocaleDateString()}</span>
+                    {type && <span className="text-[10px] text-muted-foreground uppercase">{type}</span>}
+                </div>
+            );
+        }
     },
     {
         id: "actions",

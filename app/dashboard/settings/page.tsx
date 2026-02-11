@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Copy, Eye, EyeOff, Save, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -9,22 +9,72 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { toast } from "sonner";
+import { createClient } from "@/lib/supabase/client";
 
 export default function SettingsPage() {
     const [apiKey, setApiKey] = useState("");
     const [showKey, setShowKey] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+    const [tenantId, setTenantId] = useState<string | null>(null);
 
-    // Mock Webhook URL - in prod this comes from DB
-    const webhookUrl = "https://dash.asamblor.com/api/webhooks/instantly/728ed52f-uuid-v4";
+    const supabase = createClient();
+
+    useEffect(() => {
+        loadSettings();
+    }, []);
+
+    const loadSettings = async () => {
+        const { data: { user } } = await supabase.auth.getUser();
+        if (!user) return;
+
+        const { data: profile } = await supabase
+            .from('profiles')
+            .select('tenant_id')
+            .eq('id', user.id)
+            .single();
+
+        if (profile?.tenant_id) {
+            setTenantId(profile.tenant_id);
+            const { data: integration } = await supabase
+                .from('integrations')
+                .select('api_key')
+                .eq('tenant_id', profile.tenant_id)
+                .eq('provider', 'instantly')
+                .maybeSingle();
+
+            if (integration?.api_key) {
+                setApiKey(integration.api_key);
+            }
+        }
+    };
+
+    // Construct Webhook URL
+    const webhookUrl = tenantId
+        ? `https://dash.asamblor.com/api/webhooks/instantly`
+        : "Loading...";
 
     const handleSave = async () => {
+        if (!tenantId) return;
         setIsLoading(true);
-        // Simulate API call
-        setTimeout(() => {
-            setIsLoading(false);
+
+        try {
+            const { error } = await supabase
+                .from('integrations')
+                .upsert({
+                    tenant_id: tenantId,
+                    provider: 'instantly',
+                    api_key: apiKey,
+                    updated_at: new Date().toISOString()
+                }, { onConflict: 'tenant_id,provider' });
+
+            if (error) throw error;
             toast.success("Instantly API Key saved successfully.");
-        }, 1500);
+        } catch (error: any) {
+            console.error('Save error:', error);
+            toast.error("Failed to save settings");
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     const copyWebhook = () => {

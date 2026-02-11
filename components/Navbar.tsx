@@ -63,11 +63,6 @@ export default function Navbar() {
                 {/* CTA & Actions */}
                 <div className="flex items-center gap-4">
                     <div className="hidden md:flex items-center gap-3">
-                        <Link href="/login">
-                            <button className="bg-secondary hover:bg-secondary/80 text-secondary-foreground px-4 py-2 rounded-full text-sm font-medium transition-all">
-                                Login
-                            </button>
-                        </Link>
                         <Link href="/book">
                             <button className="bg-primary hover:bg-primary/90 text-primary-foreground px-4 py-2 rounded-full text-sm font-medium transition-all shadow-lg shadow-primary/20">
                                 Book an Appointment
