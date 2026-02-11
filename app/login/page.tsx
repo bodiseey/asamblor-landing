@@ -14,12 +14,16 @@ import { login, signInWithGoogle } from "@/app/auth/actions";
 function LoginForm() {
     const searchParams = useSearchParams();
     const error = searchParams.get('error');
+    const message = searchParams.get('message');
 
     useEffect(() => {
         if (error) {
             toast.error(error);
         }
-    }, [error]);
+        if (message) {
+            toast.success(message);
+        }
+    }, [error, message]);
 
     return (
         <Card className="w-full max-w-md border-border/50 bg-card/50 backdrop-blur-xl">

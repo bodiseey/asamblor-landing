@@ -30,30 +30,30 @@ export async function signup(formData: FormData) {
     const password = formData.get('password') as string
     const companyName = formData.get('companyName') as string
 
-    // 1. Sign up the user
+    // 1. Sign up the user with metadata
     const { data: authData, error: authError } = await supabase.auth.signUp({
         email,
         password,
+        options: {
+            data: {
+                company_name: companyName,
+                full_name: email.split('@')[0], // Use email prefix as default name
+            },
+        },
     })
 
     if (authError) {
-        redirect('/login?error=Could%20not%20create%20user')
+        console.error('Signup error:', authError)
+        redirect('/register?error=' + encodeURIComponent(authError.message))
     }
 
-    // 2. Create the tenant and profile manually (since we bypass typical RLS on signup)
-    // Note: In a real app, this should be a stored procedure or edge function to ensure atomicity.
-    // For MVP, we'll rely on the client-side/server-side logic post-signup or Supabase Trigger.
+    // Check if email confirmation is required
+    if (authData.user && !authData.session) {
+        // Email confirmation required
+        redirect('/login?message=Check%20your%20email%20to%20confirm%20your%20account')
+    }
 
-    // Since we are server-side here, we can use the service role key to insert tenant if needed, 
-    // but for simplicity let's stick to standard flow or assume trigger handles profile creation.
-
-    // Actually, let's just redirect to a setup page or dashboard where they can complete profile.
-    // Or better, let's trigger a server action to create the tenant.
-
-    // If we can't easily switch to service role here without exposing keys, we rely on the Trigger in SQL.
-    // The SQL script provided earlier had a placeholder for the trigger.
-    // Let's assume the user is created and they will be redirected to verify email.
-
+    // If session exists, user is logged in (email confirmation disabled)
     revalidatePath('/', 'layout')
     redirect('/dashboard')
 }
