@@ -42,8 +42,8 @@ export async function middleware(request: NextRequest) {
         return NextResponse.redirect(new URL('/login', request.url))
     }
 
-    // Redirect Authed User from Login to Dashboard
-    if (path === '/login' && user) {
+    // Redirect Authed User from Login/Register/Home to Dashboard
+    if ((path === '/login' || path === '/register' || path === '/') && user) {
         return NextResponse.redirect(new URL('/dashboard', request.url))
     }
 

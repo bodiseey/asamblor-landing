@@ -146,7 +146,13 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                                 <span>Billing</span>
                             </DropdownMenuItem>
                             <DropdownMenuSeparator />
-                            <DropdownMenuItem className="text-red-500 focus:text-red-500 cursor-pointer">
+                            <DropdownMenuItem
+                                className="text-red-500 focus:text-red-500 cursor-pointer"
+                                onClick={async () => {
+                                    const { logout } = await import('@/app/auth/actions');
+                                    await logout();
+                                }}
+                            >
                                 <LogOut className="mr-2 h-4 w-4" />
                                 <span>Log out</span>
                             </DropdownMenuItem>
