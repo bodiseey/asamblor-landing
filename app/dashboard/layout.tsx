@@ -9,29 +9,19 @@ import {
     KanbanSquare,
     CalendarDays,
     Settings,
-    LogOut,
     Menu,
     ChevronLeft,
     ChevronRight,
     Search,
     Bell,
     Plus,
-    X
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
+import { UserDropdown } from "@/components/dashboard/user-dropdown";
 
 const sidebarItems = [
     { icon: LayoutDashboard, label: "Dashboard", href: "/dashboard" },
@@ -118,46 +108,9 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                     })}
                 </nav>
 
+
                 <div className="p-4 border-t border-border mt-auto w-full">
-                    <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                            <div className={cn("flex items-center gap-3 p-2 rounded-lg hover:bg-muted cursor-pointer transition-colors w-full", iscollapsed && "justify-center p-0")}>
-                                <Avatar className="h-9 w-9 border border-border">
-                                    <AvatarImage src="https://github.com/shadcn.png" />
-                                    <AvatarFallback>JD</AvatarFallback>
-                                </Avatar>
-                                {!iscollapsed && (
-                                    <div className="flex-1 overflow-hidden text-left">
-                                        <p className="text-sm font-medium truncate">John Doe</p>
-                                        <p className="text-[10px] text-muted-foreground truncate uppercase tracking-wide">Big Rig Logistics</p>
-                                    </div>
-                                )}
-                            </div>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end" className="w-56" side="right" sideOffset={10}>
-                            <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                            <DropdownMenuSeparator />
-                            <DropdownMenuItem className="cursor-pointer">
-                                <Users className="mr-2 h-4 w-4" />
-                                <span>Team Members</span>
-                            </DropdownMenuItem>
-                            <DropdownMenuItem className="cursor-pointer">
-                                <Settings className="mr-2 h-4 w-4" />
-                                <span>Billing</span>
-                            </DropdownMenuItem>
-                            <DropdownMenuSeparator />
-                            <DropdownMenuItem
-                                className="text-red-500 focus:text-red-500 cursor-pointer"
-                                onClick={async () => {
-                                    const { logout } = await import('@/app/auth/actions');
-                                    await logout();
-                                }}
-                            >
-                                <LogOut className="mr-2 h-4 w-4" />
-                                <span>Log out</span>
-                            </DropdownMenuItem>
-                        </DropdownMenuContent>
-                    </DropdownMenu>
+                    <UserDropdown isCollapsed={iscollapsed} />
                 </div>
             </aside>
 
