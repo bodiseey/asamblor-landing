@@ -10,6 +10,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { TeamManagement } from "@/components/dashboard/team-management";
 import { toast } from "sonner";
 import { Loader2, Upload, User, Building2, Lock, Globe } from "lucide-react";
 
@@ -346,9 +347,10 @@ export default function ProfilePage() {
             </div>
 
             <Tabs defaultValue="personal" className="space-y-6">
-                <TabsList className="grid w-full grid-cols-3 max-w-[600px]">
+                <TabsList className="grid w-full grid-cols-4 max-w-[800px]">
                     <TabsTrigger value="personal">Personal</TabsTrigger>
                     <TabsTrigger value="company">Company</TabsTrigger>
+                    <TabsTrigger value="team">My Team</TabsTrigger>
                     <TabsTrigger value="security">Security</TabsTrigger>
                 </TabsList>
 
@@ -643,6 +645,11 @@ export default function ProfilePage() {
                             </div>
                         </CardContent>
                     </Card>
+                </TabsContent>
+
+                {/* Team Management Tab */}
+                <TabsContent value="team" className="space-y-6">
+                    {profile && <TeamManagement tenantId={profile.tenant_id} currentUserId={profile.id} />}
                 </TabsContent>
 
                 {/* Security Tab */}
