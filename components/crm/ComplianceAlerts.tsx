@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { createClient } from "@/util/supabase/client"
+import { createClient } from "@/lib/supabase/client"
 import { AlertCircle, CheckCircle2, Clock, ShieldAlert } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { formatDistanceToNow } from "date-fns"

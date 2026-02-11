@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { createClient } from "@/util/supabase/client";
+import { createClient } from "@/lib/supabase/client";
 import { ActivityTimeline } from "@/components/crm/ActivityTimeline";
 import { ComplianceAlerts } from "@/components/crm/ComplianceAlerts";
 

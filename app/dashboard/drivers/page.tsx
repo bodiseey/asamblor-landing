@@ -1,4 +1,4 @@
-import { createClient } from '@/util/supabase/server';
+import { createClient } from '@/lib/supabase/server';
 import { columns, Driver } from "./columns";
 import { DataTable } from "@/components/ui/data-table";
 import { Button } from "@/components/ui/button";
