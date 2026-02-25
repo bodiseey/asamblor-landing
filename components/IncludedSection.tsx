@@ -22,17 +22,17 @@ export default function IncludedSection() {
     return (
         <section className="py-24 relative bg-background overflow-hidden" id="roi-calculator">
             {/* Background elements */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-green-500/5 blur-[120px] rounded-full pointer-events-none -mr-40 -mt-20" />
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none -mr-40 -mt-20" />
             
             <div className="max-w-[1200px] mx-auto px-8 relative z-10">
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-500 text-xs font-semibold uppercase tracking-wider w-fit mb-6">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-500 text-xs font-semibold uppercase tracking-wider w-fit mb-6">
                         <Calculator size={14} />
                         <span>ROI Calculator</span>
                     </div>
                     <h2 className="section-heading">
                         Stop Competing. <br className="md:hidden" />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-br from-green-400 to-emerald-600">Start Dominating.</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary to-blue-400">Start Dominating.</span>
                     </h2>
                     <p className="text-[17px] text-muted-foreground leading-relaxed max-w-2xl mx-auto mt-4">
                         See how much you save with our High-Velocity Subscription compared to traditional Success Fees as you scale your fleet.
@@ -107,12 +107,12 @@ export default function IncludedSection() {
                         </div>
 
                         {/* Savings Highlight */}
-                        <div className="flex flex-col justify-center items-center p-8 rounded-2xl border border-green-500/20 bg-green-500/5 relative overflow-hidden group text-center h-full">
+                        <div className="flex flex-col justify-center items-center p-8 rounded-2xl border border-blue-500/20 bg-blue-500/5 relative overflow-hidden group text-center h-full">
                             <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
-                                <TrendingUp size={100} className="text-green-500" />
+                                <TrendingUp size={100} className="text-blue-500" />
                             </div>
                             
-                            <p className="text-sm font-semibold text-green-400 mb-2 uppercase tracking-widest relative z-10 flex items-center gap-2">
+                            <p className="text-sm font-semibold text-blue-400 mb-2 uppercase tracking-widest relative z-10 flex items-center gap-2">
                                 <DollarSign size={16} /> Annual Savings
                             </p>
                             
@@ -125,13 +125,13 @@ export default function IncludedSection() {
                                     transition={{ duration: 0.3 }}
                                     className="relative z-10"
                                 >
-                                    <h3 className="text-5xl md:text-6xl font-bold text-green-400 tracking-tight font-mono [text-shadow:_0_0_30px_rgb(74_222_128_/_40%)]">
+                                    <h3 className="text-5xl md:text-6xl font-bold text-blue-400 tracking-tight font-mono [text-shadow:_0_0_30px_rgb(96_165_250_/_40%)]">
                                         ${currentGoal.savings.toLocaleString()}
                                     </h3>
                                 </motion.div>
                             </AnimatePresence>
                             
-                            <p className="text-sm text-green-200/60 mt-4 relative z-10">
+                            <p className="text-sm text-blue-200/60 mt-4 relative z-10">
                                 Capital you can reinvest into trucks, insurance, and growth.
                             </p>
                         </div>

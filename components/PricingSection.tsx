@@ -6,14 +6,6 @@ export default function PricingSection() {
         <section id="pricing" className="relative py-24 overflow-hidden">
             <div className="max-w-[1200px] mx-auto px-8 relative z-10">
 
-                <div className="text-center mb-16">
-                    <h2 className="section-heading">
-                        Stop Competing. <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">Start Dominating.</span>
-                    </h2>
-                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                        Stop complicating your growth. Get the full engine for a flat rate.
-                    </p>
-                </div>
 
                 <div className="relative rounded-3xl border border-border bg-card/50 shadow-2xl md:backdrop-blur-xl overflow-hidden">
                     {/* Background Effects - Hidden on mobile */}
