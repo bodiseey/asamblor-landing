@@ -7,7 +7,6 @@ import FlexibleEngagementModels from "@/components/FlexibleEngagementModels";
 import FeatureHighlights from "@/components/FeatureHighlights";
 import IncludedSection from "@/components/IncludedSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import PricingSection from "@/components/PricingSection";
 import Footer from "@/components/Footer";
 
 import ContactSection from "@/components/ContactSection";
@@ -56,7 +55,6 @@ export default function Home() {
       {/* Replaced old FeaturesSection with new FeatureHighlights */}
       <FeatureHighlights />      <IncludedSection />
       <TestimonialsSection />
-      <PricingSection />
       <ContactSection />
       <Footer />
       <TelegramNotification />

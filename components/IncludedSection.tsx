@@ -44,12 +44,12 @@ export default function IncludedSection() {
                     {/* Toggles */}
                     <div className="flex flex-col items-center mb-12">
                         <p className="text-sm font-semibold text-muted-foreground mb-4 uppercase tracking-widest">Select Hiring Goal</p>
-                        <div className="inline-flex bg-muted/50 p-1.5 rounded-xl border border-border relative">
+                        <div className="flex w-full sm:w-auto sm:inline-flex bg-muted/50 p-1.5 rounded-xl border border-border relative overflow-x-auto">
                             {goals.map((goal, idx) => (
                                 <button
                                     key={idx}
                                     onClick={() => setHireGoal(idx as 0 | 1 | 2)}
-                                    className={`relative px-6 py-3 rounded-lg text-sm font-medium transition-all ${hireGoal === idx ? "text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"}`}
+                                    className={`flex-1 sm:flex-none relative px-3 sm:px-6 py-2.5 sm:py-3 rounded-lg text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${hireGoal === idx ? "text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"}`}
                                 >
                                     {hireGoal === idx && (
                                         <motion.div
