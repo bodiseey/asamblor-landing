@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import AdvantageSection from "@/components/AdvantageSection";
 import CapacityTracks from "@/components/CapacityTracks";
 import SolutionSection from "@/components/SolutionSection";
+import FlexibleEngagementModels from "@/components/FlexibleEngagementModels";
 import FeatureHighlights from "@/components/FeatureHighlights";
 import IncludedSection from "@/components/IncludedSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
@@ -48,13 +49,12 @@ export default function Home() {
       <AdvantageSection />
       <CapacityTracks />
       <SolutionSection />
+      
+      {/* New Flexible Engagement Models Section right after How It Works (SolutionSection) */}
+      <FlexibleEngagementModels />
 
       {/* Replaced old FeaturesSection with new FeatureHighlights */}
-      <FeatureHighlights />
-
-
-
-      <IncludedSection />
+      <FeatureHighlights />      <IncludedSection />
       <TestimonialsSection />
       <PricingSection />
       <ContactSection />

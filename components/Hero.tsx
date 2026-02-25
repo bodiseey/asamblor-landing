@@ -83,7 +83,7 @@ export default function Hero({
             Engine for Your Fleets.
         </>
     ),
-    subheadline = "Scale your fleet without the friction. We automate the identification, engagement, and qualification of high-tier Owner-Operators and CDL Drivers.",
+    subheadline = "The Automated Capacity Engine for Drivers and Owner-Operators.",
     badgeText = "Bypass the Broker Wall",
     badgeColor = "red",
     ctaType = "standard"
