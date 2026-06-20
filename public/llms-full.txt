@@ -33,7 +33,7 @@ We are not a job board. We are not a recruiting agency. We are the infrastructur
 
 Our core customer is a dispatch authority / motor carrier that wants to scale its fleet asset-light — meaning they don't want to buy more trucks; they want more independent owner-operators running freight under their authority.
 
-A lease-on owner-operator is an independent contractor who owns their own truck (and sometimes trailer) but operates under the motor carrier's MC/DOT authority. The carrier handles dispatch, freight, compliance, and back-office; the owner-operator gets steady loads without having to build a brokerage relationship from scratch. The carrier earns a percentage of the load revenue (typically 10–25%), and grows revenue without buying equipment, hiring W-2 drivers, or taking on financing risk.
+A lease-on owner-operator is an independent contractor who owns their own truck (and sometimes trailer) but operates under the motor carrier's MC/DOT authority. The carrier handles dispatch, freight, compliance, and back-office; the owner-operator gets steady loads without having to build a brokerage relationship from scratch. The carrier earns a percentage of the load revenue (typically 10–25%), and grows revenue without buying equipment, hiring company drivers, or taking on financing risk.
 
 The problem: finding lease-on owner-operators is brutally hard.
 
@@ -45,7 +45,7 @@ Asamblor reaches that "invisible" market directly.
 
 ### Secondary ICP
 
-- Trucking companies hiring company drivers (CDL-A / W-2) — same outreach engine, different audience filters.
+- Trucking companies hiring company drivers (CDL-A) — same outreach engine, different audience filters.
 - Service providers to the trucking industry — factoring companies, insurance brokers, leasing companies, tire dealers, fuel programs, ELD vendors, and anyone else who wants verified carrier contact at scale.
 
 ---
@@ -180,7 +180,7 @@ From kickoff to first live outbound: typically 14–21 days. That window covers 
 
 ### What's a lease-on owner-operator and why target them?
 
-A lease-on owner-operator is an independent contractor who owns their truck but runs freight under a motor carrier's MC/DOT authority. The carrier earns 10–25% of load revenue without buying equipment, hiring W-2 drivers, or taking financing risk — making lease-on the fastest asset-light growth channel for trucking companies.
+A lease-on owner-operator is an independent contractor who owns their truck but runs freight under a motor carrier's MC/DOT authority. The carrier earns 10–25% of load revenue without buying equipment, hiring company drivers, or taking financing risk — making lease-on the fastest asset-light growth channel for trucking companies.
 
 ---
 

@@ -19,15 +19,137 @@ export type Solution = {
     filters: { k: string; v: string }[]; // 4-6 k/v
     estimatedRecords: string; // e.g. "~62,000 verified contacts"
   };
-  exampleOutreach: {
+  exampleOutreach?: {
     subject: string;
-    body: string; // 2-4 short paragraphs
-  };
+    body: string;
+  }; // kept in data for internal reference; not rendered publicly
   faqs: { q: string; a: string }[]; // 4-5
   related: string[]; // slugs of related solutions
 };
 
 export const SOLUTIONS: Solution[] = [
+  {
+    slug: "owner-operator-recruiting",
+    name: "Owner-Operator Recruiting",
+    short: "Add lease-on owner-operators to your fleet — asset-light, no agency commissions.",
+    audience: "Motor carriers, dispatch authorities, and asset carriers scaling fleet capacity through lease-on owner-operators rather than buying trucks or hiring company drivers.",
+    hero: {
+      eyebrow: "For motor carriers & dispatch authorities",
+      headlineWhite: "Add lease-on owner-operators to your fleet—",
+      headlineGrey: "asset-light, no agency commissions.",
+      sub: "The fastest way to scale a motor-carrier revenue base without buying iron, hiring company drivers, or paying $750–$3,500 per signed driver to an agency. Asamblor owns the data layer, runs the outbound, and routes interested owner-ops directly into your CRM.",
+    },
+    metaTitle: "Owner-Operator Recruiting — Done-For-You Acquisition Infrastructure",
+    metaDescription: "Scale your lease-on owner-operator fleet without job boards or agency fees. Asamblor builds and runs your outbound pipeline using 4.5M+ verified carrier records from CarrieX.",
+    painPoints: [
+      { title: "Agency fees destroy fleet-growth margins", body: "Driver-recruiting agencies charge $750–$3,500+ per signed owner-operator. Add 50 owner-ops to your authority and you've burned $37K–$175K — money that should fund another truck, dispatcher, or back-office hire." },
+      { title: "Job boards return ghost leads", body: "DAT, Truckstop, and indeed-style boards generate volume, not quality. Most applicants are tire-kickers, already signed, or never had the truck they claimed. Recruiters waste 60–80% of their week chasing leads that don't sign." },
+      { title: "The best owner-ops aren't shopping", body: "Owner-operators who run consistent freight aren't browsing job boards — they're already moving for another authority that's underpaying them or has wrong-direction freight. You have to reach them directly, with a specific lease-on offer, at the right moment." },
+    ],
+    whyAsamblor: [
+      { title: "Own the data layer", body: "CarrieX surfaces 4.5M+ verified owner-operator records with authority age, equipment type, OOS status, domicile, and active operating area. No buying lists from third-party brokers." },
+      { title: "Authority-age + equipment match", body: "Filter for owner-ops with the right MC age (most carriers prefer 180-day+ active authorities), the equipment you dispatch (reefer, dry van, flatbed, step-deck), and a clean OOS history. Outreach reaches only carriers your dispatch can actually use." },
+      { title: "Vetting forms route ready-to-sign leads", body: "Replies land in your CRM with MC#, USDOT#, equipment, insurance carrier, current lane preference, and percentage-vs-mileage preference. Your driver-recruiter opens a 'ready to send paperwork' call, not a discovery call." },
+      { title: "You own the infrastructure forever", body: "Domains, mailboxes, CRM pipelines, vetting forms, and the historical lead database all stay yours. When the engagement ends, you keep a permanent business asset — not a list you rented." },
+    ],
+    carriexFilters: [
+      "Power-unit count (1–2 = owner-ops, 3–10 = small-fleet partnerships)",
+      "MC authority age (sweet spot: 180–730 days)",
+      "Trailer / equipment type (dry van, reefer, flatbed, step-deck, power-only)",
+      "Domicile state + operating area / lane match",
+      "Out-of-service status",
+      "Last known inspection date + result",
+      "Authority status (active, clean, no recent revocations)",
+      "Driver count vs. power units (isolate true owner-drivers)",
+    ],
+    sampleTarget: {
+      label: "Sample ICP — Single-truck reefer owner-operators with MC active 6–24 months, operating in TX, OK, LA, AR, MS",
+      filters: [
+        { k: "Power units", v: "1" },
+        { k: "Equipment", v: "Reefer" },
+        { k: "MC age", v: "180–730 days" },
+        { k: "Operating area", v: "TX, OK, LA, AR, MS" },
+        { k: "OOS status", v: "Clean" },
+        { k: "Driver count", v: "1 (true owner-driver)" },
+      ],
+      estimatedRecords: "~4,200 verified owner-ops",
+    },
+    exampleOutreach: {
+      subject: "{{first_name}} — lease-on opportunity for {{mc_number}} (consistent reefer freight)",
+      body:
+        "Quick one. Your MC ({{mc_number}}) shows {{days_since_active}} days active running reefer out of {{state}}. We're {{carrier_name}} ({{carrier_mc}}) and we have steady reefer freight on the lanes you already run — looking to add 3–5 owner-ops to our authority this quarter.\n\nPercentage: {{pct_offered}}, weekly settlements, fuel discount, plate program, no forced dispatch.\n\nIf this fits, 60-second intake to get the conversation started: {{intake_link}}\n\nReply STOP to opt out anytime.",
+    },
+    faqs: [
+      { q: "How is this different from a driver-recruiting agency?", a: "Agencies charge $750–$3,500+ per signed owner-op and own the leads, domains, and data. Asamblor charges a flat monthly retainer (projected cost per signed owner-op under $50) and every domain, mailbox, CRM pipeline, and historical lead is yours to keep. You stop renting recruiting and start owning acquisition infrastructure." },
+      { q: "How many owner-ops can you typically sign per month?", a: "Depends entirely on your offer (percentage, lane mix, settlement terms) and the size of your ICP. A typical mid-market motor carrier with a competitive package and a regional ICP signs 8–25 owner-ops per month from a single Asamblor pipeline after the first 60-day ramp." },
+      { q: "Can you target by equipment type?", a: "Yes — build separate pipelines per equipment. Reefer owner-ops, flatbed owner-ops, step-deck, and power-only each get different sequences with equipment-specific lane and rate positioning. Different domains, different copy, much higher reply rates than generic outreach." },
+      { q: "What if we want to grow beyond owner-ops into CDL company drivers?", a: "Asamblor runs both pipelines in parallel — see our [CDL driver hiring solution](/solutions/cdl-driver-hiring). Different audience (individual drivers vs. independent MCs), different sourcing channels, but the same outbound infrastructure and CRM." },
+      { q: "How long until first signed owner-op?", a: "Typical timeline: 14–21 days from kickoff to first live outbound (covers ICP onboarding, CarrieX data extraction, domain warmup, CRM build). First signed owner-op usually lands in weeks 3–6 depending on offer competitiveness." },
+    ],
+    related: ["cdl-driver-hiring", "factoring-companies", "compliance-consultants"],
+  },
+
+  {
+    slug: "cdl-driver-hiring",
+    name: "CDL Truck Driver Hiring",
+    short: "Fill seats with vetted CDL company drivers — done-for-you, owned by you.",
+    audience: "Motor carriers and fleet operators that need to hire CDL company drivers (CDL-A and CDL-B) for OTR, regional, dedicated, and local routes — and want a real acquisition pipeline instead of paying per-applicant on job boards.",
+    hero: {
+      eyebrow: "For motor carriers hiring CDL drivers",
+      headlineWhite: "Truck driver hiring infrastructure—",
+      headlineGrey: "built, run, and owned for your fleet.",
+      sub: "Same Asamblor delivery model that powers owner-operator acquisition, applied to driver hiring. We mine CarrieX for the right audience, run multi-channel outbound on your behalf, and deliver qualified driver applicants directly into your CRM. You stop renting Indeed clicks and start owning a driver-acquisition engine.",
+    },
+    metaTitle: "Truck Driver Hiring Infrastructure — Done-For-You CDL Recruiting Pipeline",
+    metaDescription: "Asamblor builds and runs CDL truck driver hiring pipelines for motor carriers. Mined from CarrieX, delivered multi-channel, routed straight into your CRM — without per-applicant board fees.",
+    painPoints: [
+      { title: "Job boards burn cash on tire-kickers", body: "Indeed, ZipRecruiter, and TruckersReport charge $50–$120 per applicant. Of those, 40–60% never reply, 20% don't have a valid CDL, and the rest are already in someone else's pipeline. Real cost-per-hire on boards alone runs $1,500–$4,000+." },
+      { title: "Recruiters can't scale geographic hiring", body: "You need drivers in specific terminals or operating regions, not nationwide blasts. Boards don't filter by home-base radius the way you actually hire. Recruiters spend hours sorting applicants who would never accept the run." },
+      { title: "Wrong-fit hires destroy retention math", body: "A driver hired without matching lane, pay structure, or home-time expectations churns in 60–120 days at $5K–$15K per loss. Without a targeting layer, the same boards that filled the seat refill it three months later." },
+    ],
+    whyAsamblor: [
+      { title: "Same engine as owner-op recruiting — different mining strategy", body: "Asamblor's outbound infrastructure (sending domains, mailbox warmup, 10DLC SMS, CRM pipelines, vetting forms, recruiter routing) is identical to our owner-op pipeline. What changes is the CarrieX mining strategy — we build the driver audience around carrier hiring signals, fleet driver-to-power-unit ratios, geographic operating data, and equipment match." },
+      { title: "Geo-targeted by terminal and operating region", body: "Driver pipelines are built around your terminals or operating regions, not nationally. Home-base radius targeting (50/100/200 miles) is the single biggest predictor of driver acceptance and retention." },
+      { title: "Equipment + endorsement match before reply", body: "Every campaign filters for the right CDL class, endorsements (hazmat, tanker, doubles/triples, TWIC), equipment experience (reefer, flatbed, tanker, OTR/regional/dedicated), and experience tier. Your recruiter receives applicants who actually fit the job description." },
+      { title: "DQ-file-ready intake", body: "Replies route through a vetting form capturing CDL class + state, endorsements, experience years, MVR consent, accident/violation history, home-base ZIP, and run-type preference. Your recruiter opens a qualification call, not an introduction." },
+    ],
+    carriexFilters: [
+      "Carrier hiring intent signals (under-driver fleets, recent driver turnover)",
+      "Drivers-employed vs. power-units ratio (sourcing-gap indicator)",
+      "Equipment type the carrier operates (dry van, reefer, flatbed, tanker, doubles)",
+      "Carrier domicile + operating area (matches your terminal radius)",
+      "Authority age + carrier maturity (active hiring vs. retention plays)",
+      "Recent OOS / driver-violation history (turnover proxy)",
+      "Commodity / endorsement requirements per route",
+      "Owner-operators considering a transition to company-driver roles (highest-converting candidate pool)",
+    ],
+    sampleTarget: {
+      label: "Sample ICP — CDL-A driver outreach centered on Atlanta, GA: 200-mile home-base radius, dry van + reefer, 1+ year experience, clean MVR",
+      filters: [
+        { k: "CDL class", v: "CDL-A" },
+        { k: "Home-base radius", v: "200 miles from Atlanta, GA" },
+        { k: "Experience", v: "≥ 1 year (no student drivers)" },
+        { k: "Equipment match", v: "Dry van or reefer" },
+        { k: "Endorsements", v: "Optional: hazmat, tanker" },
+        { k: "MVR / accident history", v: "Clean (no accidents last 3 years)" },
+      ],
+      estimatedRecords: "~3,800 sourcing-eligible candidates per cohort",
+    },
+    exampleOutreach: {
+      subject: "{{first_name}} — CDL-A run out of {{home_city}}: weekly home time, {{pay_rate}}",
+      body:
+        "Quick one, {{first_name}}. We&apos;re {{carrier_name}} and we&apos;re hiring CDL-A drivers based in {{home_metro}} for {{run_type}} freight ({{equipment}}). Pay is {{pay_rate}} with weekly home time, no-touch freight, late-model {{truck_year}} equipment, full benefits.\n\nIf this fits, here&apos;s a 4-minute intake — we send a full CDL application after: {{intake_link}}\n\nNot looking right now? Reply STOP and you won&apos;t hear from us again.",
+    },
+    faqs: [
+      { q: "Is this the same as your owner-operator recruiting service?", a: "Same delivery infrastructure (outbound, CRM, vetting forms, recruiter routing) — different audience and a different CarrieX mining strategy. Owner-op pipelines reach independent MCs offering lease-on opportunities. Driver-hiring pipelines reach CDL drivers (including owner-ops considering a company-driver role) for company-driver roles. Many motor carriers run both in parallel." },
+      { q: "How is this different from Indeed, ZipRecruiter, or DriveMyWay?", a: "Job boards charge per applicant ($50–$120 each); real cost-per-hire ends up $1,500–$4,000+ with the tire-kicker rate. Asamblor charges a flat monthly retainer, runs outbound + paid channels under one engine, and the entire pipeline + CRM stays yours. Cost-per-hire typically drops 40–60% within 90 days." },
+      { q: "Can you target by terminal location or home-base ZIP?", a: "Yes — geographic targeting is the single most important filter for company-driver hiring. Pipelines are built around your terminals or operating region, with radius targeting (50/100/200 miles) tuned to your retention data." },
+      { q: "Can we run both owner-op and CDL pipelines at the same time?", a: "Yes — and most growing motor carriers do exactly that. Owner-op recruiting fills the asset-light track; CDL hiring fills company-driver capacity. Same Asamblor delivery, two separate sequences, shared CRM. See the [owner-operator recruiting solution](/solutions/owner-operator-recruiting) for the lease-on side." },
+      { q: "What about DOT regulatory compliance?", a: "Outbound complies with CAN-SPAM (email) and TCPA / 10DLC (SMS) by default. Once a driver applies through the vetting form, DOT regulatory steps (DQ file, MVR pull, drug screen, road test) remain your responsibility — Asamblor delivers a vetted applicant, you handle the hiring compliance." },
+    ],
+    related: ["owner-operator-recruiting", "cdl-schools", "compliance-consultants"],
+  },
+
   {
     slug: "freight-brokers",
     name: "Freight Brokers",

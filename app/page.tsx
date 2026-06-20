@@ -29,7 +29,7 @@ const FAQ = [
   },
   {
     q: "What's a lease-on owner-operator and why target them?",
-    a: "A lease-on owner-operator is an independent contractor who owns their truck but runs freight under a motor carrier's MC/DOT authority. The carrier earns 10–25% of load revenue without buying equipment, hiring W-2 drivers, or taking financing risk — making lease-on the fastest asset-light growth channel for trucking companies.",
+    a: "A lease-on owner-operator is an independent contractor who owns their truck but runs freight under a motor carrier's MC/DOT authority. The carrier earns 10–25% of load revenue without buying equipment, hiring company drivers, or taking financing risk — making lease-on the fastest asset-light growth channel for trucking companies.",
   },
 ];
 

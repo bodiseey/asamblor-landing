@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import Preloader from "@/components/Preloader";
 import { ThemeProvider } from "@/components/theme-provider";
+import { PostHogProvider } from "@/components/PostHogProvider";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
@@ -113,9 +114,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* <Preloader /> */}
-          {children}
-          <Analytics />
+          <PostHogProvider>
+            {/* <Preloader /> */}
+            {children}
+            <Analytics />
+          </PostHogProvider>
         </ThemeProvider>
       </body>
     </html>

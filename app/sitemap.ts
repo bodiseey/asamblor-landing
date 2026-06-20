@@ -1,8 +1,10 @@
 import { MetadataRoute } from "next";
 import { SOLUTIONS } from "@/lib/solutions";
 import { STATES } from "@/lib/states";
+import { CITIES_BY_STATE } from "@/lib/cities";
 
 const SITE_URL = "https://www.asamblor.com";
+const CORE_SLUGS = ["owner-operator-recruiting", "cdl-driver-hiring"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -20,7 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${SITE_URL}/solutions/${s.slug}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
-    priority: 0.8,
+    priority: CORE_SLUGS.includes(s.slug) ? 0.95 : 0.8,
   }));
 
   const industryStateEntries: MetadataRoute.Sitemap = [];
@@ -30,10 +32,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url: `${SITE_URL}/solutions/${s.slug}/${st.slug}`,
         lastModified: now,
         changeFrequency: "monthly" as const,
-        priority: st.tier === "tier1" ? 0.7 : st.tier === "tier2" ? 0.6 : 0.5,
+        priority: CORE_SLUGS.includes(s.slug) ? 0.8 : (st.tier === "tier1" ? 0.7 : st.tier === "tier2" ? 0.6 : 0.5),
       });
     }
   }
 
-  return [...base, ...industryEntries, ...industryStateEntries];
+  const cityEntries: MetadataRoute.Sitemap = [];
+  for (const slug of CORE_SLUGS) {
+    for (const [stateSlug, cities] of Object.entries(CITIES_BY_STATE)) {
+      for (const c of cities) {
+        cityEntries.push({
+          url: `${SITE_URL}/solutions/${slug}/${stateSlug}/${c.slug}`,
+          lastModified: now,
+          changeFrequency: "monthly" as const,
+          priority: 0.65,
+        });
+      }
+    }
+  }
+
+  return [...base, ...industryEntries, ...industryStateEntries, ...cityEntries];
 }

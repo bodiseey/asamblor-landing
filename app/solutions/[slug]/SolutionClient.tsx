@@ -6,6 +6,7 @@ import { getCalApi } from "@calcom/embed-react";
 import { CAL_NAMESPACE, CAL_LINK, HOVER_CSS } from "@/components/landing/LandingPage";
 import { Solution } from "@/lib/solutions";
 import { StateData } from "@/lib/states";
+import { InfrastructureStack } from "@/components/InfrastructureStack";
 import React from "react";
 
 function linkifyCarrieX(text: string): React.ReactNode {
@@ -213,20 +214,15 @@ export default function SolutionClient({ s, related, states = [] }: { s: Solutio
               </div>
             </div>
             <div>
-              <div style={{ fontSize: 10.5, color: "#71717a", fontFamily: "monospace", letterSpacing: "0.07em", marginBottom: 14 }}>SAMPLE OUTREACH</div>
-              <h2 style={{ fontSize: 22, fontWeight: 400, lineHeight: 1.3, color: "#fafafa", marginBottom: 24, letterSpacing: "-0.015em" }}>
-                A real outbound message — not a template you&apos;d be embarrassed to send.
+              <div style={{ fontSize: 10.5, color: "#71717a", fontFamily: "monospace", letterSpacing: "0.07em", marginBottom: 14 }}>YOUR ASAMBLOR INFRASTRUCTURE</div>
+              <h2 style={{ fontSize: 22, fontWeight: 400, lineHeight: 1.3, color: "#fafafa", marginBottom: 14, letterSpacing: "-0.015em" }}>
+                The complete acquisition infrastructure—{" "}
+                <span style={{ color: "#71717a" }}>fully managed for your fleet.</span>
               </h2>
-              <div className="sol-email">
-                <div className="sol-email-hdr">
-                  <span className="sol-email-dot" style={{ background: "#ef4444" }} />
-                  <span className="sol-email-dot" style={{ background: "#f59e0b" }} />
-                  <span className="sol-email-dot" style={{ background: "#10b981" }} />
-                  <span style={{ marginLeft: "auto" }}>asamblor.engine</span>
-                </div>
-                <div className="sol-email-subj">{s.exampleOutreach.subject}</div>
-                <div className="sol-email-body">{s.exampleOutreach.body}</div>
-              </div>
+              <p style={{ fontSize: 13.5, color: "#71717a", lineHeight: 1.6, marginBottom: 20, maxWidth: 460 }}>
+                Six components, one engine. Built, run, and owned for you — no per-applicant fees, no agency commissions.
+              </p>
+              <InfrastructureStack />
             </div>
           </div>
         </div>

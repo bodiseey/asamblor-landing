@@ -1142,6 +1142,8 @@ export default function LandingPage({ faq = [] as { q: string; a: string }[] }: 
             ]} />
             <FooterCol heading="Solutions" columns={2} links={[
               { label: "All solutions", href: "/solutions" },
+              { label: "Owner-Operator Recruiting", href: "/solutions/owner-operator-recruiting" },
+              { label: "Truck Driver Hiring", href: "/solutions/cdl-driver-hiring" },
               { label: "Freight Brokers", href: "/solutions/freight-brokers" },
               { label: "Insurance Sales", href: "/solutions/insurance-sales" },
               { label: "Factoring Companies", href: "/solutions/factoring-companies" },

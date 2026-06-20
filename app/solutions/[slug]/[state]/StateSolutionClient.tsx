@@ -6,6 +6,8 @@ import { getCalApi } from "@calcom/embed-react";
 import { CAL_NAMESPACE, CAL_LINK, HOVER_CSS } from "@/components/landing/LandingPage";
 import { Solution } from "@/lib/solutions";
 import { StateData } from "@/lib/states";
+import { City } from "@/lib/cities";
+import { InfrastructureStack } from "@/components/InfrastructureStack";
 
 function linkifyCarrieX(text: string): React.ReactNode {
   const parts = text.split("CarrieX");
@@ -35,10 +37,12 @@ export default function StateSolutionClient({
   s,
   state,
   adjacent,
+  cities = [],
 }: {
   s: Solution;
   state: StateData;
   adjacent: StateData[];
+  cities?: City[];
 }) {
   useEffect(() => {
     (async () => {
@@ -210,6 +214,18 @@ export default function StateSolutionClient({
         </div>
       </section>
 
+      {/* INFRASTRUCTURE STACK */}
+      <section className="ss-section">
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
+          <div className="ss-eyebrow">Your Asamblor infrastructure</div>
+          <h2 className="ss-h2"><span>The complete acquisition infrastructure—</span><span className="grey">{" "}fully managed for your fleet.</span></h2>
+          <p style={{ fontSize: 14, color: "#71717a", lineHeight: 1.65, marginBottom: 32, maxWidth: 760 }}>
+            Six components, one engine — built, run, and owned for {state.name} motor carriers. No per-applicant fees, no agency commissions, no rented infrastructure.
+          </p>
+          <InfrastructureStack />
+        </div>
+      </section>
+
       {/* STATE-SPECIFIC FAQ */}
       <section className="ss-section">
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
@@ -249,6 +265,31 @@ export default function StateSolutionClient({
           </div>
         </div>
       </section>
+
+      {/* BY CITY — only for CORE solutions */}
+      {cities.length > 0 && (
+        <section className="ss-section">
+          <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
+            <div className="ss-eyebrow">{state.name} cities</div>
+            <h2 className="ss-h2"><span>{s.name} pipelines </span><span className="grey">in {state.name} metros.</span></h2>
+            <p style={{ fontSize: 14, color: "#71717a", lineHeight: 1.6, marginBottom: 24, maxWidth: 760 }}>
+              Each city page covers the local hiring radius, regional corridors, and adjacent-metro coverage relevant to {s.name.toLowerCase()} in that market.
+            </p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "1px 1px", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.07)", borderRadius: 8, overflow: "hidden" }} className="ss-city-grid">
+              {cities.map((c) => (
+                <a key={c.slug} href={`/solutions/${s.slug}/${state.slug}/${c.slug}`} style={{ background: "#0a0a0d", padding: "14px 16px", textDecoration: "none", color: "#a1a1aa", fontSize: 13, display: "flex", justifyContent: "space-between", alignItems: "center" }} className="ss-city-link">
+                  <span>{c.name}{c.isCapital ? " ★" : ""}</span>
+                  <span style={{ color: "#52525b", fontSize: 11, fontFamily: "monospace" }}>{state.abbr}</span>
+                </a>
+              ))}
+            </div>
+            <style dangerouslySetInnerHTML={{ __html: `
+              .ss-city-link:hover { background: #141418 !important; color: #fafafa !important; }
+              @media (max-width: 900px) { .ss-city-grid { grid-template-columns: repeat(2, 1fr) !important; } }
+            ` }} />
+          </div>
+        </section>
+      )}
 
       {/* ADJACENT STATES — internal linking */}
       {adjacent.length > 0 && (

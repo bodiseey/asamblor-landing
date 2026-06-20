@@ -43,3 +43,5 @@ replit.nix
 
 # twenty reference
 twenty_reference/
+.env.local
+.playwright-mcp/

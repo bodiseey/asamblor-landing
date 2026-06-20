@@ -3,6 +3,9 @@ import { notFound } from "next/navigation";
 import StateSolutionClient from "./StateSolutionClient";
 import { SOLUTIONS, getSolution } from "@/lib/solutions";
 import { STATES, getState, getAdjacentStates } from "@/lib/states";
+import { citiesForState } from "@/lib/cities";
+
+const CORE_SLUGS = ["owner-operator-recruiting", "cdl-driver-hiring"];
 
 const SITE_URL = "https://www.asamblor.com";
 
@@ -60,6 +63,7 @@ export default function Page({ params }: { params: { slug: string; state: string
   if (!s || !state) notFound();
 
   const adjacent = getAdjacentStates(state.adjacentStates).slice(0, 3);
+  const cities = CORE_SLUGS.includes(s.slug) ? citiesForState(state.slug) : [];
   const url = `${SITE_URL}/solutions/${s.slug}/${state.slug}`;
 
   const service = {
@@ -99,7 +103,7 @@ export default function Page({ params }: { params: { slug: string; state: string
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(graph) }} />
-      <StateSolutionClient s={s} state={state} adjacent={adjacent} />
+      <StateSolutionClient s={s} state={state} adjacent={adjacent} cities={cities} />
     </>
   );
 }
