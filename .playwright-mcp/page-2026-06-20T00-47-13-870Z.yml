@@ -1,0 +1,46 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e4]:
+        - link "Asamblor Asamblor" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img "Asamblor" [ref=e6]
+          - generic [ref=e7]: Asamblor
+        - generic [ref=e8]:
+          - link "How It Works" [ref=e9] [cursor=pointer]:
+            - /url: /#how-it-works
+          - link "The Engine" [ref=e10] [cursor=pointer]:
+            - /url: /#engine
+          - link "Pricing" [ref=e11] [cursor=pointer]:
+            - /url: /#pricing
+          - link "FAQ" [ref=e12] [cursor=pointer]:
+            - /url: /#faq
+        - link "← Back home" [ref=e13] [cursor=pointer]:
+          - /url: /
+    - generic [ref=e15]:
+      - generic [ref=e16]: Book a discovery call
+      - heading "30 minutes. We'll scope your acquisition engine end-to-end—ICP, live CarrieX preview, mailbox count, CRM pipeline, launch path." [level=1] [ref=e17]
+      - paragraph [ref=e18]: No pitch deck, no sales script. We open CarrieX live, pull a sample matching your exact target, and walk you through what your engine would look like.
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - generic [ref=e23]: STEP 01
+        - generic [ref=e24]: ICP review
+        - generic [ref=e25]: Authority type, lanes, equipment, fleet-size filters.
+      - generic [ref=e26]:
+        - generic [ref=e27]: STEP 02
+        - generic [ref=e28]: Live data preview
+        - generic [ref=e29]: We pull a CarrieX sample for your exact target — no NDA.
+      - generic [ref=e30]:
+        - generic [ref=e31]: STEP 03
+        - generic [ref=e32]: Engine scope
+        - generic [ref=e33]: Domains, mailbox count, monthly capacity, CRM pipeline, 14–21 day launch.
+    - generic [ref=e39]:
+      - generic [ref=e40]: © 2026 Asamblor — operated by CarrieX Labs LLC.
+      - generic [ref=e41]:
+        - link "Privacy" [ref=e42] [cursor=pointer]:
+          - /url: /privacy
+        - link "Terms" [ref=e43] [cursor=pointer]:
+          - /url: /terms
+        - link "office@asamblor.com" [ref=e44] [cursor=pointer]:
+          - /url: mailto:office@asamblor.com
+  - alert [ref=e45]

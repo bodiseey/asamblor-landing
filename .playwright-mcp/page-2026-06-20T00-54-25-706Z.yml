@@ -1,0 +1,207 @@
+- main [ref=e2]:
+  - navigation [ref=e3]:
+    - generic [ref=e4]:
+      - link "Asamblor Asamblor" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "Asamblor" [ref=e6]
+        - generic [ref=e7]: Asamblor
+      - generic [ref=e8]:
+        - link "How It Works" [ref=e9] [cursor=pointer]:
+          - /url: /#how-it-works
+        - link "The Engine" [ref=e10] [cursor=pointer]:
+          - /url: /#engine
+        - link "Pricing" [ref=e11] [cursor=pointer]:
+          - /url: /#pricing
+        - link "FAQ" [ref=e12] [cursor=pointer]:
+          - /url: /#faq
+      - link "← Back home" [ref=e13] [cursor=pointer]:
+        - /url: /
+  - generic [ref=e15]:
+    - generic [ref=e16]: Legal
+    - heading "Privacy Policy" [level=1] [ref=e17]
+    - paragraph [ref=e18]: "Effective date: June 20, 2026"
+    - paragraph [ref=e19]:
+      - text: Asamblor is a service of
+      - strong [ref=e20]: CarrieX Labs LLC
+      - text: ", powered by the CarrieX trucking data platform."
+  - generic [ref=e22]:
+    - generic [ref=e23]:
+      - paragraph [ref=e24]:
+        - text: This Privacy Policy describes how CarrieX Labs LLC (“
+        - strong [ref=e25]: CarrieX Labs
+        - text: ",” “"
+        - strong [ref=e26]: we
+        - text: ",” “"
+        - strong [ref=e27]: us
+        - text: ",” or “"
+        - strong [ref=e28]: our
+        - text: ”) collects, uses, discloses, and protects information in connection with the Asamblor service, our website at
+        - link "www.asamblor.com" [ref=e29] [cursor=pointer]:
+          - /url: https://www.asamblor.com
+        - text: ", and the CarrieX trucking data platform (collectively, the “"
+        - strong [ref=e30]: Services
+        - text: ”).
+      - paragraph [ref=e31]:
+        - text: If you have questions, contact us at
+        - link "privacy@asamblor.com" [ref=e32] [cursor=pointer]:
+          - /url: mailto:privacy@asamblor.com
+        - text: or at the address at the end of this policy.
+    - generic [ref=e33]:
+      - heading "01 Information we collect" [level=2] [ref=e34]:
+        - generic [ref=e35]: "01"
+        - text: Information we collect
+      - heading "Information you provide" [level=3] [ref=e36]
+      - list [ref=e37]:
+        - listitem [ref=e38]:
+          - strong [ref=e39]: Account & client information
+          - text: — business name, role, work email, phone, billing details, and Ideal Customer Profile (ICP) parameters you share during onboarding.
+        - listitem [ref=e40]:
+          - strong [ref=e41]: Communications
+          - text: — messages you send us through forms, email, calendar bookings, or our team channels.
+      - heading "Information collected automatically" [level=3] [ref=e42]
+      - list [ref=e43]:
+        - listitem [ref=e44]:
+          - strong [ref=e45]: Usage & device data
+          - text: — IP address, browser/OS, pages viewed, referrer URL, timestamps, and basic analytics about how you interact with the site and any client portals.
+        - listitem [ref=e46]:
+          - strong [ref=e47]: Cookies and similar technologies
+          - text: — strictly necessary cookies for session and security, and limited analytics cookies (see Section 7).
+      - heading "Information collected from third parties and public sources" [level=3] [ref=e48]
+      - list [ref=e49]:
+        - listitem [ref=e50]:
+          - strong [ref=e51]: Carrier / driver business contact data
+          - text: sourced through the CarrieX platform from public FMCSA filings, state authority records, and other publicly available business directories. This data is used to operate B2B outbound recruiting campaigns on behalf of our clients.
+        - listitem [ref=e52]:
+          - strong [ref=e53]: Service-provider data
+          - text: — payment status from our payment processor, deliverability metrics from our email infrastructure, calendar events from our booking provider.
+    - generic [ref=e54]:
+      - heading "02 How we use information" [level=2] [ref=e55]:
+        - generic [ref=e56]: "02"
+        - text: How we use information
+      - paragraph [ref=e57]: "We use information to:"
+      - list [ref=e58]:
+        - listitem [ref=e59]: Provide, operate, and improve the Services and our clients' recruitment pipelines.
+        - listitem [ref=e60]: Mine, dedupe, and verify trucking carrier and owner-operator records through CarrieX.
+        - listitem [ref=e61]: Send B2B outbound communications (email, SMS, web forms, telephony) on behalf of clients, subject to the recipient's rights and applicable law.
+        - listitem [ref=e62]: Manage billing, accounts, fraud prevention, security, and infrastructure (SPF/DKIM/DMARC, 10DLC registration, etc.).
+        - listitem [ref=e63]: Communicate with you about the Services, including service updates, security alerts, and administrative messages.
+        - listitem [ref=e64]: Comply with legal obligations, enforce our Terms, and protect our rights and the rights of others.
+    - generic [ref=e65]:
+      - heading "03 Roles under data protection law" [level=2] [ref=e66]:
+        - generic [ref=e67]: "03"
+        - text: Roles under data protection law
+      - paragraph [ref=e68]:
+        - text: For data we process to run our own business (e.g., your account information), CarrieX Labs is the
+        - strong [ref=e69]: controller / business
+        - text: .
+      - paragraph [ref=e70]:
+        - text: For data we process on behalf of clients to operate their recruiting pipelines (e.g., leads they qualify, vetting-form submissions, lead status in their CRM), the client is the controller / business and CarrieX Labs acts as the
+        - strong [ref=e71]: processor / service provider
+        - text: . Our processing is governed by the client's service agreement and applicable Data Processing Addendum.
+      - paragraph [ref=e72]: Under the California Consumer Privacy Act (CCPA/CPRA), we do not “sell” or “share” personal information as those terms are defined, and we do not process personal information for cross-context behavioral advertising.
+    - generic [ref=e73]:
+      - heading "04 How we share information" [level=2] [ref=e74]:
+        - generic [ref=e75]: "04"
+        - text: How we share information
+      - paragraph [ref=e76]: "We share information only as needed to operate the Services and only with:"
+      - list [ref=e77]:
+        - listitem [ref=e78]:
+          - strong [ref=e79]: Our clients
+          - text: ", who receive the qualified leads, vetting-form data, and CRM records generated by their pipelines."
+        - listitem [ref=e80]:
+          - strong [ref=e81]: Subprocessors
+          - text: bound by written confidentiality and security obligations — including hosting (Vercel), email infrastructure (deliverability / warmup providers), telephony / SMS (10DLC carriers), CRM platforms, payment processors, analytics, and scheduling (Cal.com).
+        - listitem [ref=e82]:
+          - strong [ref=e83]: Professional advisors
+          - text: (legal, tax, accounting, insurance) under confidentiality.
+        - listitem [ref=e84]:
+          - strong [ref=e85]: Authorities
+          - text: when required by law, subpoena, court order, or to protect our rights, our clients, or the public.
+        - listitem [ref=e86]:
+          - strong [ref=e87]: Successors
+          - text: in a merger, acquisition, financing, reorganization, or sale of assets, subject to standard confidentiality.
+    - generic [ref=e88]:
+      - heading "05 Your rights" [level=2] [ref=e89]:
+        - generic [ref=e90]: "05"
+        - text: Your rights
+      - paragraph [ref=e91]: "Depending on where you live, you may have rights to:"
+      - list [ref=e92]:
+        - listitem [ref=e93]: Know what personal information we hold about you and how we process it.
+        - listitem [ref=e94]: Request access to, correction of, or deletion of your personal information.
+        - listitem [ref=e95]: Opt out of certain uses (e.g., direct marketing).
+        - listitem [ref=e96]: Withdraw consent where consent is the legal basis.
+        - listitem [ref=e97]: Receive a copy of your information in a portable format.
+        - listitem [ref=e98]: Not be discriminated against for exercising these rights.
+      - paragraph [ref=e99]:
+        - text: To exercise a right, email
+        - link "privacy@asamblor.com" [ref=e100] [cursor=pointer]:
+          - /url: mailto:privacy@asamblor.com
+        - text: from the address associated with the request. We may need to verify your identity. If we process information on behalf of a client, we will route requests to that client when appropriate. We respond within the timelines required by applicable law (typically 45 days under CCPA, with one 45-day extension if necessary).
+      - paragraph [ref=e101]:
+        - strong [ref=e102]: Authorized agents.
+        - text: California residents may use an authorized agent; the agent must provide proof of authorization and we may contact you to verify the request.
+    - generic [ref=e103]:
+      - heading "06 Communications & opt-outs" [level=2] [ref=e104]:
+        - generic [ref=e105]: "06"
+        - text: Communications & opt-outs
+      - paragraph [ref=e106]: "If you are a recipient of outbound email or SMS sent through Asamblor on behalf of a client:"
+      - list [ref=e107]:
+        - listitem [ref=e108]: Every email includes a clearly marked unsubscribe link and the sender's physical mailing address, per the CAN-SPAM Act.
+        - listitem [ref=e109]: SMS replies of STOP, UNSUBSCRIBE, END, QUIT, or CANCEL are processed immediately and the recipient's number is suppressed across all client pipelines on the platform.
+        - listitem [ref=e110]:
+          - text: You may also email
+          - link "privacy@asamblor.com" [ref=e111] [cursor=pointer]:
+            - /url: mailto:privacy@asamblor.com
+          - text: with the address or phone number you want suppressed.
+    - generic [ref=e112]:
+      - heading "07 Cookies and analytics" [level=2] [ref=e113]:
+        - generic [ref=e114]: "07"
+        - text: Cookies and analytics
+      - paragraph [ref=e115]: We use strictly necessary cookies for site security and session management, and may use limited first-party analytics to understand site usage in aggregate. You can control cookies through your browser settings. We do not use third-party advertising cookies or cross-site tracking pixels.
+    - generic [ref=e116]:
+      - heading "08 Data retention" [level=2] [ref=e117]:
+        - generic [ref=e118]: "08"
+        - text: Data retention
+      - paragraph [ref=e119]: We retain information only as long as needed to provide the Services, comply with legal obligations, resolve disputes, and enforce our agreements. Carrier business contact data is refreshed and pruned on a continuous basis. Client account records are retained for the duration of the engagement and for a commercially reasonable period thereafter for tax, audit, and dispute purposes.
+    - generic [ref=e120]:
+      - heading "09 Security" [level=2] [ref=e121]:
+        - generic [ref=e122]: "09"
+        - text: Security
+      - paragraph [ref=e123]: We use administrative, technical, and physical safeguards designed to protect information, including TLS in transit, encryption at rest where supported by infrastructure providers, role-based access controls, and least-privilege access to sending and CRM infrastructure. No method of transmission or storage is 100% secure, and we cannot guarantee absolute security.
+    - generic [ref=e124]:
+      - heading "10 International data transfers" [level=2] [ref=e125]:
+        - generic [ref=e126]: "10"
+        - text: International data transfers
+      - paragraph [ref=e127]: The Services are operated from the United States. If you access them from outside the United States, you understand that information will be processed in the United States, which may have different data-protection laws than your country.
+    - generic [ref=e128]:
+      - heading "11 Children's privacy" [level=2] [ref=e129]:
+        - generic [ref=e130]: "11"
+        - text: Children's privacy
+      - paragraph [ref=e131]: The Services are a B2B product for trucking businesses and are not directed to children under 16. We do not knowingly collect personal information from children. If you believe a child has provided us information, contact us and we will delete it.
+    - generic [ref=e132]:
+      - heading "12 Changes to this policy" [level=2] [ref=e133]:
+        - generic [ref=e134]: "12"
+        - text: Changes to this policy
+      - paragraph [ref=e135]: We may update this Privacy Policy from time to time. When we do, we will revise the “Effective date” above and, for material changes, provide additional notice (such as a site banner or email). Your continued use of the Services after the effective date constitutes acceptance of the updated policy.
+    - generic [ref=e136]:
+      - heading "13 Contact us" [level=2] [ref=e137]:
+        - generic [ref=e138]: "13"
+        - text: Contact us
+      - paragraph [ref=e139]:
+        - text: "Privacy inquiries:"
+        - link "privacy@asamblor.com" [ref=e140] [cursor=pointer]:
+          - /url: mailto:privacy@asamblor.com
+      - paragraph [ref=e141]:
+        - strong [ref=e142]: CarrieX Labs LLC
+        - text: 1012 Marquez Place, Ste. 106-B
+        - text: Santa Fe, NM 87505
+        - text: United States
+  - generic [ref=e144]:
+    - generic [ref=e145]: © 2026 Asamblor — a service of CarrieX Labs LLC.
+    - generic [ref=e146]:
+      - link "Privacy" [ref=e147] [cursor=pointer]:
+        - /url: /privacy
+      - link "Terms" [ref=e148] [cursor=pointer]:
+        - /url: /terms
+      - link "office@asamblor.com" [ref=e149] [cursor=pointer]:
+        - /url: mailto:office@asamblor.com

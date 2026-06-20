@@ -1,134 +1,102 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { motion } from "framer-motion";
+import Image from "next/image";
 import { useEffect } from "react";
-import { Calendar, ShieldCheck, Zap, ArrowLeft, BarChart3, Users, Clock } from "lucide-react";
-import Link from "next/link";
 import Cal, { getCalApi } from "@calcom/embed-react";
+import { CAL_NAMESPACE, CAL_LINK, HOVER_CSS } from "@/components/landing/LandingPage";
 
 export default function BookClient() {
-    useEffect(() => {
-        (async function () {
-            const cal = await getCalApi({ "namespace": "kick-off" });
-            cal("ui", { "hideEventTypeDetails": false, "layout": "month_view" });
-        })();
-    }, []);
+  useEffect(() => {
+    (async () => {
+      const cal = await getCalApi({ namespace: CAL_NAMESPACE });
+      cal("ui", { hideEventTypeDetails: false, layout: "month_view", theme: "dark" });
+    })();
+  }, []);
 
-    return (
-        <main className="relative min-h-screen bg-background text-foreground selection:bg-primary/30">
-            <Navbar />
+  return (
+    <main style={{ background: "#09090b", color: "#fafafa", fontFamily: "Inter, -apple-system, BlinkMacSystemFont, sans-serif", WebkitFontSmoothing: "antialiased" }}>
+      <style dangerouslySetInnerHTML={{ __html: HOVER_CSS }} />
 
-            {/* Background Effects */}
-            <div className="absolute inset-0 bg-dotted-grid opacity-20" />
+      {/* NAV — identical to landing */}
+      <nav style={{ position: "sticky", top: 0, zIndex: 100, background: "rgba(9,9,11,0.88)", backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px", height: 58, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <a href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
+            <Image src="/logo.png" alt="Asamblor" width={32} height={32} priority style={{ display: "block", objectFit: "contain" }} />
+            <span style={{ fontSize: 14.5, fontWeight: 500, color: "#fafafa", letterSpacing: "-0.01em" }}>Asamblor</span>
+          </a>
+          <div className="lp-nav-links" style={{ display: "flex", alignItems: "center", gap: 32 }}>
+            <a href="/#how-it-works" className="lp-nav-link" style={{ fontSize: 13.5, textDecoration: "none" }}>How It Works</a>
+            <a href="/#engine" className="lp-nav-link" style={{ fontSize: 13.5, textDecoration: "none" }}>Infrastructure</a>
+            <a href="/solutions" className="lp-nav-link" style={{ fontSize: 13.5, textDecoration: "none" }}>Solutions</a>
+            <a href="/#pricing" className="lp-nav-link" style={{ fontSize: 13.5, textDecoration: "none" }}>Pricing</a>
+            <a href="/#faq" className="lp-nav-link" style={{ fontSize: 13.5, textDecoration: "none" }}>FAQ</a>
+          </div>
+          <a href="/" className="lp-nav-link" style={{ fontSize: 13, textDecoration: "none", whiteSpace: "nowrap" }}>
+            ← Back home
+          </a>
+        </div>
+      </nav>
 
-            {/* Background Elements - Hidden on mobile for performance */}
-            <div className="hidden md:block absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 blur-[150px] rounded-full pointer-events-none" />
-            <div className="hidden md:block absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/5 blur-[150px] rounded-full pointer-events-none" />
+      {/* HEADER — landing-style split typography */}
+      <section style={{ padding: "56px 0 40px", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
+          <div style={{ fontSize: 10.5, color: "#71717a", fontFamily: "monospace", letterSpacing: "0.07em", marginBottom: 24, textTransform: "uppercase" }}>
+            Book a discovery call
+          </div>
+          <h1 className="lp-h1" style={{ fontSize: 36, fontWeight: 400, lineHeight: 1.2, letterSpacing: "-0.025em", marginBottom: 20, maxWidth: 1120 }}>
+            <span className="lp-h1-line" style={{ display: "block", whiteSpace: "nowrap", color: "#fafafa" }}>30 minutes. We&apos;ll scope your acquisition engine end-to-end—</span>
+            <span className="lp-h1-line" style={{ display: "block", whiteSpace: "nowrap", color: "#71717a" }}>ICP, live CarrieX preview, mailbox count, CRM pipeline, launch path.</span>
+          </h1>
+          <p className="lp-subhero" style={{ fontSize: 16, color: "#71717a", lineHeight: 1.6, marginBottom: 8, maxWidth: 760 }}>
+            No pitch deck, no sales script. We open CarrieX live, pull a sample matching your exact target, and walk you through what your engine would look like.
+          </p>
+        </div>
+      </section>
 
-            <div className="relative pt-24 pb-16 md:pt-32 md:pb-24 max-w-[1400px] mx-auto px-4 md:px-8">
-                {/* Header Section */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
-                    <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="lg:col-span-5 space-y-8"
-                    >
-                        <div>
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold uppercase tracking-wider mb-6">
-                                <Calendar size={14} />
-                                <span>Kick off your hiring process</span>
-                            </div>
-                            <h1 className="section-heading text-left !mb-6 !md:text-[64px]">
-                                Book Your <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary to-blue-400 italic">Hiring Engine.</span>
-                            </h1>
-                            <p className="text-muted-foreground text-lg leading-relaxed max-w-md">
-                                Shift your recruitment into high gear. Schedule a session with our automation experts to build your custom autonomous driver funnel.
-                            </p>
-                        </div>
+      {/* META STRIP — feature row in landing style */}
+      <section style={{ borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
+          <div className="lp-3col" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", borderLeft: "1px solid rgba(255,255,255,0.07)", borderRight: "1px solid rgba(255,255,255,0.07)" }}>
+            {[
+              { tag: "STEP 01", title: "ICP review", body: "Authority type, lanes, equipment, fleet-size filters." },
+              { tag: "STEP 02", title: "Live data preview", body: "We pull a CarrieX sample for your exact target — no NDA." },
+              { tag: "STEP 03", title: "Engine scope", body: "Domains, mailbox count, monthly capacity, CRM pipeline, 14–21 day launch." },
+            ].map((s) => (
+              <div key={s.tag} style={{ padding: "32px 32px 36px", borderRight: "1px solid rgba(255,255,255,0.07)" }}>
+                <div style={{ fontSize: 10, color: "#71717a", fontFamily: "monospace", letterSpacing: "0.07em", marginBottom: 14 }}>{s.tag}</div>
+                <div style={{ fontSize: 15.5, fontWeight: 500, color: "#fafafa", marginBottom: 8, letterSpacing: "-0.01em" }}>{s.title}</div>
+                <div style={{ fontSize: 13.5, color: "#71717a", lineHeight: 1.55 }}>{s.body}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-                        {/* Back Link */}
-                        <Link href="/" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group">
-                            <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-                            <span className="text-sm font-medium">Back to Home</span>
-                        </Link>
+      {/* CAL EMBED */}
+      <section id="embed" style={{ padding: "56px 0 96px" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px" }}>
+          <div style={{ position: "relative", borderRadius: 14, border: "1px solid rgba(255,255,255,0.07)", background: "linear-gradient(180deg, #0e0e11 0%, #0a0a0c 100%)", overflow: "hidden", minHeight: 820, boxShadow: "0 30px 80px rgba(0,0,0,0.45)" }}>
+            <Cal
+              namespace={CAL_NAMESPACE}
+              calLink={CAL_LINK}
+              style={{ width: "100%", height: "100%", minHeight: 820, overflow: "scroll" }}
+              config={{ layout: "month_view", theme: "dark" }}
+            />
+          </div>
+        </div>
+      </section>
 
-                        {/* Analytics/Automation Stats Card */}
-                        <div className="grid grid-cols-1 gap-4 pt-4">
-                            <div className="p-4 md:p-6 rounded-3xl bg-white/[0.03] border border-white/10 md:backdrop-blur-xl relative group overflow-hidden shadow-2xl">
-                                <div className="absolute top-0 right-0 p-4 opacity-5">
-                                    <BarChart3 size={120} className="text-primary" />
-                                </div>
-                                <div className="relative z-10 flex flex-col gap-6">
-                                    <div className="flex items-center gap-2 text-primary font-bold">
-                                        <Zap size={18} fill="currentColor" />
-                                        <span className="text-sm uppercase tracking-widest px-2 py-0.5 rounded bg-primary/10 border border-primary/20">Automation Velocity</span>
-                                    </div>
-                                    <div className="space-y-4">
-                                        <div className="flex items-center justify-between border-b border-border pb-3">
-                                            <div className="flex items-center gap-3">
-                                                <div className="p-1.5 rounded-lg bg-white/5 border border-white/10">
-                                                    <Users size={16} className="text-muted-foreground" />
-                                                </div>
-                                                <span className="text-sm text-foreground font-medium">Lead Screening</span>
-                                            </div>
-                                            <span className="text-sm font-bold text-primary uppercase italic tracking-wider">Instant</span>
-                                        </div>
-                                        <div className="flex items-center justify-between border-b border-border pb-3">
-                                            <div className="flex items-center gap-3">
-                                                <div className="p-1.5 rounded-lg bg-white/5 border border-white/10">
-                                                    <Clock size={16} className="text-muted-foreground" />
-                                                </div>
-                                                <span className="text-sm text-foreground font-medium">Qual. Interviews</span>
-                                            </div>
-                                            <span className="text-sm font-bold text-primary uppercase italic tracking-wider">Automated</span>
-                                        </div>
-                                        <div className="flex items-center justify-between">
-                                            <div className="flex items-center gap-3">
-                                                <div className="p-1.5 rounded-lg bg-white/5 border border-white/10">
-                                                    <ShieldCheck size={16} className="text-muted-foreground" />
-                                                </div>
-                                                <span className="text-sm text-foreground font-medium">Hiring Certainty</span>
-                                            </div>
-                                            <span className="text-sm font-bold text-primary uppercase italic tracking-wider">94% Success</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
-
-                    {/* Booking Widget Section */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="lg:col-span-7"
-                    >
-                        <div className="relative group p-[1px] rounded-[24px] md:rounded-[32px] overflow-hidden bg-gradient-to-b from-primary/30 to-transparent min-h-[600px] md:min-h-[700px] shadow-[0_0_80px_rgba(0,102,255,0.1)]">
-                            <div className="absolute inset-0 bg-card md:backdrop-blur-3xl rounded-[24px] md:rounded-[32px] overflow-hidden">
-                                {/* Cal.com Embed Library Component */}
-                                <div className="w-full h-full min-h-[600px] md:min-h-[700px]">
-                                    <Cal namespace="kick-off"
-                                        calLink="bodishtyan-solutions-llc-vsaga6/kick-off"
-                                        style={{ width: "100%", height: "100%" }}
-                                        config={{ "layout": "month_view", "theme": "dark" }}
-                                    />
-                                </div>
-                            </div>
-
-                            {/* Decorative Corner Accents - Hidden on mobile */}
-                            <div className="hidden md:block absolute top-0 right-0 w-32 h-32 bg-primary/20 blur-[60px] pointer-events-none" />
-                            <div className="hidden md:block absolute bottom-0 left-0 w-32 h-32 bg-blue-500/10 blur-[60px] pointer-events-none" />
-                        </div>
-                    </motion.div>
-                </div>
-            </div>
-
-            <Footer />
-        </main>
-    );
+      {/* FOOTER strip — minimal */}
+      <footer style={{ borderTop: "1px solid rgba(255,255,255,0.07)", padding: "24px 0", background: "#09090b" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 40px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
+          <div style={{ fontSize: 12, color: "#52525b" }}>© {new Date().getFullYear()} Asamblor — operated by CarrieX Labs LLC.</div>
+          <div style={{ display: "flex", gap: 24 }}>
+            <a href="/privacy" className="lp-nav-link" style={{ fontSize: 12, textDecoration: "none" }}>Privacy</a>
+            <a href="/terms" className="lp-nav-link" style={{ fontSize: 12, textDecoration: "none" }}>Terms</a>
+            <a href="mailto:office@asamblor.com" className="lp-nav-link" style={{ fontSize: 12, textDecoration: "none" }}>office@asamblor.com</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+  );
 }

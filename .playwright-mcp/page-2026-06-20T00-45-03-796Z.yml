@@ -1,0 +1,415 @@
+- generic [ref=e1]:
+  - main [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e4]:
+        - link "Asamblor Asamblor" [ref=e5] [cursor=pointer]:
+          - /url: "#"
+          - img "Asamblor" [ref=e6]
+          - generic [ref=e7]: Asamblor
+        - generic [ref=e8]:
+          - link "How It Works" [ref=e9] [cursor=pointer]:
+            - /url: "#how-it-works"
+          - link "The Engine" [ref=e10] [cursor=pointer]:
+            - /url: "#engine"
+          - link "Pricing" [ref=e11] [cursor=pointer]:
+            - /url: "#pricing"
+          - link "Contact" [ref=e12] [cursor=pointer]:
+            - /url: "#contact"
+        - link "Book a Discovery Call" [ref=e13] [cursor=pointer]:
+          - /url: /book
+    - generic [ref=e16]:
+      - heading "Asamblor is an owner-operator acquisition infrastructure that finds, vets, and routes active candidates directly into your CRM." [level=1] [ref=e17]
+      - paragraph [ref=e18]: We build and run done-for-you lease-on pipelines to scale your fleet asset-light—free from job boards and agency commissions.
+      - generic [ref=e19]:
+        - textbox "Work email" [ref=e20]:
+          - /placeholder: your@company.com
+        - button "Book a Discovery Call →" [active] [ref=e21] [cursor=pointer]
+      - generic [ref=e24]:
+        - heading "Powered by CarrieX, we operate inside a single, unified data ecosystem." [level=2] [ref=e26]:
+          - text: Powered by
+          - link "CarrieX" [ref=e27] [cursor=pointer]:
+            - /url: https://carriex.io/
+          - text: ", we operate inside a single, unified data ecosystem."
+        - paragraph [ref=e28]: We tap into 4.5M+ verified trucking records to build an exclusive pipeline of active owner-operators — no scrapers, no cold lists, no manual handoffs.
+    - generic [ref=e30]:
+      - generic [ref=e31]:
+        - heading "Stop renting leads. Start owning the infrastructure." [level=2] [ref=e33]
+        - generic [ref=e34]:
+          - paragraph [ref=e35]: Traditional recruiting burns margin on $3,500+ agency fees for every owner-operator signed. Asamblor replaces the agency with productized, done-for-you acquisition pipelines—built as a permanent business asset you own.
+          - link "Contact us →" [ref=e36] [cursor=pointer]:
+            - /url: mailto:office@asamblor.com
+      - generic [ref=e37]:
+        - generic [ref=e38]:
+          - generic [ref=e39]:
+            - img [ref=e40]
+            - img [ref=e42]:
+              - img [ref=e68]
+          - generic [ref=e72]:
+            - generic [ref=e73]: Live database sync
+            - generic [ref=e74]: 4,529,279+
+            - generic [ref=e75]:
+              - text: Verified trucking records inside the
+              - link "CarrieX" [ref=e76] [cursor=pointer]:
+                - /url: https://carriex.io/
+              - text: database
+        - generic [ref=e77]:
+          - generic [ref=e78]:
+            - img [ref=e79]
+            - img [ref=e81]:
+              - generic [ref=e92]: EMAIL
+              - generic [ref=e96]: SMS
+              - generic [ref=e100]: CRM
+          - generic [ref=e101]:
+            - generic [ref=e102]: Monthly outbound capacity
+            - generic [ref=e103]: 75,000+
+            - generic [ref=e104]: Targeted outreach points per month, built for your fleet
+        - generic [ref=e105]:
+          - generic [ref=e106]:
+            - img [ref=e107]
+            - img [ref=e109]:
+              - generic [ref=e117]: $3.5K
+              - generic [ref=e118]: AGENCY
+              - generic [ref=e123]: $44
+              - generic [ref=e124]: ASAMBLOR
+          - generic [ref=e125]:
+            - generic [ref=e126]: Cost per acquisition
+            - generic [ref=e127]: $44↓
+            - generic [ref=e128]: Max projected cost per signed owner-operator vs. $3,500+ with agencies
+    - generic [ref=e131]:
+      - generic [ref=e132]:
+        - img [ref=e133]
+        - generic [ref=e139]: FIG 0.1
+        - generic [ref=e140]: We own the data layer
+        - paragraph [ref=e141]:
+          - text: We mine 4.5M+ verified trucking records directly through
+          - link "CarrieX" [ref=e142] [cursor=pointer]:
+            - /url: https://carriex.io/
+          - text: —our proprietary data platform. No scrapers, no bought lists, and no stale data.
+      - generic [ref=e143]:
+        - img [ref=e144]
+        - generic [ref=e148]: FIG 0.2
+        - generic [ref=e149]: You own the infrastructure
+        - paragraph [ref=e150]: Domains, CRM configurations, and historical lead data—all yours to keep. When you close your contract, you walk away with a fully operational acquisition asset.
+      - generic [ref=e151]:
+        - img [ref=e152]
+        - generic [ref=e157]: FIG 0.3
+        - generic [ref=e158]: Flat monthly, not per-hire
+        - paragraph [ref=e159]: Agencies charge $3,500+ per operator. Asamblor operates on a transparent, flat monthly fee. Scaling your lease-on fleet no longer forces your recruiting costs to spiral.
+    - generic [ref=e161]:
+      - heading "The complete acquisition infrastructure. Fully managed for you." [level=2] [ref=e163]
+      - generic [ref=e164]:
+        - generic [ref=e165]:
+          - generic [ref=e166]:
+            - generic [ref=e167]: 1.0 Email Outreach
+            - generic [ref=e168]: →
+          - img [ref=e170]
+          - generic [ref=e174]: Email Outreach
+          - paragraph [ref=e175]: Up to 75,000 targeted emails per month with A/B testing, reply detection, inbox rotation, and full deliverability infrastructure.
+        - generic [ref=e176]:
+          - generic [ref=e177]:
+            - generic [ref=e178]: 2.0 SMS Follow-Up
+            - generic [ref=e179]: →
+          - img [ref=e181]
+          - generic [ref=e185]: SMS Follow-Up
+          - paragraph [ref=e186]: TCPA-compliant SMS fires within minutes of a reply or click — only on explicit intent signals. Lifts reply-to-sign conversion significantly.
+        - generic [ref=e187]:
+          - generic [ref=e188]:
+            - generic [ref=e189]: 3.0 Web Vetting Forms
+            - generic [ref=e190]: →
+          - img [ref=e192]
+          - generic [ref=e195]: Web Vetting Forms
+          - paragraph [ref=e196]: Dynamic pre-qualification forms capture authority, trailer, equipment, and experience. Leads arrive fully scored before a recruiter makes a single call.
+        - generic [ref=e197]:
+          - generic [ref=e198]:
+            - generic [ref=e199]: 4.0 CRM Pipeline
+            - generic [ref=e200]: →
+          - img [ref=e202]
+          - generic [ref=e207]: CRM Pipeline Engineering
+          - paragraph [ref=e208]: Custom pipeline built around your exact process — stage automations, lead routing, re-engagement sequences, and drag-and-drop workflow triggers.
+        - generic [ref=e209]:
+          - generic [ref=e210]:
+            - generic [ref=e211]: 5.0 Real-Time Alerts
+            - generic [ref=e212]: →
+          - img [ref=e214]
+          - generic [ref=e221]: Real-Time Notifications
+          - paragraph [ref=e222]: Bots ping your team the moment a hot lead drops, a form is submitted, or a campaign flag fires. No qualified operator falls through.
+        - generic [ref=e223]:
+          - generic [ref=e224]:
+            - generic [ref=e225]: 6.0 Command Center
+            - generic [ref=e226]: →
+          - img [ref=e228]
+          - generic [ref=e233]: Command Center Dashboard
+          - paragraph [ref=e234]: "Full transparency: emails sent, deliverability, opens, replies, pipeline stages, and signed operators. Know where every dollar goes."
+    - generic [ref=e236]:
+      - heading "How Asamblor compares to the alternatives." [level=2] [ref=e238]
+      - generic [ref=e239]:
+        - generic [ref=e240]:
+          - generic [ref=e241]: JOB BOARDS
+          - generic [ref=e242]: Public listing platforms
+          - generic [ref=e243]:
+            - generic [ref=e244]:
+              - generic [ref=e245]: ✕
+              - generic [ref=e246]:
+                - generic [ref=e247]: Per-post or per-lead pricing
+                - generic [ref=e248]: Cost scales with every posting
+            - generic [ref=e249]:
+              - generic [ref=e250]: ✕
+              - generic [ref=e251]:
+                - generic [ref=e252]: Low-intent public applicants
+                - generic [ref=e253]: Saturated with ghost leads
+            - generic [ref=e254]:
+              - generic [ref=e255]: ✕
+              - generic [ref=e256]:
+                - generic [ref=e257]: Board owns the data
+                - generic [ref=e258]: You keep nothing when you leave
+            - generic [ref=e259]:
+              - generic [ref=e260]: ✕
+              - generic [ref=e261]:
+                - generic [ref=e262]: Hard scale ceiling
+                - generic [ref=e263]: Can't reach passive operators
+        - generic [ref=e264]:
+          - generic [ref=e265]: RECRUITING AGENCIES
+          - generic [ref=e266]: Traditional recruiting agencies
+          - generic [ref=e267]:
+            - generic [ref=e268]:
+              - generic [ref=e269]: ✕
+              - generic [ref=e270]:
+                - generic [ref=e271]: $3,500+ per signed operator
+                - generic [ref=e272]: Recruiting fees eat your expansion margins
+            - generic [ref=e273]:
+              - generic [ref=e274]: ✕
+              - generic [ref=e275]:
+                - generic [ref=e276]: Opaque, variable quality
+                - generic [ref=e277]: No ICP-matching or pre-vetting
+            - generic [ref=e278]:
+              - generic [ref=e279]: ✕
+              - generic [ref=e280]:
+                - generic [ref=e281]: Agency owns the pipeline
+                - generic [ref=e282]: Zero asset when you exit
+            - generic [ref=e283]:
+              - generic [ref=e284]: ✕
+              - generic [ref=e285]:
+                - generic [ref=e286]: Cost scales per hire
+                - generic [ref=e287]: More operators signed = more commissions
+        - generic [ref=e288]:
+          - generic [ref=e289]: ASAMBLOR · RECOMMENDED
+          - generic [ref=e290]: Done-for-you acquisition infrastructure
+          - generic [ref=e291]:
+            - generic [ref=e292]:
+              - generic [ref=e293]: ✓
+              - generic [ref=e294]:
+                - generic [ref=e295]: Flat monthly, no commissions
+                - generic [ref=e296]: Predictable cost at any volume
+            - generic [ref=e297]:
+              - generic [ref=e298]: ✓
+              - generic [ref=e299]:
+                - generic [ref=e300]:
+                  - link "CarrieX" [ref=e301] [cursor=pointer]:
+                    - /url: https://carriex.io/
+                  - text: ICP-matched data
+                - generic [ref=e302]: 4.5M+ verified trucking records
+            - generic [ref=e303]:
+              - generic [ref=e304]: ✓
+              - generic [ref=e305]:
+                - generic [ref=e306]: You own the entire pipeline
+                - generic [ref=e307]: Domains, CRM, history — yours
+            - generic [ref=e308]:
+              - generic [ref=e309]: ✓
+              - generic [ref=e310]:
+                - generic [ref=e311]: 75K emails/mo, no ceiling
+                - generic [ref=e312]: Scale your fleet without scaling recruiting costs
+          - link "Book a Discovery Call" [ref=e313] [cursor=pointer]:
+            - /url: /book
+    - generic [ref=e315]:
+      - generic [ref=e316]:
+        - heading "Scalable Growth Packages & ProjectionsAll plans require a flat $750 technical setup fee to cover infrastructure provisioning and database integration. No per-operator fees, ever." [level=2] [ref=e317]
+        - generic [ref=e318]:
+          - generic [ref=e319]: ✓ Standard outbound pipelines
+          - generic [ref=e320]: ✓ CRM integration & workflow engineering
+          - generic [ref=e321]: ✓ Dynamic vetting forms
+          - generic [ref=e322]: ✓ SMS follow-up triggers
+          - generic [ref=e323]: ✓ Real-time notifications
+          - generic [ref=e324]: ✓ Command center dashboard
+        - img [ref=e327]
+      - table [ref=e329]:
+        - rowgroup [ref=e330]:
+          - row "PLAN OPTION MONTHLY VOLUME EST. SIGNED OPERATORS (10%) NET MONTHLY FEE YOUR 1ST-MONTH SAVINGS" [ref=e331]:
+            - columnheader "PLAN OPTION" [ref=e332]
+            - columnheader "MONTHLY VOLUME" [ref=e333]
+            - columnheader "EST. SIGNED OPERATORS (10%)" [ref=e334]
+            - columnheader "NET MONTHLY FEE" [ref=e335]
+            - columnheader "YOUR 1ST-MONTH SAVINGS" [ref=e336]
+        - rowgroup [ref=e337]:
+          - row "Micro Infrastructure 7,500 Emails 8 Signed Operators $1,200 / mo $3,675 (65% Savings)" [ref=e338]:
+            - cell "Micro Infrastructure" [ref=e339]
+            - cell "7,500 Emails" [ref=e340]
+            - cell "8 Signed Operators" [ref=e341]
+            - cell "$1,200 / mo" [ref=e342]
+            - cell "$3,675 (65% Savings)" [ref=e343]
+          - row "Starter Infrastructure 15,000 Emails 15 Signed Operators $1,750 / mo $8,750 (77% Savings)" [ref=e344]:
+            - cell "Starter Infrastructure" [ref=e345]
+            - cell "15,000 Emails" [ref=e346]
+            - cell "15 Signed Operators" [ref=e347]
+            - cell "$1,750 / mo" [ref=e348]
+            - cell "$8,750 (77% Savings)" [ref=e349]
+          - row "Growth Infrastructure 30,000 Emails 30 Signed Operators $2,800 / mo $18,950 (84% Savings)" [ref=e350]:
+            - cell "Growth Infrastructure" [ref=e351]
+            - cell "30,000 Emails" [ref=e352]
+            - cell "30 Signed Operators" [ref=e353]
+            - cell "$2,800 / mo" [ref=e354]
+            - cell "$18,950 (84% Savings)" [ref=e355]
+          - row "Pro Infrastructure 45,000 Emails 45 Signed Operators $3,900 / mo $29,100 (86% Savings)" [ref=e356]:
+            - cell "Pro Infrastructure" [ref=e357]
+            - cell "45,000 Emails" [ref=e358]
+            - cell "45 Signed Operators" [ref=e359]
+            - cell "$3,900 / mo" [ref=e360]
+            - cell "$29,100 (86% Savings)" [ref=e361]
+          - row "Enterprise Infrastructure 60,000 Emails 60 Signed Operators $5,000 / mo $39,250 (87% Savings)" [ref=e362]:
+            - cell "Enterprise Infrastructure" [ref=e363]
+            - cell "60,000 Emails" [ref=e364]
+            - cell "60 Signed Operators" [ref=e365]
+            - cell "$5,000 / mo" [ref=e366]
+            - cell "$39,250 (87% Savings)" [ref=e367]
+          - row "Fleet-Scale Infrastructure 75,000 Emails 75 Signed Operators $6,000 / mo $49,500 (88% Savings)" [ref=e368]:
+            - cell "Fleet-Scale Infrastructure" [ref=e369]
+            - cell "75,000 Emails" [ref=e370]
+            - cell "75 Signed Operators" [ref=e371]
+            - cell "$6,000 / mo" [ref=e372]
+            - cell "$49,500 (88% Savings)" [ref=e373]
+      - generic [ref=e375]:
+        - generic [ref=e376]: "*Optional dedicated CRM custom pipelines setup is available on request for $100 flat."
+        - generic [ref=e377]: "*Data estimates and projected outcomes are computed using standard industry-average lead conversion parameters. First-month Asamblor cost includes the one-time $750 technical setup fee."
+    - generic [ref=e379]:
+      - generic [ref=e380]:
+        - heading "What clients say. In their own words." [level=2] [ref=e381]
+        - generic [ref=e382]:
+          - button [ref=e383] [cursor=pointer]:
+            - img [ref=e384]
+          - button [ref=e386] [cursor=pointer]:
+            - img [ref=e387]
+      - generic [ref=e389]:
+        - generic [ref=e390]:
+          - paragraph [ref=e391]: “Before Asamblor, we were paying $750 per driver to a recruiter and getting maybe 4–5 owner-operators a month. Three months in, we're signing 15–20 per month and our recruiting costs dropped over 80%.”
+          - generic [ref=e392]:
+            - generic [ref=e394]: DR
+            - generic [ref=e395]:
+              - generic [ref=e396]: David R.
+              - generic [ref=e397]: Director of Recruitment, Midwest Freight Authority
+        - generic [ref=e398]:
+          - paragraph [ref=e399]: “The thing that sold us was owning the infrastructure. When we leave, we keep the CRM, the domains, the lead history — everything. No other agency in trucking gives you that.”
+          - generic [ref=e400]:
+            - generic [ref=e402]: MC
+            - generic [ref=e403]:
+              - generic [ref=e404]: Maria C.
+              - generic [ref=e405]: Operations Manager, Sun State Logistics
+    - generic [ref=e408]:
+      - generic [ref=e409]:
+        - generic [ref=e410]: FAQ
+        - heading "What fleet owners ask us most." [level=2] [ref=e411]
+      - generic [ref=e412]:
+        - group [ref=e413]:
+          - generic "What does Asamblor actually do for a trucking fleet? +" [ref=e414] [cursor=pointer]:
+            - generic [ref=e415]: What does Asamblor actually do for a trucking fleet?
+            - generic [ref=e416]: +
+        - group [ref=e417]:
+          - generic "How is Asamblor different from a driver recruiting agency? +" [ref=e418] [cursor=pointer]:
+            - generic [ref=e419]: How is Asamblor different from a driver recruiting agency?
+            - generic [ref=e420]: +
+        - group [ref=e421]:
+          - generic "Where does the owner-operator data come from? +" [ref=e422] [cursor=pointer]:
+            - generic [ref=e423]: Where does the owner-operator data come from?
+            - generic [ref=e424]: +
+        - group [ref=e425]:
+          - generic "How many outbound touches per month does Asamblor send? +" [ref=e426] [cursor=pointer]:
+            - generic [ref=e427]: How many outbound touches per month does Asamblor send?
+            - generic [ref=e428]: +
+        - group [ref=e429]:
+          - generic "Is Asamblor's outreach TCPA and CAN-SPAM compliant? +" [ref=e430] [cursor=pointer]:
+            - generic [ref=e431]: Is Asamblor's outreach TCPA and CAN-SPAM compliant?
+            - generic [ref=e432]: +
+        - group [ref=e433]:
+          - generic "How long does it take to launch a pipeline? +" [ref=e434] [cursor=pointer]:
+            - generic [ref=e435]: How long does it take to launch a pipeline?
+            - generic [ref=e436]: +
+        - group [ref=e437]:
+          - generic "What's a lease-on owner-operator and why target them? +" [ref=e438] [cursor=pointer]:
+            - generic [ref=e439]: What's a lease-on owner-operator and why target them?
+            - generic [ref=e440]: +
+    - generic [ref=e442]:
+      - generic [ref=e443]: BOOK A DATA DISCOVERY CALL
+      - heading "Ready to build your acquisition infrastructure?" [level=2] [ref=e444]
+      - paragraph [ref=e445]:
+        - text: We'll review your ICP, show you what's in the
+        - link "CarrieX" [ref=e446] [cursor=pointer]:
+          - /url: https://carriex.io/
+        - text: database for your exact target, and scope your engine.
+      - generic [ref=e447]:
+        - textbox "your@company.com" [ref=e448]
+        - button "Get Started →" [ref=e449] [cursor=pointer]
+    - generic [ref=e451]:
+      - generic [ref=e452]:
+        - generic [ref=e453]:
+          - generic [ref=e454]:
+            - img "Asamblor" [ref=e455]
+            - generic [ref=e456]: Asamblor
+          - paragraph [ref=e457]:
+            - text: Acquisition infrastructure for modern fleets. Powered by
+            - link "CarrieX Labs LLC" [ref=e458] [cursor=pointer]:
+              - /url: https://carriex.io/
+            - text: .
+          - generic [ref=e459]:
+            - link [ref=e460] [cursor=pointer]:
+              - /url: https://carriex.io
+              - img [ref=e461]
+            - link [ref=e464] [cursor=pointer]:
+              - /url: mailto:office@asamblor.com
+              - img [ref=e465]
+        - generic [ref=e468]:
+          - heading "Product" [level=4] [ref=e469]
+          - generic [ref=e470]:
+            - link "How It Works" [ref=e471] [cursor=pointer]:
+              - /url: "#how-it-works"
+            - link "The Engine" [ref=e472] [cursor=pointer]:
+              - /url: "#engine"
+            - link "Pricing" [ref=e473] [cursor=pointer]:
+              - /url: "#pricing"
+            - link "CarrieX Data" [ref=e474] [cursor=pointer]:
+              - /url: https://carriex.io
+        - generic [ref=e475]:
+          - heading "Use Cases" [level=4] [ref=e476]
+          - generic [ref=e477]:
+            - link "Owner-Op Recruiting" [ref=e478] [cursor=pointer]:
+              - /url: "#"
+            - link "CDL-A Driver Hiring" [ref=e479] [cursor=pointer]:
+              - /url: "#"
+            - link "Insurance Outreach" [ref=e480] [cursor=pointer]:
+              - /url: "#"
+            - link "Factoring & Finance" [ref=e481] [cursor=pointer]:
+              - /url: "#"
+        - generic [ref=e482]:
+          - heading "Company" [level=4] [ref=e483]
+          - generic [ref=e484]:
+            - link "carriex.io" [ref=e485] [cursor=pointer]:
+              - /url: https://carriex.io
+            - link "office@asamblor.com" [ref=e486] [cursor=pointer]:
+              - /url: mailto:office@asamblor.com
+            - link "+1 872-313-1211" [ref=e487] [cursor=pointer]:
+              - /url: tel:+18723131211
+      - generic [ref=e488]:
+        - paragraph [ref=e489]:
+          - text: © 2026
+          - link "CarrieX Labs LLC" [ref=e490] [cursor=pointer]:
+            - /url: https://carriex.io/
+          - text: . All rights reserved.
+        - generic [ref=e491]:
+          - link "Privacy Policy" [ref=e492] [cursor=pointer]:
+            - /url: /privacy
+          - link "Terms & Conditions" [ref=e493] [cursor=pointer]:
+            - /url: /terms
+  - alert [ref=e494]
+  - generic [ref=e495]:
+    - button "Close" [ref=e497] [cursor=pointer]: ×
+    - generic [ref=e499]:
+      - status "Loading" [ref=e502]
+      - iframe [ref=e515]:
+        

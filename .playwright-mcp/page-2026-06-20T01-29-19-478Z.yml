@@ -1,0 +1,178 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e4]:
+        - link "Asamblor Asamblor" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img "Asamblor" [ref=e6]
+          - generic [ref=e7]: Asamblor
+        - generic [ref=e8]:
+          - link "How It Works" [ref=e9] [cursor=pointer]:
+            - /url: /#how-it-works
+          - link "Infrastructure" [ref=e10] [cursor=pointer]:
+            - /url: /#engine
+          - link "Solutions" [ref=e11] [cursor=pointer]:
+            - /url: /solutions
+          - link "Pricing" [ref=e12] [cursor=pointer]:
+            - /url: /#pricing
+          - link "FAQ" [ref=e13] [cursor=pointer]:
+            - /url: /#faq
+        - link "Book a Discovery Call" [ref=e14] [cursor=pointer]:
+          - /url: /book
+    - generic [ref=e16]:
+      - link "Home" [ref=e17] [cursor=pointer]:
+        - /url: /
+      - text: /
+      - link "Solutions" [ref=e18] [cursor=pointer]:
+        - /url: /solutions
+      - text: /
+      - link "Factoring Companies" [ref=e19] [cursor=pointer]:
+        - /url: /solutions/factoring-companies
+      - text: /Texas
+    - generic [ref=e21]:
+      - generic [ref=e22]: For freight factoring companies · TEXAS
+      - heading "Factoring Companies acquisition pipeline,tuned for carriers domiciled in Texas." [level=1] [ref=e23]:
+        - generic [ref=e24]: Factoring Companies acquisition pipeline,
+        - generic [ref=e25]: tuned for carriers domiciled in Texas.
+      - paragraph [ref=e26]: Owner-ops on net-30 to net-90 broker terms hit a cash wall by week 6. Factoring isn't sold — it's positioned at the right moment. Asamblor reaches that moment, every week.
+      - paragraph [ref=e27]:
+        - strong [ref=e28]: "Texas context:"
+        - text: Largest motor-carrier population in the US. Oil & gas freight in the Permian, port volume out of Houston, the busiest US–Mexico inland border crossing at Laredo, and a huge cross-dock corridor on I-35.
+      - generic [ref=e29]:
+        - button "Book a Discovery Call →" [ref=e30] [cursor=pointer]
+        - link "← All Factoring Companies resources" [ref=e31] [cursor=pointer]:
+          - /url: /solutions/factoring-companies
+    - generic [ref=e34]:
+      - generic [ref=e35]:
+        - generic [ref=e36]: Primary Texas corridors
+        - generic [ref=e37]:
+          - generic [ref=e38]: I-10 (LA→FL coast)
+          - generic [ref=e39]: I-35 (Mexico→Minneapolis)
+          - generic [ref=e40]: I-20 (Dallas→Atlanta)
+          - generic [ref=e41]: I-45 (Dallas→Houston)
+      - generic [ref=e42]:
+        - generic [ref=e43]: Top trucking hubs in TX
+        - generic [ref=e44]:
+          - generic [ref=e45]: Dallas / Fort Worth
+          - generic [ref=e46]: Houston
+          - generic [ref=e47]: San Antonio
+          - generic [ref=e48]: Laredo (Mexico border)
+    - generic [ref=e50]:
+      - generic [ref=e51]: Why factoring companies in Texas is hard
+      - heading "Three reasons your acquisition stalls in TX." [level=2] [ref=e52]:
+        - text: Three reasons
+        - generic [ref=e53]: your acquisition stalls in TX.
+      - generic [ref=e54]:
+        - generic [ref=e55]:
+          - generic [ref=e56]: PROBLEM 01
+          - generic [ref=e57]: First-90-day cash-flow gap is invisible
+          - generic [ref=e58]: An owner-op activates an MC, hauls their first 3 loads, then waits 45 days for the first broker check. By week 6 they're behind on fuel and the truck payment. That's the conversation factoring should be in — and it's almost always too late.
+        - generic [ref=e59]:
+          - generic [ref=e60]: PROBLEM 02
+          - generic [ref=e61]: Recourse vs. non-recourse needs different audiences
+          - generic [ref=e62]: Recourse factoring fits established owner-ops with good freight; non-recourse fits new MCs with broker-credit risk. Without segmentation, your sales team pitches the wrong product to half the leads.
+        - generic [ref=e63]:
+          - generic [ref=e64]: PROBLEM 03
+          - generic [ref=e65]: Lost accounts go to whoever is in front of them
+          - generic [ref=e66]: When a carrier outgrows or sours on a factor, the next factor with a clean pitch wins. Without a constant top-of-funnel of new MCs, you lose more than you gain every quarter.
+    - generic [ref=e69]:
+      - generic [ref=e70]:
+        - generic [ref=e71]: Texas sample ICP
+        - heading "Factoring Companies ICP for Texas, with operating area in adjacent Southwest." [level=2] [ref=e72]
+        - generic [ref=e73]:
+          - generic [ref=e74]:
+            - generic [ref=e75]: Industry
+            - generic [ref=e76]: Factoring Companies
+          - generic [ref=e77]:
+            - generic [ref=e78]: Domicile state
+            - generic [ref=e79]: Texas (TX)
+          - generic [ref=e80]:
+            - generic [ref=e81]: Operating area
+            - generic [ref=e82]: TX + OK, LA, AR, NM
+          - generic [ref=e83]:
+            - generic [ref=e84]: Primary corridors
+            - generic [ref=e85]: I-10, I-35, I-20, I-45
+          - generic [ref=e86]:
+            - generic [ref=e87]: Top hubs (radius)
+            - generic [ref=e88]: Dallas / Fort Worth, Houston
+          - generic [ref=e89]:
+            - generic [ref=e90]: Power units
+            - generic [ref=e91]: "1"
+          - generic [ref=e92]:
+            - generic [ref=e93]: MC age
+            - generic [ref=e94]: 14–60 days
+          - generic [ref=e95]:
+            - generic [ref=e96]: Commodity
+            - generic [ref=e97]: General freight
+      - generic [ref=e98]:
+        - generic [ref=e99]: Why Texas
+        - heading "What makes Texas different." [level=2] [ref=e100]
+        - paragraph [ref=e101]: Largest motor-carrier population in the US. Oil & gas freight in the Permian, port volume out of Houston, the busiest US–Mexico inland border crossing at Laredo, and a huge cross-dock corridor on I-35.
+        - paragraph [ref=e102]:
+          - text: A typical factoring companies pipeline run on Texas-domiciled carriers will reach companies operating out of
+          - strong [ref=e103]: Dallas / Fort Worth and Houston
+          - text: ", with route exposure on the corridors above. Adjacent-state coverage (OK, LA, AR, NM) keeps the regional flow intact for carriers with multi-state operating areas."
+    - generic [ref=e106]:
+      - generic [ref=e107]:
+        - generic [ref=e108]: FAQ — Texas
+        - heading "Questions from Texas operators." [level=2] [ref=e109]:
+          - text: Questions
+          - generic [ref=e110]: from Texas operators.
+      - generic [ref=e111]:
+        - group [ref=e112]:
+          - generic "How many factoring companies prospects can Asamblor reach in Texas? +" [ref=e113] [cursor=pointer]:
+            - generic [ref=e114]: How many factoring companies prospects can Asamblor reach in Texas?
+            - generic [ref=e115]: +
+        - group [ref=e116]:
+          - generic "Do you cover carriers running through Texas on long-haul lanes, or only TX-domiciled? +" [ref=e117] [cursor=pointer]:
+            - generic [ref=e118]: Do you cover carriers running through Texas on long-haul lanes, or only TX-domiciled?
+            - generic [ref=e119]: +
+        - group [ref=e120]:
+          - generic "What's special about Texas for factoring companies? +" [ref=e121] [cursor=pointer]:
+            - generic [ref=e122]: What's special about Texas for factoring companies?
+            - generic [ref=e123]: +
+        - group [ref=e124]:
+          - generic "Can we run a regional campaign covering TX + adjacent states? +" [ref=e125] [cursor=pointer]:
+            - generic [ref=e126]: Can we run a regional campaign covering TX + adjacent states?
+            - generic [ref=e127]: +
+    - generic [ref=e129]:
+      - generic [ref=e130]: Factoring Companies in adjacent states
+      - heading "Same playbook, neighboring carrier markets." [level=2] [ref=e131]:
+        - text: Same playbook,
+        - generic [ref=e132]: neighboring carrier markets.
+      - generic [ref=e133]:
+        - 'link "Factoring Companies — Oklahoma Hubs: Oklahoma City, Tulsa" [ref=e134] [cursor=pointer]':
+          - /url: /solutions/factoring-companies/oklahoma
+          - generic [ref=e135]: Factoring Companies — Oklahoma
+          - generic [ref=e136]: "Hubs: Oklahoma City, Tulsa"
+        - 'link "Factoring Companies — Louisiana Hubs: New Orleans, Baton Rouge" [ref=e137] [cursor=pointer]':
+          - /url: /solutions/factoring-companies/louisiana
+          - generic [ref=e138]: Factoring Companies — Louisiana
+          - generic [ref=e139]: "Hubs: New Orleans, Baton Rouge"
+        - 'link "Factoring Companies — Arkansas Hubs: Little Rock, Lowell / Bentonville" [ref=e140] [cursor=pointer]':
+          - /url: /solutions/factoring-companies/arkansas
+          - generic [ref=e141]: Factoring Companies — Arkansas
+          - generic [ref=e142]: "Hubs: Little Rock, Lowell / Bentonville"
+    - generic [ref=e144]:
+      - generic [ref=e145]: Book a Discovery Call
+      - heading "Scope your Texas factoring companies pipeline." [level=2] [ref=e146]
+      - paragraph [ref=e147]:
+        - text: 30 minutes. We pull a live
+        - link "CarrieX" [ref=e148] [cursor=pointer]:
+          - /url: https://carriex.io/
+        - text: sample for Texas-domiciled factoring companies prospects, and outline the engine.
+      - button "Book a Discovery Call →" [ref=e149] [cursor=pointer]
+    - generic [ref=e151]:
+      - generic [ref=e152]:
+        - text: © 2026 Asamblor is a product of
+        - link "CarrieX Labs LLC" [ref=e153] [cursor=pointer]:
+          - /url: https://carriex.io/
+        - text: .
+      - generic [ref=e154]:
+        - link "All solutions" [ref=e155] [cursor=pointer]:
+          - /url: /solutions
+        - link "Privacy" [ref=e156] [cursor=pointer]:
+          - /url: /privacy
+        - link "Terms" [ref=e157] [cursor=pointer]:
+          - /url: /terms
+  - alert [ref=e158]

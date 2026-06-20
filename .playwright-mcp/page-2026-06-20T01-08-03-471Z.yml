@@ -1,0 +1,187 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e4]:
+        - link "Asamblor Asamblor" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img "Asamblor" [ref=e6]
+          - generic [ref=e7]: Asamblor
+        - generic [ref=e8]:
+          - link "How It Works" [ref=e9] [cursor=pointer]:
+            - /url: /#how-it-works
+          - link "The Engine" [ref=e10] [cursor=pointer]:
+            - /url: /#engine
+          - link "Pricing" [ref=e11] [cursor=pointer]:
+            - /url: /#pricing
+          - link "FAQ" [ref=e12] [cursor=pointer]:
+            - /url: /#faq
+        - link "Book a Discovery Call" [ref=e13] [cursor=pointer]:
+          - /url: /book
+    - generic [ref=e15]:
+      - link "Home" [ref=e16] [cursor=pointer]:
+        - /url: /
+      - text: /
+      - link "Solutions" [ref=e17] [cursor=pointer]:
+        - /url: /solutions
+      - text: /Factoring Companies
+    - generic [ref=e19]:
+      - generic [ref=e20]: For freight factoring companies
+      - heading "Hit new MCs and small fleets—the week their cash flow gets tight." [level=1] [ref=e21]
+      - paragraph [ref=e22]: Owner-ops on net-30 to net-90 broker terms hit a cash wall by week 6. Factoring isn't sold — it's positioned at the right moment. Asamblor reaches that moment, every week.
+      - generic [ref=e23]:
+        - button "Book a Discovery Call →" [ref=e24] [cursor=pointer]
+        - link "How the engine works" [ref=e25] [cursor=pointer]:
+          - /url: /#how-it-works
+      - paragraph [ref=e26]:
+        - text: Powered by
+        - link "CarrieX" [ref=e27] [cursor=pointer]:
+          - /url: https://carriex.io/
+        - text: — 4.5M+ verified trucking records. Freight factoring companies offering invoice factoring to carriers and owner-operators.
+    - generic [ref=e28]:
+      - generic [ref=e29]:
+        - generic [ref=e30]: WHY THIS AUDIENCE IS HARD TO REACH
+        - heading "Three reasons your acquisition stalls." [level=2] [ref=e31]:
+          - text: Three reasons
+          - generic [ref=e32]: your acquisition stalls.
+      - generic [ref=e34]:
+        - generic [ref=e35]:
+          - generic [ref=e36]: PROBLEM 01
+          - generic [ref=e37]: First-90-day cash-flow gap is invisible
+          - generic [ref=e38]: An owner-op activates an MC, hauls their first 3 loads, then waits 45 days for the first broker check. By week 6 they're behind on fuel and the truck payment. That's the conversation factoring should be in — and it's almost always too late.
+        - generic [ref=e39]:
+          - generic [ref=e40]: PROBLEM 02
+          - generic [ref=e41]: Recourse vs. non-recourse needs different audiences
+          - generic [ref=e42]: Recourse factoring fits established owner-ops with good freight; non-recourse fits new MCs with broker-credit risk. Without segmentation, your sales team pitches the wrong product to half the leads.
+        - generic [ref=e43]:
+          - generic [ref=e44]: PROBLEM 03
+          - generic [ref=e45]: Lost accounts go to whoever is in front of them
+          - generic [ref=e46]: When a carrier outgrows or sours on a factor, the next factor with a clean pitch wins. Without a constant top-of-funnel of new MCs, you lose more than you gain every quarter.
+    - generic [ref=e47]:
+      - generic [ref=e48]:
+        - generic [ref=e49]: WHY ASAMBLOR FOR FACTORING COMPANIES
+        - heading "The same engine tuned for your ICP." [level=2] [ref=e50]
+      - generic [ref=e52]:
+        - generic [ref=e53]:
+          - generic [ref=e54]: New-MC trigger (first 14–60 days)
+          - generic [ref=e55]: Pull a rolling list of authorities activated in the last 14, 30, or 60 days — your highest-intent factoring leads, before your competitors get there.
+        - generic [ref=e56]:
+          - generic [ref=e57]: Owner-op vs. small fleet segmentation
+          - generic [ref=e58]: Single-truck owner-ops need cash-flow positioning; 5–15 truck small fleets need same-day funding + fuel-advance integration. Different sequences, same database.
+        - generic [ref=e59]:
+          - generic [ref=e60]: Fuel-card + factoring bundle ready
+          - generic [ref=e61]: Once a carrier signs your factoring, the same engine can promote fuel cards, dispatch services, and insurance partnerships — a multi-product CRM motion without rebuilding outbound for each.
+        - generic [ref=e62]:
+          - generic [ref=e63]: Suppression of competitor customers
+          - generic [ref=e64]: If you have a list of carriers already factoring with you, we apply that as a global suppression — no cannibalization, no duplicate outreach.
+    - generic [ref=e67]:
+      - generic [ref=e68]:
+        - generic [ref=e69]: CARRIEX FILTERS
+        - heading "The filters you can pull on." [level=2] [ref=e70]:
+          - text: The filters
+          - generic [ref=e71]: you can pull on.
+        - paragraph [ref=e72]:
+          - text: Every filter is sourced from public FMCSA, state DOT, and authority filings — structured and de-duped by
+          - link "CarrieX" [ref=e73] [cursor=pointer]:
+            - /url: https://carriex.io/
+          - text: .
+      - generic [ref=e74]:
+        - generic [ref=e75]: MC authority age (0–14 / 14–60 / 60–180 / 180+ days)
+        - generic [ref=e76]: Power-unit count (1, 1–2, 3–5, 5–15 segments)
+        - generic [ref=e77]: Trailer / equipment type
+        - generic [ref=e78]: Domicile state
+        - generic [ref=e79]: Authority status (active, clean, no recent revocations)
+        - generic [ref=e80]: Operating commodity (general freight = cleanest factoring credit)
+        - generic [ref=e81]: OOS recent history
+        - generic [ref=e82]: Carrier classification (interstate vs. intrastate)
+    - generic [ref=e85]:
+      - generic [ref=e86]:
+        - generic [ref=e87]: SAMPLE ICP
+        - heading "Sample ICP — Single-truck owner-ops, MC active 14–60 days, general freight, domiciled in TX, FL, GA, NC, IL" [level=2] [ref=e88]
+        - generic [ref=e89]:
+          - generic [ref=e90]:
+            - generic [ref=e91]: Power units
+            - generic [ref=e92]: "1"
+          - generic [ref=e93]:
+            - generic [ref=e94]: MC age
+            - generic [ref=e95]: 14–60 days
+          - generic [ref=e96]:
+            - generic [ref=e97]: Commodity
+            - generic [ref=e98]: General freight
+          - generic [ref=e99]:
+            - generic [ref=e100]: Domicile
+            - generic [ref=e101]: TX, FL, GA, NC, IL
+          - generic [ref=e102]:
+            - generic [ref=e103]: OOS status
+            - generic [ref=e104]: Clean
+        - generic [ref=e105]:
+          - text: ESTIMATED REACH
+          - generic [ref=e106]: ~1,400 owner-ops per cohort
+      - generic [ref=e107]:
+        - generic [ref=e108]: SAMPLE OUTREACH
+        - heading "A real outbound message — not a template you'd be embarrassed to send." [level=2] [ref=e109]
+        - generic [ref=e110]:
+          - generic [ref=e115]: asamblor.engine
+          - generic [ref=e116]: "{{first_name}} — net-45 broker terms eating your week?"
+          - generic [ref=e117]: "You're {{days_since_active}} days into your authority. By now you've probably hauled 4–6 loads, and the first broker check is still floating. We pay 96% of an invoice in 24 hours, flat 2% fee, no minimums, no contract. Recourse and non-recourse both available depending on broker credit. If you want to keep moving without waiting on net-45, here's the 3-minute application: {{apply_link}} Reply STOP to opt out."
+    - generic [ref=e120]:
+      - generic [ref=e121]:
+        - generic [ref=e122]: FAQ
+        - heading "What factoring companies ask us." [level=2] [ref=e123]:
+          - generic [ref=e124]: What factoring companies
+          - text: ask us.
+      - generic [ref=e125]:
+        - group [ref=e126]:
+          - generic "How do you identify new MCs without buying lists? +" [ref=e127] [cursor=pointer]:
+            - generic [ref=e128]: How do you identify new MCs without buying lists?
+            - generic [ref=e129]: +
+        - group [ref=e130]:
+          - generic "Can we run different products by carrier profile? +" [ref=e131] [cursor=pointer]:
+            - generic [ref=e132]: Can we run different products by carrier profile?
+            - generic [ref=e133]: +
+        - group [ref=e134]:
+          - generic "What's the typical response rate? +" [ref=e135] [cursor=pointer]:
+            - generic [ref=e136]: What's the typical response rate?
+            - generic [ref=e137]: +
+        - group [ref=e138]:
+          - generic "Does this work for non-recourse / spot factoring? +" [ref=e139] [cursor=pointer]:
+            - generic [ref=e140]: Does this work for non-recourse / spot factoring?
+            - generic [ref=e141]: +
+    - generic [ref=e143]:
+      - generic [ref=e144]: RELATED SOLUTIONS
+      - heading "Same engine, different ICP." [level=2] [ref=e145]
+      - generic [ref=e146]:
+        - link "Fuel Card Programs → Get cards in the hands of the small fleets and owner-ops that fuel the most." [ref=e147] [cursor=pointer]:
+          - /url: /solutions/fuel-card-providers
+          - generic [ref=e148]: Fuel Card Programs →
+          - generic [ref=e149]: Get cards in the hands of the small fleets and owner-ops that fuel the most.
+        - link "Commercial Trucking Insurance → Hit new-authority and renewal-window carriers at the exact moment they shop." [ref=e150] [cursor=pointer]:
+          - /url: /solutions/insurance-sales
+          - generic [ref=e151]: Commercial Trucking Insurance →
+          - generic [ref=e152]: Hit new-authority and renewal-window carriers at the exact moment they shop.
+        - link "Dispatch Services → Sign owner-operators who need a dispatcher today—not next quarter." [ref=e153] [cursor=pointer]:
+          - /url: /solutions/dispatch-services
+          - generic [ref=e154]: Dispatch Services →
+          - generic [ref=e155]: Sign owner-operators who need a dispatcher today—not next quarter.
+    - generic [ref=e157]:
+      - generic [ref=e158]: BOOK A DISCOVERY CALL
+      - heading "Scope your factoring companies acquisition pipeline." [level=2] [ref=e159]
+      - paragraph [ref=e160]:
+        - text: 30 minutes. We review your ICP, pull a live
+        - link "CarrieX" [ref=e161] [cursor=pointer]:
+          - /url: https://carriex.io/
+        - text: sample matching your exact target, and outline the engine we'd build.
+      - button "Book a Discovery Call →" [ref=e162] [cursor=pointer]
+    - generic [ref=e164]:
+      - generic [ref=e165]:
+        - text: © 2026 Asamblor — a service of
+        - link "CarrieX Labs LLC" [ref=e166] [cursor=pointer]:
+          - /url: https://carriex.io/
+        - text: .
+      - generic [ref=e167]:
+        - link "All solutions" [ref=e168] [cursor=pointer]:
+          - /url: /solutions
+        - link "Privacy" [ref=e169] [cursor=pointer]:
+          - /url: /privacy
+        - link "Terms" [ref=e170] [cursor=pointer]:
+          - /url: /terms
+  - alert [ref=e171]

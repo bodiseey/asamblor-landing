@@ -1,0 +1,222 @@
+- main [ref=e2]:
+  - navigation [ref=e3]:
+    - generic [ref=e4]:
+      - link "Asamblor Asamblor" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "Asamblor" [ref=e6]
+        - generic [ref=e7]: Asamblor
+      - generic [ref=e8]:
+        - link "How It Works" [ref=e9] [cursor=pointer]:
+          - /url: /#how-it-works
+        - link "The Engine" [ref=e10] [cursor=pointer]:
+          - /url: /#engine
+        - link "Pricing" [ref=e11] [cursor=pointer]:
+          - /url: /#pricing
+        - link "FAQ" [ref=e12] [cursor=pointer]:
+          - /url: /#faq
+      - link "← Back home" [ref=e13] [cursor=pointer]:
+        - /url: /
+  - generic [ref=e15]:
+    - generic [ref=e16]: Legal
+    - heading "Terms of Service" [level=1] [ref=e17]
+    - paragraph [ref=e18]: "Effective date: June 20, 2026"
+    - paragraph [ref=e19]:
+      - text: Asamblor is a service of
+      - strong [ref=e20]: CarrieX Labs LLC
+      - text: ", powered by the CarrieX trucking data platform."
+  - generic [ref=e22]:
+    - generic [ref=e23]:
+      - paragraph [ref=e24]:
+        - text: These Terms of Service (“
+        - strong [ref=e25]: Terms
+        - text: ”) form a binding agreement between you, the entity you represent (“
+        - strong [ref=e26]: Client
+        - text: ",” “"
+        - strong [ref=e27]: you
+        - text: ”), and CarrieX Labs LLC, a New Mexico limited liability company (“
+        - strong [ref=e28]: CarrieX Labs
+        - text: ",” “"
+        - strong [ref=e29]: we
+        - text: ",” “"
+        - strong [ref=e30]: us
+        - text: ”) governing your access to and use of the Asamblor service, the CarrieX trucking data platform, the website at
+        - link "www.asamblor.com" [ref=e31] [cursor=pointer]:
+          - /url: https://www.asamblor.com
+        - text: ", and any related deliverables (collectively, the “"
+        - strong [ref=e32]: Services
+        - text: ”).
+      - paragraph [ref=e33]: By accessing, signing up for, or paying for the Services, you accept these Terms. If you do not accept them, do not use the Services.
+    - generic [ref=e34]:
+      - heading "01 Eligibility" [level=2] [ref=e35]:
+        - generic [ref=e36]: "01"
+        - text: Eligibility
+      - paragraph [ref=e37]: The Services are intended only for businesses and their authorized representatives. You represent that you are at least 18 years old, are authorized to bind the entity you represent, and that your use of the Services complies with all laws and regulations applicable to your business.
+    - generic [ref=e38]:
+      - heading "02 The Services" [level=2] [ref=e39]:
+        - generic [ref=e40]: "02"
+        - text: The Services
+      - paragraph [ref=e41]: "Asamblor is a done-for-you acquisition infrastructure for trucking carriers. Depending on the engagement, the Services may include: ICP onboarding; data extraction from the CarrieX platform; provisioning of sending domains, mailboxes, telephony, and SMS infrastructure; CRM pipeline build; outbound campaign execution; vetting forms; team notification automations; and ongoing optimization."
+      - paragraph [ref=e42]:
+        - text: Specific scope, deliverables, fees, term length, and any service-level commitments will be set out in an order form, statement of work, or proposal accepted by both parties (“
+        - strong [ref=e43]: Order
+        - text: ”). If an Order conflicts with these Terms, the Order controls for the conflicting subject only.
+    - generic [ref=e44]:
+      - heading "03 Accounts & access" [level=2] [ref=e45]:
+        - generic [ref=e46]: "03"
+        - text: Accounts & access
+      - paragraph [ref=e47]:
+        - text: You are responsible for maintaining the confidentiality of any credentials issued to you and for all activity under your account. Notify us immediately at
+        - link "office@asamblor.com" [ref=e48] [cursor=pointer]:
+          - /url: mailto:office@asamblor.com
+        - text: of any unauthorized use.
+    - generic [ref=e49]:
+      - heading "04 Fees, billing & taxes" [level=2] [ref=e50]:
+        - generic [ref=e51]: "04"
+        - text: Fees, billing & taxes
+      - paragraph [ref=e52]: "Fees are stated in the applicable Order, billed in USD, and due on the schedule specified. Unless otherwise stated:"
+      - list [ref=e53]:
+        - listitem [ref=e54]:
+          - text: Fees are
+          - strong [ref=e55]: non-refundable
+          - text: once a billing period or service window has commenced, given the immediate allocation of infrastructure (domains, mailboxes, telephony registrations, CarrieX data extractions) and engineering work.
+        - listitem [ref=e56]: Late payments accrue interest at the lesser of 1.5% per month or the maximum rate allowed by law.
+        - listitem [ref=e57]: You are responsible for all sales, use, VAT, and similar taxes other than taxes on our net income.
+        - listitem [ref=e58]: We may suspend the Services for non-payment after written notice and a reasonable cure period.
+    - generic [ref=e59]:
+      - heading "05 Client responsibilities & compliance" [level=2] [ref=e60]:
+        - generic [ref=e61]: "05"
+        - text: Client responsibilities & compliance
+      - paragraph [ref=e62]: "You are the sender, advertiser, and / or controller of communications dispatched on your behalf and the data used in your pipelines. You agree to:"
+      - list [ref=e63]:
+        - listitem [ref=e64]: Comply with all laws and regulations applicable to your outbound, including the CAN-SPAM Act, the Telephone Consumer Protection Act (TCPA), 10DLC requirements, applicable state telemarketing and Do-Not-Call laws, CCPA/CPRA, and similar state and federal laws.
+        - listitem [ref=e65]: Provide accurate ICP information, an accurate physical mailing address for use in email footers, and accurate brand identification.
+        - listitem [ref=e66]: Maintain proper consents, suppression lists, and DNC compliance where applicable, and process opt-out requests promptly. Reasonable suppression of STOP / unsubscribe requests is honored automatically across the platform.
+        - listitem [ref=e67]: "Refrain from using the Services for prohibited content, including but not limited to: deceptive headers or subject lines, illegal goods or services, adult content, content that infringes third-party rights, malware, or any content that violates applicable law."
+        - listitem [ref=e68]: Cooperate in good faith with reasonable security, deliverability, and abuse-prevention measures.
+      - paragraph [ref=e69]: You will defend, indemnify, and hold us harmless from claims arising out of your failure to comply with this Section, in accordance with Section 12.
+    - generic [ref=e70]:
+      - heading "06 Acceptable use" [level=2] [ref=e71]:
+        - generic [ref=e72]: "06"
+        - text: Acceptable use
+      - paragraph [ref=e73]: "You may not, and may not permit any third party to: (a) reverse engineer, decompile, or copy the Services other than as expressly permitted; (b) interfere with or disrupt the integrity or performance of the Services; (c) use the Services to send unsolicited bulk communications in violation of applicable law; (d) misrepresent the source or identity of any message sent through the Services; or (e) access the Services to build a competing product."
+    - generic [ref=e74]:
+      - heading "07 Data & ownership" [level=2] [ref=e75]:
+        - generic [ref=e76]: "07"
+        - text: Data & ownership
+      - heading "Client Data" [level=3] [ref=e77]
+      - paragraph [ref=e78]:
+        - text: As between the parties, you own all data you upload, provide, or that is generated specifically for your pipelines (including leads qualified for you, vetting-form submissions, and historical CRM records associated with your pipelines) (“
+        - strong [ref=e79]: Client Data
+        - text: ”). You grant us a non-exclusive, worldwide, royalty-free license to use Client Data solely to provide and improve the Services for you.
+      - heading "Infrastructure you may retain" [level=3] [ref=e80]
+      - paragraph [ref=e81]: "Subject to payment of all amounts due, upon termination you may retain ownership and operational control of: sending domains we registered in your name; CRM pipelines and forms built within your CRM tenant; and the historical lead database accumulated during the engagement. Mailboxes, third-party service subscriptions, and telephony registrations remain governed by the underlying provider's terms and may transfer subject to those providers' processes."
+      - heading "Our Intellectual Property" [level=3] [ref=e82]
+      - paragraph [ref=e83]: We retain all right, title, and interest in and to the Services, the CarrieX platform, our proprietary data pipelines, software, models, workflows, playbooks, and any improvements thereto. The CarrieX dataset itself (as a whole and as updated) is licensed, not sold; your right to use CarrieX-derived contact data is limited to operating your own outbound pipelines during the engagement and any post-termination period expressly granted.
+      - heading "Feedback" [level=3] [ref=e84]
+      - paragraph [ref=e85]: If you give us feedback or suggestions, you grant us a perpetual, irrevocable, royalty-free license to use it without restriction.
+      - heading "Aggregated & anonymized data" [level=3] [ref=e86]
+      - paragraph [ref=e87]: We may collect and use aggregated and anonymized data derived from the operation of the Services, provided such data does not identify you or any individual.
+    - generic [ref=e88]:
+      - heading "08 Privacy & data processing" [level=2] [ref=e89]:
+        - generic [ref=e90]: "08"
+        - text: Privacy & data processing
+      - paragraph [ref=e91]:
+        - text: Our processing of personal information is described in the
+        - link "Privacy Policy" [ref=e92] [cursor=pointer]:
+          - /url: /privacy
+        - text: ", which is incorporated by reference. To the extent we process personal information on your behalf, you are the “business” / “controller” and we act as a “service provider” / “processor.” A Data Processing Addendum will apply where required by law and is available on request."
+    - generic [ref=e93]:
+      - heading "09 Confidentiality" [level=2] [ref=e94]:
+        - generic [ref=e95]: "09"
+        - text: Confidentiality
+      - paragraph [ref=e96]: Each party may receive non-public information of the other (“Confidential Information”). The receiving party will use the same degree of care it uses to protect its own confidential information (and no less than reasonable care), will use Confidential Information only to perform under these Terms, and will limit access to personnel with a need to know who are bound by confidentiality obligations. Confidentiality obligations survive termination for three (3) years, except for trade secrets, which survive as long as they remain trade secrets under applicable law.
+    - generic [ref=e97]:
+      - heading "10 Term, suspension & termination" [level=2] [ref=e98]:
+        - generic [ref=e99]: "10"
+        - text: Term, suspension & termination
+      - paragraph [ref=e100]: These Terms remain in effect for the term stated in the applicable Order. Either party may terminate for the other party's material breach if the breach is not cured within thirty (30) days of written notice. We may suspend or terminate immediately for non-payment, security or abuse incidents, or where required by law.
+      - paragraph [ref=e101]: "Upon termination: (a) your right to access the Services ends; (b) we will reasonably cooperate in transitioning Client Data and infrastructure that you are entitled to retain under Section 7; (c) fees already invoiced or due for the current billing period remain payable; and (d) Sections that by their nature should survive (including Sections 4, 5, 7, 9, 11, 12, 13, 15, and 16) survive termination."
+    - generic [ref=e102]:
+      - heading "11 Warranties & disclaimer" [level=2] [ref=e103]:
+        - generic [ref=e104]: "11"
+        - text: Warranties & disclaimer
+      - paragraph [ref=e105]: We warrant that we will perform the Services in a professional and workmanlike manner consistent with industry standards.
+      - paragraph [ref=e106]: EXCEPT AS EXPRESSLY STATED IN THESE TERMS, THE SERVICES ARE PROVIDED “AS IS” AND “AS AVAILABLE.” TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, AND ANY WARRANTY ARISING FROM COURSE OF DEALING OR USAGE OF TRADE.
+      - paragraph [ref=e107]: WE DO NOT GUARANTEE ANY SPECIFIC RECRUITING OUTCOME, NUMBER OF LEADS, INBOX PLACEMENT RATE, DRIVER SIGN-ON, RETENTION, OR REVENUE RESULT. ALL HIRING AND BUSINESS DECISIONS REMAIN SOLELY YOURS.
+    - generic [ref=e108]:
+      - heading "12 Indemnification" [level=2] [ref=e109]:
+        - generic [ref=e110]: "12"
+        - text: Indemnification
+      - paragraph [ref=e111]: "You will defend, indemnify, and hold harmless CarrieX Labs and its officers, directors, employees, and agents from and against any third-party claim, loss, damage, liability, cost, or expense (including reasonable attorneys' fees) arising out of or related to: (a) your or your end-recipients' use of the Services; (b) Client Data or your ICP instructions; (c) communications sent through the Services on your behalf, including TCPA, CAN-SPAM, DNC, or similar claims; or (d) your breach of these Terms or violation of law."
+    - generic [ref=e112]:
+      - heading "13 Limitation of liability" [level=2] [ref=e113]:
+        - generic [ref=e114]: "13"
+        - text: Limitation of liability
+      - paragraph [ref=e115]: TO THE MAXIMUM EXTENT PERMITTED BY LAW, NEITHER PARTY WILL BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES, OR FOR ANY LOSS OF PROFITS, REVENUE, DATA, OR BUSINESS, EVEN IF ADVISED OF THE POSSIBILITY.
+      - paragraph [ref=e116]: EACH PARTY'S TOTAL AGGREGATE LIABILITY ARISING OUT OF OR RELATED TO THESE TERMS WILL NOT EXCEED THE FEES PAID OR PAYABLE BY YOU TO US UNDER THE APPLICABLE ORDER IN THE TWELVE (12) MONTHS PRECEDING THE EVENT GIVING RISE TO LIABILITY.
+      - paragraph [ref=e117]: "The above limitations do not apply to: (i) your payment obligations; (ii) your indemnification obligations; (iii) breaches of confidentiality; or (iv) liability that cannot be limited under applicable law."
+    - generic [ref=e118]:
+      - heading "14 Modifications" [level=2] [ref=e119]:
+        - generic [ref=e120]: "14"
+        - text: Modifications
+      - paragraph [ref=e121]: We may update these Terms from time to time. Material changes will be posted on this page with a new effective date and, where reasonable, communicated by email. Your continued use of the Services after the effective date constitutes acceptance.
+    - generic [ref=e122]:
+      - heading "15 Governing law & disputes" [level=2] [ref=e123]:
+        - generic [ref=e124]: "15"
+        - text: Governing law & disputes
+      - paragraph [ref=e125]: These Terms are governed by the laws of the State of New Mexico, United States, without regard to its conflict-of-laws rules. The state and federal courts located in Santa Fe County, New Mexico have exclusive jurisdiction over any dispute that is not subject to arbitration or small-claims, and the parties consent to personal jurisdiction and venue there.
+      - paragraph [ref=e126]: The United Nations Convention on Contracts for the International Sale of Goods does not apply. To the extent permitted by law, each party waives any right to a jury trial and to participate in any class or representative action.
+    - generic [ref=e127]:
+      - heading "16 General" [level=2] [ref=e128]:
+        - generic [ref=e129]: "16"
+        - text: General
+      - list [ref=e130]:
+        - listitem [ref=e131]:
+          - strong [ref=e132]: Entire agreement.
+          - text: These Terms together with any Order and the Privacy Policy are the entire agreement between the parties and supersede all prior agreements on the same subject.
+        - listitem [ref=e133]:
+          - strong [ref=e134]: Severability.
+          - text: If any provision is held unenforceable, the remaining provisions remain in full force and the unenforceable provision will be reformed to the minimum extent necessary.
+        - listitem [ref=e135]:
+          - strong [ref=e136]: Assignment.
+          - text: You may not assign these Terms without our prior written consent, except to a successor in a merger or sale of substantially all assets. We may assign freely.
+        - listitem [ref=e137]:
+          - strong [ref=e138]: Force majeure.
+          - text: Neither party is liable for delays or failures caused by events beyond reasonable control.
+        - listitem [ref=e139]:
+          - strong [ref=e140]: No waiver.
+          - text: Failure to enforce any right is not a waiver of that right.
+        - listitem [ref=e141]:
+          - strong [ref=e142]: Independent contractors.
+          - text: The parties are independent contractors; nothing creates an agency, partnership, or joint venture.
+        - listitem [ref=e143]:
+          - strong [ref=e144]: Notices.
+          - text: Notices to us must be sent to
+          - link "legal@asamblor.com" [ref=e145] [cursor=pointer]:
+            - /url: mailto:legal@asamblor.com
+          - text: and to the address below. Notices to you may be sent to the email associated with your account.
+    - generic [ref=e146]:
+      - heading "17 Contact" [level=2] [ref=e147]:
+        - generic [ref=e148]: "17"
+        - text: Contact
+      - paragraph [ref=e149]:
+        - text: "Legal:"
+        - link "legal@asamblor.com" [ref=e150] [cursor=pointer]:
+          - /url: mailto:legal@asamblor.com
+        - text: "General:"
+        - link "office@asamblor.com" [ref=e151] [cursor=pointer]:
+          - /url: mailto:office@asamblor.com
+      - paragraph [ref=e152]:
+        - strong [ref=e153]: CarrieX Labs LLC
+        - text: 1012 Marquez Place, Ste. 106-B
+        - text: Santa Fe, NM 87505
+        - text: United States
+  - generic [ref=e155]:
+    - generic [ref=e156]: © 2026 Asamblor — a service of CarrieX Labs LLC.
+    - generic [ref=e157]:
+      - link "Privacy" [ref=e158] [cursor=pointer]:
+        - /url: /privacy
+      - link "Terms" [ref=e159] [cursor=pointer]:
+        - /url: /terms
+      - link "office@asamblor.com" [ref=e160] [cursor=pointer]:
+        - /url: mailto:office@asamblor.com

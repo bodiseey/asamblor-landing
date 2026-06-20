@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import Preloader from "@/components/Preloader";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const inter = Inter({
@@ -16,52 +17,85 @@ const playfair = Playfair_Display({
   variable: '--font-playfair',
 })
 
+const SITE_URL = "https://www.asamblor.com";
+const SITE_NAME = "Asamblor";
+const SITE_TITLE = "Asamblor | Acquisition infrastructure for modern fleets";
+const SITE_DESCRIPTION =
+  "Asamblor is the done-for-you acquisition infrastructure for trucking fleets. We build, run, and own end-to-end recruiting pipelines that source verified owner-operators and CDL drivers from a 4.5M+ record database — no job boards, no agency commissions.";
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.asamblor.com'),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Asamblor | Hire CDL Drivers & Owner Operators on Autopilot",
-    template: "%s | Asamblor - Fleet Recruitment"
+    default: SITE_TITLE,
+    template: "%s | Asamblor",
   },
-  description: "Asamblor is the AI-driven recruitment platform for trucking fleet owners. Automatically hire qualified CDL drivers and owner operators to fill your fleet faster.",
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  category: "Business",
   keywords: [
-    "hire cdl drivers",
-    "owner operators",
-    "truck driver recruitment",
-    "fleet recruiting",
-    "cdl driver jobs",
-    "trucking automated recruitment",
+    "owner-operator recruitment",
+    "lease-on owner operators",
+    "cdl driver recruitment",
+    "trucking fleet recruiting",
+    "fleet acquisition infrastructure",
+    "trucking outbound engine",
+    "done-for-you driver recruiting",
+    "carriex",
     "asamblor",
-    "driver hiring platform",
-    "trucking business growth",
-    "automated driver vetting"
+    "trucking growth",
+    "alternative to driver recruiting agency",
+    "cost per acquisition trucking",
   ],
-  authors: [{ name: "Asamblor Team" }],
-  creator: "Asamblor",
-  publisher: "Asamblor",
+  authors: [{ name: "Asamblor", url: SITE_URL }],
+  creator: "CarrieX Labs LLC",
+  publisher: "CarrieX Labs LLC",
+  formatDetection: { email: false, address: false, telephone: false },
+  alternates: {
+    canonical: SITE_URL,
+    types: { "application/rss+xml": [], "text/plain": [{ url: "/llms.txt", title: "LLMs index" }] },
+  },
   openGraph: {
-    title: "Asamblor | Intelligent Fleet Recruitment for CDL Drivers",
-    description: "Scale your trucking business by hiring the best CDL drivers and owner operators with AI-powered automation.",
-    url: 'https://www.asamblor.com',
-    siteName: 'Asamblor',
-    locale: 'en_US',
-    type: 'website',
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    locale: "en_US",
+    type: "website",
+    images: [
+      { url: "/logo.png", width: 1200, height: 630, alt: "Asamblor — acquisition infrastructure for modern fleets" },
+    ],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: "Asamblor | Hire CDL Drivers Fast",
-    description: "Automate your fleet recruitment. Hire qualified CDL drivers and owner operators effortlessly.",
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
     creator: "@asamblor",
+    images: ["/logo.png"],
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    apple: [{ url: "/logo.png" }],
+  },
+  manifest: "/manifest.json",
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      noimageindex: false,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
+  },
+  other: {
+    "theme-color": "#09090b",
+    "color-scheme": "dark",
   },
 };
 
@@ -81,6 +115,7 @@ export default function RootLayout({
         >
           {/* <Preloader /> */}
           {children}
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
