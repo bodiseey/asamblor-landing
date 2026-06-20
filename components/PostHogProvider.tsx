@@ -15,6 +15,7 @@ if (typeof window !== "undefined") {
       capture_pageleave: true,
       persistence: "localStorage+cookie",
       autocapture: true,
+      person_profiles: "identified_only",
     });
   }
 }
