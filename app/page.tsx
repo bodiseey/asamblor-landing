@@ -9,7 +9,7 @@ const FAQ = [
   },
   {
     q: "How is Asamblor different from a driver recruiting agency?",
-    a: "Traditional agencies charge $750–$3,500+ per signed driver and own the leads, the domains, and the data. Asamblor charges a flat monthly fee with a projected cost per signed owner-operator under $50, and every domain, mailbox, CRM pipeline, and historical lead is yours to keep. You stop renting leads and start owning the infrastructure.",
+    a: "Traditional agencies charge $750+ per signed driver and own the leads, the domains, and the data. Asamblor charges a flat monthly fee with a projected cost per signed owner-operator under $50, and every domain, mailbox, CRM pipeline, and historical lead is yours to keep. You stop renting leads and start owning the infrastructure.",
   },
   {
     q: "Where does the owner-operator data come from?",
@@ -132,11 +132,48 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "@id": `${SITE_URL}/#faq`,
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["#faq .lp-faq-item summary", "#faq .lp-faq-item div"],
+    },
     mainEntity: FAQ.map((f) => ({
       "@type": "Question",
       name: f.q,
       acceptedAnswer: { "@type": "Answer", text: f.a },
     })),
+  };
+
+  const howTo = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "@id": `${SITE_URL}/#howto`,
+    name: "How Asamblor builds your acquisition infrastructure",
+    description: "Six-stage done-for-you process to launch a motor-carrier acquisition pipeline.",
+    totalTime: "P21D",
+    estimatedCost: { "@type": "MonetaryAmount", currency: "USD", value: "750" },
+    tool: [
+      { "@type": "HowToTool", name: "CarrieX trucking data platform" },
+      { "@type": "HowToTool", name: "Email sending infrastructure (SPF/DKIM/DMARC)" },
+      { "@type": "HowToTool", name: "10DLC-registered SMS" },
+    ],
+    step: [
+      { "@type": "HowToStep", name: "Onboarding & targeting", text: "We interview the client to capture the exact ICP: authority type, lanes, trailer types, fleet-size filters, geographic targeting, authority age, OOS status." },
+      { "@type": "HowToStep", name: "Data mining via CarrieX", text: "Mine 4.5M+ verified trucking records to produce a clean, deduped, verified list of carriers and owner-operators matching the ICP exactly." },
+      { "@type": "HowToStep", name: "Outbound infrastructure build", text: "Provision sending domains, warm mailboxes, configure SPF/DKIM/DMARC, register 10DLC telephony, build vetting forms and CRM pipeline." },
+      { "@type": "HowToStep", name: "Multi-channel engagement", text: "Run up to 75,000 targeted outbound touches per month across email, SMS, and web forms; SMS fires only on explicit intent signals." },
+      { "@type": "HowToStep", name: "CRM pipeline & automation", text: "Qualified leads land in the client's CRM with full context, automations handle stage transitions and re-engagement." },
+      { "@type": "HowToStep", name: "Real-time team notifications", text: "Bots ping the recruiter, dispatcher, or ops team the moment a hot lead replies or a vetting form is submitted." },
+    ],
+  };
+
+  const founder = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${SITE_URL}/#founder`,
+    name: "George Bodistean",
+    jobTitle: "Founder",
+    worksFor: { "@id": `${SITE_URL}/#organization` },
+    sameAs: ["https://carriex.io"],
   };
 
   const breadcrumb = {
@@ -149,7 +186,7 @@ export default function Home() {
 
   const graph = {
     "@context": "https://schema.org",
-    "@graph": [organization, website, service, faq, breadcrumb],
+    "@graph": [organization, founder, website, service, faq, howTo, breadcrumb],
   };
 
   return (

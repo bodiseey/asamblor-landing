@@ -1,6 +1,6 @@
 # Asamblor
 
-> Asamblor is done-for-you acquisition infrastructure for trucking fleets. We build, run, and own end-to-end recruiting pipelines that source verified owner-operators and CDL drivers from a 4.5M+ record database — replacing job boards and $750–$3,500-per-hire agencies with a flat-fee engine fleets own as a permanent asset.
+> Asamblor is done-for-you acquisition infrastructure for trucking fleets. We build, run, and own end-to-end recruiting pipelines that source verified owner-operators and CDL drivers from a 4.5M+ record database — replacing job boards and $750-per-hire agencies with a flat-fee engine fleets own as a permanent asset.
 
 Asamblor is a product of CarrieX Labs LLC (1012 Marquez Place, Ste. 106-B, Santa Fe, NM 87505, United States), powered by the CarrieX trucking data platform (https://carriex.io). The service combines: proprietary trucking data, multi-channel outbound (email, SMS, web forms, telephony), CRM pipeline engineering, and real-time team notifications into one managed acquisition engine.
 
@@ -59,7 +59,7 @@ Clients keep all infrastructure (domains, mailboxes, CRM tenant, vetting forms, 
 
 - 4.5M+ verified trucking records in the CarrieX database (authority status, equipment, insurance, out-of-service status, verified contact info).
 - Up to 75,000 targeted outbound touches per month per pipeline (email + SMS + web forms).
-- Projected cost per signed owner-operator under $50 vs. $750–$3,500+ typical agency fees.
+- Projected cost per signed owner-operator under $50 vs. $750+ typical agency fees.
 - 14–21 day standard launch window from kickoff to first live outbound.
 - Service is flat-fee monthly; clients own all domains, mailboxes, CRM pipelines, and historical lead data.
 - TCPA-compliant SMS (10DLC / toll-free registered, fires only on explicit interest signal); CAN-SPAM-compliant email with proper SPF/DKIM/DMARC.

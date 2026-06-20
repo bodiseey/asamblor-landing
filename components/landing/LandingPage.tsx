@@ -623,7 +623,7 @@ function CostWidget() {
         <div className="lp-feat-stat">
           $44<span className="accent" style={{ color: "#10b981" }}>↓</span>
         </div>
-        <div className="lp-feat-desc">Max projected cost per signed owner-operator vs. $3,500+ with agencies</div>
+        <div className="lp-feat-desc">Max projected cost per signed owner-operator vs. $750+ with agencies</div>
       </div>
     </div>
   );
@@ -765,7 +765,7 @@ export default function LandingPage({ faq = [] as { q: string; a: string }[] }: 
             </div>
             <div style={{ paddingTop: 8 }}>
               <p style={{ fontSize: 16, color: "#71717a", lineHeight: 1.72, marginBottom: 28 }}>
-                Traditional recruiting burns margin on $3,500+ agency fees for every owner-operator signed. Asamblor replaces the agency with productized, done-for-you acquisition pipelines—built as a permanent business asset you own.
+                Traditional recruiting burns margin on $750+ agency fees for every owner-operator signed. Asamblor replaces the agency with productized, done-for-you acquisition pipelines—built as a permanent business asset you own.
               </p>
               <a href="mailto:office@asamblor.com" className="lp-link-dark" style={{ fontSize: 13.5, textDecoration: "none" }}>Contact us →</a>
             </div>
@@ -812,7 +812,7 @@ export default function LandingPage({ faq = [] as { q: string; a: string }[] }: 
                   <line x1="4" y1="52" x2="76" y2="52" stroke="rgba(255,255,255,0.05)" strokeWidth="1" />
                 </svg>
               )},
-              { fig: "FIG 0.3", title: "Flat monthly, not per-hire", desc: "Agencies charge $3,500+ per operator. Asamblor operates on a transparent, flat monthly fee. Scaling your lease-on fleet no longer forces your recruiting costs to spiral.", svg: (
+              { fig: "FIG 0.3", title: "Flat monthly, not per-hire", desc: "Agencies charge $750+ per operator. Asamblor operates on a transparent, flat monthly fee. Scaling your lease-on fleet no longer forces your recruiting costs to spiral.", svg: (
                 <svg width="80" height="56" viewBox="0 0 80 56" fill="none" style={{ marginBottom: 32, display: "block" }}>
                   <circle cx="40" cy="28" r="22" stroke="rgba(255,255,255,0.09)" strokeWidth="1" />
                   <circle cx="40" cy="28" r="14" stroke="rgba(255,255,255,0.05)" strokeWidth="1" />
@@ -940,7 +940,7 @@ export default function LandingPage({ faq = [] as { q: string; a: string }[] }: 
               title="Traditional recruiting agencies"
               dark={false}
               items={[
-                { ok: false, label: "$3,500+ per signed operator", sub: "Recruiting fees eat your expansion margins" },
+                { ok: false, label: "$750+ per signed operator", sub: "Recruiting fees eat your expansion margins" },
                 { ok: false, label: "Opaque, variable quality", sub: "No ICP-matching or pre-vetting" },
                 { ok: false, label: "Agency owns the pipeline", sub: "Zero asset when you exit" },
                 { ok: false, label: "Cost scales per hire", sub: "More operators signed = more commissions" },
@@ -1009,7 +1009,17 @@ export default function LandingPage({ faq = [] as { q: string; a: string }[] }: 
                     <td style={{ padding: "22px 12px", fontSize: 13, lineHeight: "1.5", color: "#ffffff", fontWeight: 500 }}>{row.plan}</td>
                     <td style={{ padding: "22px 12px", fontSize: 13, lineHeight: "1.5", color: "rgba(255,255,255,0.85)" }}>{row.volume}</td>
                     <td style={{ padding: "22px 12px", fontSize: 13, lineHeight: "1.5", color: "#e0f2fe", fontWeight: 500 }}>{row.operators}</td>
-                    <td style={{ padding: "22px 12px", fontSize: 13, lineHeight: "1.5", color: "#ffffff", fontWeight: 600 }}>{row.fee}</td>
+                    <td style={{ padding: "22px 12px", fontSize: 13, lineHeight: "1.5" }}>
+                      <button
+                        type="button"
+                        {...calAttrs}
+                        aria-label={`Get a custom price for the ${row.plan} plan`}
+                        style={{ position: "relative", background: "rgba(255,255,255,0.10)", border: "1px solid rgba(255,255,255,0.25)", borderRadius: 6, padding: "8px 14px", cursor: "pointer", color: "#ffffff", fontSize: 12.5, fontWeight: 500, whiteSpace: "nowrap", display: "inline-flex", alignItems: "center", gap: 8, overflow: "hidden", fontFamily: "inherit" }}
+                      >
+                        <span aria-hidden="true" style={{ filter: "blur(6px)", opacity: 0.55, color: "#ffffff", fontWeight: 600, letterSpacing: "0.02em" }}>{row.fee}</span>
+                        <span>Get custom price →</span>
+                      </button>
+                    </td>
                     <td style={{ padding: "22px 12px", fontSize: 13, lineHeight: "1.5", color: "#a7f3d0", fontWeight: 600 }}>{row.savings}</td>
                   </tr>
                 ))}

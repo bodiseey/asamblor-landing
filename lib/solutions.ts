@@ -37,12 +37,12 @@ export const SOLUTIONS: Solution[] = [
       eyebrow: "For motor carriers & dispatch authorities",
       headlineWhite: "Add lease-on owner-operators to your fleet—",
       headlineGrey: "asset-light, no agency commissions.",
-      sub: "The fastest way to scale a motor-carrier revenue base without buying iron, hiring company drivers, or paying $750–$3,500 per signed driver to an agency. Asamblor owns the data layer, runs the outbound, and routes interested owner-ops directly into your CRM.",
+      sub: "The fastest way to scale a motor-carrier revenue base without buying iron, hiring company drivers, or paying $750+ per signed driver to an agency. Asamblor owns the data layer, runs the outbound, and routes interested owner-ops directly into your CRM.",
     },
     metaTitle: "Owner-Operator Recruiting — Done-For-You Acquisition Infrastructure",
     metaDescription: "Scale your lease-on owner-operator fleet without job boards or agency fees. Asamblor builds and runs your outbound pipeline using 4.5M+ verified carrier records from CarrieX.",
     painPoints: [
-      { title: "Agency fees destroy fleet-growth margins", body: "Driver-recruiting agencies charge $750–$3,500+ per signed owner-operator. Add 50 owner-ops to your authority and you've burned $37K–$175K — money that should fund another truck, dispatcher, or back-office hire." },
+      { title: "Agency fees destroy fleet-growth margins", body: "Driver-recruiting agencies charge $750+ per signed owner-operator. Add 50 owner-ops to your authority and you've burned $37K+ — money that should fund another truck, dispatcher, or back-office hire." },
       { title: "Job boards return ghost leads", body: "DAT, Truckstop, and indeed-style boards generate volume, not quality. Most applicants are tire-kickers, already signed, or never had the truck they claimed. Recruiters waste 60–80% of their week chasing leads that don't sign." },
       { title: "The best owner-ops aren't shopping", body: "Owner-operators who run consistent freight aren't browsing job boards — they're already moving for another authority that's underpaying them or has wrong-direction freight. You have to reach them directly, with a specific lease-on offer, at the right moment." },
     ],
@@ -80,7 +80,7 @@ export const SOLUTIONS: Solution[] = [
         "Quick one. Your MC ({{mc_number}}) shows {{days_since_active}} days active running reefer out of {{state}}. We're {{carrier_name}} ({{carrier_mc}}) and we have steady reefer freight on the lanes you already run — looking to add 3–5 owner-ops to our authority this quarter.\n\nPercentage: {{pct_offered}}, weekly settlements, fuel discount, plate program, no forced dispatch.\n\nIf this fits, 60-second intake to get the conversation started: {{intake_link}}\n\nReply STOP to opt out anytime.",
     },
     faqs: [
-      { q: "How is this different from a driver-recruiting agency?", a: "Agencies charge $750–$3,500+ per signed owner-op and own the leads, domains, and data. Asamblor charges a flat monthly retainer (projected cost per signed owner-op under $50) and every domain, mailbox, CRM pipeline, and historical lead is yours to keep. You stop renting recruiting and start owning acquisition infrastructure." },
+      { q: "How is this different from a driver-recruiting agency?", a: "Agencies charge $750+ per signed owner-op and own the leads, domains, and data. Asamblor charges a flat monthly retainer (projected cost per signed owner-op under $50) and every domain, mailbox, CRM pipeline, and historical lead is yours to keep. You stop renting recruiting and start owning acquisition infrastructure." },
       { q: "How many owner-ops can you typically sign per month?", a: "Depends entirely on your offer (percentage, lane mix, settlement terms) and the size of your ICP. A typical mid-market motor carrier with a competitive package and a regional ICP signs 8–25 owner-ops per month from a single Asamblor pipeline after the first 60-day ramp." },
       { q: "Can you target by equipment type?", a: "Yes — build separate pipelines per equipment. Reefer owner-ops, flatbed owner-ops, step-deck, and power-only each get different sequences with equipment-specific lane and rate positioning. Different domains, different copy, much higher reply rates than generic outreach." },
       { q: "What if we want to grow beyond owner-ops into CDL company drivers?", a: "Asamblor runs both pipelines in parallel — see our [CDL driver hiring solution](/solutions/cdl-driver-hiring). Different audience (individual drivers vs. independent MCs), different sourcing channels, but the same outbound infrastructure and CRM." },
