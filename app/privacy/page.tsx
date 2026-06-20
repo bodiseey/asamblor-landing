@@ -3,7 +3,7 @@ import PrivacyClient from "./PrivacyClient";
 
 export const metadata: Metadata = {
     title: "Privacy Policy",
-    description: "How CarrieX Labs LLC (Asamblor) collects, uses, and protects information — CCPA/CPRA rights, processor roles, opt-outs, and contact details.",
+    description: "Read the Privacy Policy for Asamblor to learn how we collect, process, and protect your information, including your CCPA/CPRA data rights and choices.",
     alternates: { canonical: "https://www.asamblor.com/privacy" },
 };
 

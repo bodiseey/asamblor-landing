@@ -6,7 +6,7 @@ const SITE_URL = "https://www.asamblor.com";
 
 export const metadata: Metadata = {
   title: "Solutions — Acquisition pipelines for every trucking-adjacent business",
-  description: "Asamblor builds done-for-you outbound pipelines for freight brokers, insurance, factoring, dispatch, fuel cards, tire dealers, equipment suppliers, CDL schools, compliance consultants, and more — powered by CarrieX (4.5M+ verified records).",
+  description: "Explore done-for-you outbound recruiting pipelines tailored for freight brokers, factoring, fuel cards, tire dealers, and more, powered by CarrieX databases.",
   alternates: { canonical: `${SITE_URL}/solutions` },
 };
 

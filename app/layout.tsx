@@ -21,7 +21,7 @@ const SITE_URL = "https://www.asamblor.com";
 const SITE_NAME = "Asamblor";
 const SITE_TITLE = "Asamblor | Acquisition infrastructure for modern fleets";
 const SITE_DESCRIPTION =
-  "Asamblor is the done-for-you acquisition infrastructure for trucking fleets. We build, run, and own end-to-end recruiting pipelines that source verified owner-operators and CDL drivers from a 4.5M+ record database — no job boards, no agency commissions.";
+  "Asamblor is the done-for-you owner-operator acquisition infrastructure for trucking fleets. Build, run, and own your pipeline powered by 4.5M+ verified records.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
